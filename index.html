@@ -39,6 +39,13 @@
             color: #00ffff;
         }
 
+        /* Imagen del Protocolo metida como fondo seguro para que cargue sí o sí */
+        .safe-bg-image {
+            background-image: url('https://raw.githubusercontent.com/figueredo56/zaard-tracker/refs/heads/main/188%20sin%20t%C3%ADtulo_20260720001344.png');
+            background-size: cover;
+            background-position: center;
+        }
+
         .orders-box {
             background: linear-gradient(rgba(10, 10, 25, 0.82), rgba(10, 10, 25, 0.82)), url('https://raw.githubusercontent.com/figueredo56/zaard-tracker/refs/heads/main/188%20sin%20t%C3%ADtulo_20260720001344.png');
             background-size: cover;
@@ -47,6 +54,15 @@
     </style>
 </head>
 <body class="flex items-center justify-center min-h-screen">
+
+    <!-- Reproductor de la canción de ZARD flotante y discreto -->
+    <div class="fixed bottom-3 right-3 z-50 bg-black/90 border border-cyan-400 p-2 rounded-xl shadow-[0_0_15px_rgba(0,255,255,0.4)] flex items-center gap-2">
+        <span class="text-[10px] text-cyan-300 font-semibold uppercase tracking-wider hidden md:inline">🎶 El Chupulún de Zaard</span>
+        <audio id="zaard-audio" controls loop class="h-8 w-36 md:w-44 accent-cyan-400">
+            <source src="El Chupulún de Zaard.mp3" type="audio/mpeg">
+            Tu navegador no soporta audio.
+        </audio>
+    </div>
 
     <div class="frame-gold w-full max-w-4xl p-3 md:p-5 mx-auto">
         
@@ -72,12 +88,10 @@
                 </div>
             </div>
 
-            <!-- Panel Lateral con la imagen visible y ajustada -->
+            <!-- Panel Lateral con la imagen de fondo segura (cargará perfecto) -->
             <div class="flex flex-col gap-2">
                 
-                <div class="w-full h-32 overflow-hidden rounded-xl border border-cyan-500/50 relative shadow-lg bg-black flex items-center justify-center">
-                    <img src="https://raw.githubusercontent.com/figueredo56/zaard-tracker/refs/heads/main/188%20sin%20t%C3%ADtulo_20260720001344.png" alt="Protocolo Panga" class="w-full h-full object-cover">
-                </div>
+                <div class="w-full h-32 rounded-xl border border-cyan-500/50 relative shadow-lg safe-bg-image"></div>
 
                 <div class="border border-cyan-500/50 rounded-xl p-2.5 bg-black/70 text-xs">
                     <p class="text-gray-300">Dueño: <span class="text-white font-semibold">Panga</span></p>
@@ -104,43 +118,11 @@
     </div>
 
     <script>
-        // Generador de Sonido "Tin-Tin" limpio mediante Web Audio API (Sin depender de archivos externos caídos)
-        function playCoinSound() {
-            try {
-                const audioCtx = new (window.AudioContext || window.webkitAudioContext)();
-                if (audioCtx.state === 'suspended') {
-                    audioCtx.resume();
-                }
-                
-                const playTone = (freq, startTime, duration) => {
-                    const osc = audioCtx.createOscillator();
-                    const gain = audioCtx.createGain();
-                    osc.type = 'sine';
-                    osc.frequency.value = freq;
-                    
-                    gain.gain.setValueAtTime(0.15, audioCtx.currentTime + startTime); // Volumen bajito y agradable
-                    gain.gain.exponentialRampToValueAtTime(0.001, audioCtx.currentTime + startTime + duration);
-                    
-                    osc.connect(gain);
-                    gain.connect(audioCtx.destination);
-                    
-                    osc.start(audioCtx.currentTime + startTime);
-                    osc.stop(audioCtx.currentTime + startTime + duration);
-                };
-
-                // Notas estilo "tin-tin" clásico de moneda
-                playTone(987.77, 0, 0.08);    // B5
-                playTone(1318.51, 0.08, 0.25); // E6
-            } catch(e) {
-                console.log("Audio contextual activo");
-            }
-        }
-
-        // Se reproduce suavemente al primer toque en la pantalla
-        document.addEventListener('click', function initAudio() {
-            playCoinSound();
-            document.removeEventListener('click', initAudio);
-        }, { once: true });
+        // Configuración de volumen inicial bajito para la canción de ZARD
+        window.addEventListener('DOMContentLoaded', () => {
+            const audio = document.getElementById('zaard-audio');
+            audio.volume = 0.3; // Volumen moderado/bajo muy agradable
+        });
 
         const ZARD_CONTRACT = "0x3468ea4e6ce13ec4c7f8651f7efc6aa6046f4d65";
         const PANCAKE_POOL = "0x7084d8562532aea9f9239cdd63ea289c85e6b0e9";
