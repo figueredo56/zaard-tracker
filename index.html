@@ -39,13 +39,8 @@
             color: #00ffff;
         }
 
-        /* Contenedor de la imagen con respaldo directo */
-        .safe-image-box {
-            background: url('https://raw.githubusercontent.com/figueredo56/zaard-tracker/refs/heads/main/188%20sin%20t%C3%ADtulo_20260720001344.png') center/cover no-repeat, #000;
-        }
-
         .orders-box {
-            background: linear-gradient(rgba(10, 10, 25, 0.82), rgba(10, 10, 25, 0.82)), url('https://raw.githubusercontent.com/figueredo56/zaard-tracker/refs/heads/main/188%20sin%20t%C3%ADtulo_20260720001344.png');
+            background: linear-gradient(rgba(10, 10, 25, 0.82), rgba(10, 10, 25, 0.82)), url('https://raw.githubusercontent.com/figueredo56/zaard-tracker/refs/heads/main/184%20sin%20t%C3%ADtulo_20260715225022.png');
             background-size: cover;
             background-position: center;
         }
@@ -86,10 +81,12 @@
                 </div>
             </div>
 
-            <!-- Panel Lateral con la imagen asegurada por CSS -->
+            <!-- Panel Lateral con imagen 100% segura y visible -->
             <div class="flex flex-col gap-2">
                 
-                <div class="w-full h-32 rounded-xl border border-cyan-500/50 relative shadow-lg safe-image-box"></div>
+                <div class="w-full h-32 rounded-xl border border-cyan-500/50 relative shadow-lg overflow-hidden bg-black flex items-center justify-center">
+                    <img src="https://raw.githubusercontent.com/figueredo56/zaard-tracker/refs/heads/main/184%20sin%20t%C3%ADtulo_20260715225022.png" alt="Protocolo Panga" class="w-full h-full object-cover">
+                </div>
 
                 <div class="border border-cyan-500/50 rounded-xl p-2.5 bg-black/70 text-xs">
                     <p class="text-gray-300">Dueño: <span class="text-white font-semibold">Panga</span></p>
@@ -118,7 +115,7 @@
     <script>
         window.addEventListener('DOMContentLoaded', () => {
             const audio = document.getElementById('zaard-audio');
-            audio.volume = 0.3; // Volumen moderado para la canción de ZARD
+            audio.volume = 0.3; // Volumen moderado para la canción
         });
 
         const ZARD_CONTRACT = "0x3468ea4e6ce13ec4c7f8651f7efc6aa6046f4d65";
