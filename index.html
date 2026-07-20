@@ -26,12 +26,28 @@
             padding: 4px 10px;
         }
 
+        /* Animación envolvente que cambia el borde entre Azul y Morado */
+        @keyframes borderGlow {
+            0% {
+                border-color: #00ffff;
+                box-shadow: 0 0 20px rgba(0, 255, 255, 0.4), inset 0 0 15px rgba(0, 255, 255, 0.2);
+            }
+            50% {
+                border-color: #a855f7;
+                box-shadow: 0 0 35px rgba(168, 85, 247, 0.7), inset 0 0 25px rgba(168, 85, 247, 0.4);
+            }
+            100% {
+                border-color: #00ffff;
+                box-shadow: 0 0 20px rgba(0, 255, 255, 0.4), inset 0 0 15px rgba(0, 255, 255, 0.2);
+            }
+        }
+
         .frame-gold {
             border: 2px solid #00ffff;
             border-radius: 16px;
-            background: rgba(10, 10, 25, 0.75);
+            background: rgba(10, 10, 25, 0.8);
             backdrop-filter: blur(12px);
-            box-shadow: 0 0 25px rgba(0, 255, 255, 0.3);
+            animation: borderGlow 4s infinite ease-in-out;
         }
 
         .glow-text {
@@ -48,10 +64,10 @@
 </head>
 <body class="flex items-center justify-center min-h-screen">
 
-    <!-- Reproductor de la canción de ZARD flotante -->
+    <!-- Reproductor de la canción de ZARD (Autoplay integrado) -->
     <div class="fixed bottom-3 right-3 z-50 bg-black/90 border border-cyan-400 p-2 rounded-xl shadow-[0_0_15px_rgba(0,255,255,0.4)] flex items-center gap-2">
         <span class="text-[10px] text-cyan-300 font-semibold uppercase tracking-wider hidden md:inline">🎶 El Chupulún de Zaard</span>
-        <audio id="zaard-audio" controls loop class="h-8 w-36 md:w-44 accent-cyan-400">
+        <audio id="zaard-audio" controls autoplay loop class="h-8 w-36 md:w-44 accent-cyan-400">
             <source src="El Chupulún de Zaard.mp3" type="audio/mpeg">
             Tu navegador no soporta audio.
         </audio>
@@ -81,11 +97,11 @@
                 </div>
             </div>
 
-            <!-- Panel Lateral con imagen 100% segura y visible -->
+            <!-- Panel Lateral con la imagen solicitada -->
             <div class="flex flex-col gap-2">
                 
-                <div class="w-full h-32 rounded-xl border border-cyan-500/50 relative shadow-lg overflow-hidden bg-black flex items-center justify-center">
-                    <img src="https://raw.githubusercontent.com/figueredo56/zaard-tracker/refs/heads/main/184%20sin%20t%C3%ADtulo_20260715225022.png" alt="Protocolo Panga" class="w-full h-full object-cover">
+                <div class="w-full h-36 rounded-xl border border-cyan-500/50 relative shadow-lg overflow-hidden bg-black flex items-center justify-center p-1">
+                    <img src="https://raw.githubusercontent.com/figueredo56/zaard-tracker/refs/heads/main/184%20sin%20t%C3%ADtulo_20260715225022.png" alt="Protocolo Panga" class="w-full h-full object-contain">
                 </div>
 
                 <div class="border border-cyan-500/50 rounded-xl p-2.5 bg-black/70 text-xs">
@@ -115,7 +131,15 @@
     <script>
         window.addEventListener('DOMContentLoaded', () => {
             const audio = document.getElementById('zaard-audio');
-            audio.volume = 0.3; // Volumen moderado para la canción
+            audio.volume = 0.3; // Volumen moderado para que suene agradable de fondo
+            
+            // Forzar reproducción automática superando políticas de algunos navegadores
+            audio.play().catch(error => {
+                console.log("Autoplay bloqueado por el navegador, esperando interacción:", error);
+                document.body.addEventListener('click', () => {
+                    audio.play();
+                }, { once: true });
+            });
         });
 
         const ZARD_CONTRACT = "0x3468ea4e6ce13ec4c7f8651f7efc6aa6046f4d65";
