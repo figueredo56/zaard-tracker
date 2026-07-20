@@ -5,9 +5,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>ZAARD TRACKER | Protocolo Panga</title>
     
-    <!-- Metaetiquetas Open Graph (Para que al compartir el link se vea la imagen, título y descripción bonita en WhatsApp, Telegram, etc.) -->
+    <!-- Metaetiquetas Open Graph para que al compartir en WhatsApp/Telegram salga la imagen y título -->
     <meta property="og:title" content="ZAARD TRACKER">
-    <meta property="og:description" content="Monitoreo Técnico On-Chain - Ecosistema Panga y ZARD en Tiempo Real">
+    <meta property="og:description" content="Monitoreo Técnico On-Chain - Protocolo Panga">
     <meta property="og:image" content="https://raw.githubusercontent.com/figueredo56/zaard-tracker/refs/heads/main/184%20sin%20t%C3%ADtulo_20260715225022.png">
     <meta property="og:url" content="https://figueredo56.github.io/zaard-tracker/">
     <meta property="og:type" content="website">
@@ -24,43 +24,6 @@
             font-family: 'Arial', sans-serif;
             margin: 0;
             padding: 4px 10px;
-            overflow-x: hidden;
-        }
-
-        /* Capa de inicio para activar el sonido */
-        #sound-overlay {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: rgba(0, 0, 0, 0.9);
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
-            z-index: 1000;
-            backdrop-filter: blur(10px);
-        }
-
-        .start-btn {
-            background: transparent;
-            border: 3px solid #00ffff;
-            color: #00ffff;
-            font-size: 1.5rem;
-            padding: 15px 40px;
-            border-radius: 10px;
-            cursor: pointer;
-            transition: all 0.3s ease;
-            text-transform: uppercase;
-            letter-spacing: 2px;
-            box-shadow: 0 0 15px rgba(0, 255, 255, 0.5);
-        }
-
-        .start-btn:hover {
-            background: #00ffff;
-            color: #000;
-            box-shadow: 0 0 25px rgba(0, 255, 255, 0.8);
         }
 
         .frame-gold {
@@ -83,7 +46,6 @@
             object-position: center center;
             width: 100%;
             height: 100%;
-            transform: scale(1.02);
         }
 
         .orders-box {
@@ -95,14 +57,7 @@
 </head>
 <body class="flex items-center justify-center min-h-screen">
 
-    <!-- Overlay de Activación de Sonido -->
-    <div id="sound-overlay">
-        <h2 class="text-3xl glow-text mb-6 uppercase tracking-widest text-center px-4">ZAARD TRACKER</h2>
-        <p class="text-gray-400 mb-10 text-lg text-center px-4">Activa el audio para la experiencia completa</p>
-        <button class="start-btn" onclick="startExperience()">⚡ Entrar</button>
-    </div>
-
-    <div class="frame-gold w-full max-w-4xl p-3 md:p-5 mx-auto opacity-0 transition-opacity duration-500" id="main-content">
+    <div class="frame-gold w-full max-w-4xl p-3 md:p-5 mx-auto">
         
         <!-- Cabecera -->
         <header class="text-center mb-3 flex flex-col items-center">
@@ -126,11 +81,11 @@
                 </div>
             </div>
 
-            <!-- Panel Lateral con la imagen perfectamente centrada y ampliada -->
+            <!-- Panel Lateral con la imagen ya arreglada y visible -->
             <div class="flex flex-col gap-2">
                 
                 <div class="h-32 w-full overflow-hidden rounded-xl border border-cyan-500/50 relative shadow-lg bg-black">
-                    <img src="https://raw.githubusercontent.com/figueredo56/zaard-tracker/refs/heads/main/188%20sin%20t%C3%ADtulo_20260720001344.png" alt="Detalle Amplio" class="decor-img">
+                    <img src="https://raw.githubusercontent.com/figueredo56/zaard-tracker/refs/heads/main/188%20sin%20t%C3%ADtulo_20260720001344.png" alt="Protocolo Panga" class="decor-img">
                 </div>
 
                 <div class="border border-cyan-500/50 rounded-xl p-2.5 bg-black/70 text-xs">
@@ -158,23 +113,14 @@
     </div>
 
     <script>
-        // Sonido de moneda limpio y a volumen moderado/bajo
-        const marioCoinSound = new Audio('https://www.myinstants.com/media/sounds/smw_coin.mp3');
-        
-        function startExperience() {
-            marioCoinSound.volume = 0.25; // Volumen bien bajito, sutil y elegante
-            marioCoinSound.play().catch(error => {
-                console.log("Audio play error:", error);
-            });
-            
-            const overlay = document.getElementById('sound-overlay');
-            overlay.style.opacity = '0';
-            overlay.style.pointerEvents = 'none';
-            
-            const mainContent = document.getElementById('main-content');
-            mainContent.style.opacity = '1';
-            mainContent.style.pointerEvents = 'auto';
-        }
+        // Sonido sutil tipo moneda que se reproduce al primer toque o interacción en la página
+        const coinSound = new Audio('https://www.myinstants.com/media/sounds/smw_coin.mp3');
+        coinSound.volume = 0.2; // Volumen bajito y agradable
+
+        document.addEventListener('click', function playOnce() {
+            coinSound.play().catch(e => console.log("Audio waiting"));
+            document.removeEventListener('click', playOnce);
+        }, { once: true });
 
         const ZARD_CONTRACT = "0x3468ea4e6ce13ec4c7f8651f7efc6aa6046f4d65";
         const PANCAKE_POOL = "0x7084d8562532aea9f9239cdd63ea289c85e6b0e9";
