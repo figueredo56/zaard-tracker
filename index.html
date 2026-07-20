@@ -6,13 +6,9 @@
     <title>ZAARD Tracker | Protocolo Panga</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <style>
-        /* Fondo principal con la primera imagen */
+        /* Fondo principal optimizado */
         body {
-            background-image: url('https://raw.githubusercontent.com/figueredo56/zaard-tracker/refs/heads/main/184%20sin%20t%C3%ADtulo_20260715225022.png');
-            background-size: cover;
-            background-position: center;
-            background-repeat: no-repeat;
-            background-attachment: fixed;
+            background-color: #050b14;
             color: #fff;
             font-family: 'Arial', sans-serif;
         }
@@ -44,9 +40,8 @@
 
     <div class="frame-gold max-w-6xl mx-auto p-6 md:p-10">
         
-        <!-- Cabecera épica con la segunda imagen como emblema -->
+        <!-- Cabecera épica -->
         <header class="text-center mb-8 flex flex-col items-center">
-            <img src="https://raw.githubusercontent.com/figueredo56/zaard-tracker/refs/heads/main/60%20sin%20t%C3%ADtulo_20260509231919_1.png" alt="ZAARD Emblem" class="w-28 h-28 md:w-36 md:h-36 decor-img mb-4">
             <h1 class="text-3xl md:text-5xl font-bold glow-text uppercase tracking-wider">ZAARD INNOVATION</h1>
             <p class="text-gray-400 mt-2 tracking-wide">Monitoreo Técnico en Tiempo Real - Ecosistema PANGA</p>
         </header>
@@ -55,41 +50,34 @@
         <div class="grid grid-cols-1 lg:grid-cols-3 gap-6">
             
             <!-- Gráfica Principal (Ocupa 2 columnas) -->
-            <div class="lg:col-span-2 border border-yellow-600/50 rounded-xl p-4 bg-black/60 flex flex-col justify-between h-[420px]">
-                <div class="flex justify-between items-center border-b border-yellow-600/30 pb-2">
+            <div class="lg:col-span-2 border border-yellow-600/50 rounded-xl p-4 bg-black/60 flex flex-col justify-between">
+                <div class="flex justify-between items-center border-b border-yellow-650/30 pb-2">
                     <h2 class="text-yellow-500 font-bold">Gráfica Central / EMA & Parabolic SAR</h2>
                     <span class="text-xs text-green-400 animate-pulse">● En Vivo</span>
                 </div>
-                <div id="chart-container" class="flex-grow flex items-center justify-center">
+                <div id="chart-container" class="flex-grow flex items-center justify-center min-h-[300px]">
                     <p class="text-gray-500 italic">Cargando motor de velas...</p>
                 </div>
             </div>
 
-            <!-- Panel Lateral con la tercera imagen decorativa y el registro -->
+            <!-- Panel Lateral con registro -->
             <div class="flex flex-col gap-4">
-                <!-- Imagen de acoplamiento estético (Tercera imagen) -->
-                <div class="h-36 w-full overflow-hidden rounded-xl border border-yellow-600/50 relative">
-                    <img src="https://raw.githubusercontent.com/figueredo56/zaard-tracker/refs/heads/main/CC_20260430_215529.png" alt="ZAARD Art" class="w-full h-full object-cover">
-                    <div class="absolute inset-0 bg-black/30"></div>
+                <div class="border border-yellow-600/50 rounded-xl p-4 bg-black/60">
+                    <h3 class="text-yellow-500 font-bold mb-2">Estado de Protocolo</h3>
+                    <p class="text-sm text-gray-300">Propietario: <span class="text-white font-semibold">Panga</span></p>
+                    <p class="text-sm text-gray-300 mt-1">Red: <span class="text-white font-semibold">Binance Smart Chain</span></p>
                 </div>
-
-                <!-- Historial de Transacciones (Compras verdes / Ventas rojas) -->
-                <div class="border border-yellow-600/50 rounded-xl p-4 bg-black/60 h-[260px] overflow-y-auto">
-                    <h3 class="text-yellow-500 font-bold mb-3 text-sm border-b border-yellow-600/30 pb-1">Historial de Operaciones</h3>
-                    <div class="text-xs font-mono space-y-2">
-                        <p class="text-green-400">🟢 Compra: +0.85 BNB [12:15]</p>
-                        <p class="text-red-400">🔴 Venta: -0.40 BNB [12:12]</p>
-                        <p class="text-green-400">🟢 Compra: +1.20 BNB [12:05]</p>
+                
+                <div class="border border-yellow-600/50 rounded-xl p-4 bg-black/60 flex-grow">
+                    <h3 class="text-yellow-500 font-bold mb-2">Historial de Transacciones</h3>
+                    <div class="text-xs text-gray-400 space-y-2">
+                        <p class="text-green-400">⚡ Sincronización de Pool activa</p>
+                        <p class="text-gray-300">⚡ Monitoreo de liquidez en curso</p>
                     </div>
                 </div>
             </div>
 
         </div>
-
-        <!-- Footer -->
-        <footer class="text-center mt-8 text-xs text-gray-500 border-t border-yellow-600/20 pt-4">
-            Protocolo Descentralizado ZAARD & PANGA — Todos los derechos reservados.
-        </footer>
 
     </div>
 
