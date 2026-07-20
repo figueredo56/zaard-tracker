@@ -14,76 +14,71 @@
             background-attachment: fixed;
             color: #fff;
             font-family: 'Arial', sans-serif;
+            margin: 0;
+            padding: 8px;
         }
 
         .frame-gold {
-            border: 3px solid #d4af37;
-            border-radius: 20px;
-            background: rgba(5, 5, 10, 0.88);
-            backdrop-filter: blur(10px);
-            box-shadow: 0 0 25px rgba(212, 175, 55, 0.3);
+            border: 2px solid #d4af37;
+            border-radius: 14px;
+            background: rgba(5, 5, 10, 0.90);
+            backdrop-filter: blur(8px);
+            box-shadow: 0 0 15px rgba(212, 175, 55, 0.3);
         }
 
         .glow-text {
-            text-shadow: 0 0 15px #d4af37;
+            text-shadow: 0 0 10px #d4af37;
             color: #d4af37;
         }
 
         .decor-img {
             border: 2px solid #d4af37;
-            border-radius: 12px;
-            box-shadow: 0 0 15px rgba(212, 175, 55, 0.4);
+            border-radius: 8px;
             object-fit: cover;
         }
     </style>
 </head>
-<body class="p-4 md:p-8">
+<body class="flex items-center justify-center min-h-screen">
 
-    <div class="frame-gold max-w-6xl mx-auto p-6 md:p-10">
+    <div class="frame-gold w-full max-w-4xl p-3 md:p-6 mx-auto">
         
-        <!-- Cabecera épica -->
-        <header class="text-center mb-8 flex flex-col items-center">
-            <img src="60sin_titulo_20260509231919_1.png" alt="Emblema ZAARD & PANGA" class="decor-img w-32 h-32 md:w-40 md:h-40 mb-4">
-            <h1 class="text-3xl md:text-5xl font-bold glow-text uppercase tracking-wider">ZAARD INNOVATION</h1>
-            <p class="text-gray-400 mt-2 tracking-wide">Monitoreo Técnico en Tiempo Real - Ecosistema PANGA</p>
+        <!-- Cabecera compacta -->
+        <header class="text-center mb-3 flex flex-col items-center">
+            <img src="60sin_titulo_20260509231919_1.png" alt="Emblema ZAARD & PANGA" class="decor-img w-16 h-16 md:w-20 md:h-20 mb-1">
+            <h1 class="text-xl md:text-3xl font-bold glow-text uppercase tracking-wider">ZAARD INNOVATION</h1>
+            <p class="text-xs text-gray-400">Monitoreo Técnico On-Chain - Protocolo Panga</p>
         </header>
 
-        <!-- Distribución Central -->
-        <div class="grid grid-cols-1 lg:grid-cols-3 gap-6">
+        <!-- Distribución en Grid Compacto -->
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-3">
             
-            <!-- Gráfica Principal (Ocupa 2 columnas) -->
-            <div class="lg:col-span-2 border border-yellow-600/50 rounded-xl p-4 bg-black/60 flex flex-col justify-between">
-                <div class="flex justify-between items-center border-b border-yellow-600/30 pb-2">
-                    <h2 class="text-yellow-500 font-bold">Gráfica Central / EMA & Parabolic SAR</h2>
-                    <span class="text-xs text-green-400 animate-pulse">● En Vivo (On-Chain)</span>
+            <!-- Gráfica Principal -->
+            <div class="md:col-span-2 border border-yellow-600/50 rounded-lg p-3 bg-black/60 flex flex-col justify-between">
+                <div class="flex justify-between items-center border-b border-yellow-600/30 pb-1 mb-2">
+                    <h2 class="text-yellow-500 font-bold text-xs md:text-sm">Gráfica / EMA & Parabolic SAR</h2>
+                    <span class="text-[10px] text-green-400 animate-pulse">● En Vivo</span>
                 </div>
-                <div id="chart-container" class="flex-grow flex flex-col items-center justify-center min-h-[300px] text-center p-4">
-                    <p class="text-gray-300 font-semibold mb-2">Conectado al Ecosistema ZARD</p>
-                    <p class="text-xs text-yellow-500/80 break-all mb-1">Contrato ZARD: <span class="text-gray-400">0x3468ea4e6ce13ec4c7f8651f7efc6aa6046f4d65</span></p>
-                    <p class="text-xs text-yellow-500/80 break-all">Pool PancakeSwap: <span class="text-gray-400">0x7084d8562532aea9f9239cdd63ea289c85e6b0e9</span></p>
+                <div class="flex flex-col items-center justify-center text-center py-2">
+                    <p class="text-xs text-gray-300 font-semibold mb-1">Ecosistema ZARD Sincronizado</p>
+                    <p class="text-[10px] text-yellow-500/80 break-all">Contrato: <span class="text-gray-400">0x3468...4d65</span></p>
+                    <p class="text-[10px] text-yellow-500/80 break-all">Pool: <span class="text-gray-400">0x7084...b0e9</span></p>
                 </div>
             </div>
 
-            <!-- Panel Lateral -->
-            <div class="flex flex-col gap-4">
+            <!-- Panel Lateral Compacto -->
+            <div class="flex flex-col gap-2">
                 
-                <div class="h-36 w-full overflow-hidden rounded-xl border border-yellow-600/50 relative">
-                    <img src="CC_20260430_215529.png" alt="Detalle Protocolo" class="w-full h-full decor-img">
-                    <div class="absolute inset-0 bg-black/30"></div>
+                <div class="h-20 w-full overflow-hidden rounded-lg border border-yellow-600/50 relative">
+                    <img src="CC_20260430_215529.png" alt="Detalle" class="w-full h-full decor-img">
                 </div>
 
-                <div class="border border-yellow-600/50 rounded-xl p-4 bg-black/60">
-                    <h3 class="text-yellow-500 font-bold mb-2">Estado de Protocolo</h3>
-                    <p class="text-sm text-gray-300">Propietario: <span class="text-white font-semibold">Panga</span></p>
-                    <p class="text-sm text-gray-300 mt-1">Red: <span class="text-white font-semibold">Binance Smart Chain</span></p>
+                <div class="border border-yellow-600/50 rounded-lg p-2 bg-black/60 text-xs">
+                    <p class="text-gray-300">Dueño: <span class="text-white font-semibold">Panga</span></p>
+                    <p class="text-gray-300">Red: <span class="text-white font-semibold">BSC</span></p>
                 </div>
                 
-                <div class="border border-yellow-600/50 rounded-xl p-4 bg-black/60 flex-grow">
-                    <h3 class="text-yellow-500 font-bold mb-2">Historial de Transacciones</h3>
-                    <div class="text-xs text-gray-400 space-y-2">
-                        <p class="text-green-400">⚡ Sincronización de Pool V2 activa</p>
-                        <p class="text-gray-300">⚡ Monitoreo de reservas on-chain</p>
-                    </div>
+                <div class="border border-yellow-600/50 rounded-lg p-2 bg-black/60 text-[11px]">
+                    <p class="text-green-400">⚡ Pool V2 Activo</p>
                 </div>
 
             </div>
@@ -93,12 +88,8 @@
     </div>
 
     <script>
-        // Direcciones oficiales inyectadas en el núcleo del tracker
         const ZARD_CONTRACT = "0x3468ea4e6ce13ec4c7f8651f7efc6aa6046f4d65";
         const PANCAKE_POOL = "0x7084d8562532aea9f9239cdd63ea289c85e6b0e9";
-        
-        console.log("Protocolo Panga inicializado con el token ZARD:", ZARD_CONTRACT);
-        console.log("Pool de liquidez vinculado:", PANCAKE_POOL);
     </script>
 </body>
 </html>
