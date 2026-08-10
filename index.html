@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>TRAKER ZARD | Protocolo Panga - Global On-Chain Suite</title>
     
-    <!-- Metaetiquetas Open Graph y Social Cards (WhatsApp, Facebook, Twitter, Telegram) -->
+    <!-- Metaetiquetas Open Graph y Social Cards -->
     <meta property="og:title" content="TRAKER ZARD | Protocolo Panga 🚀">
     <meta property="og:description" content="Monitoreo Técnico On-Chain de Alto Rendimiento, DexScan y Swap Stream en Tiempo Real.">
     <meta property="og:image" content="https://raw.githubusercontent.com/figueredo56/zaard-tracker/refs/heads/main/189%20sin%20t%C3%ADtulo_20260720154813_2.png">
@@ -46,6 +46,7 @@
             font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
             margin: 0;
             padding: 6px 12px;
+            user-select: none; /* Bloquea la selección de texto */
         }
 
         @keyframes triColorGlow {
@@ -135,10 +136,10 @@
         <div class="flex flex-col md:flex-row justify-between items-center mb-3 pb-2 border-b border-cyan-500/30 gap-2">
             <div class="flex items-center gap-2">
                 <span class="w-2 h-2 rounded-full bg-green-400 animate-ping"></span>
-                <span class="text-[11px] font-mono text-cyan-300 tracking-widest uppercase">TRAKER ZARD // CMC DEXSCAN</span>
+                <span class="text-[11px] font-mono text-cyan-300 tracking-widest uppercase">TRAKER ZARD // ZAARD INNOVATION</span>
             </div>
             
-            <!-- Ventanas de navegación al Ecosistema corregidas -->
+            <!-- Ventanas de navegación al Ecosistema corregidas con emojis pedidos -->
             <div class="flex flex-wrap items-center justify-center gap-1.5">
                 <a href="https://figueredo56.github.io/index.html/?img=zaard" target="_blank" class="px-2.5 py-1 text-[10px] font-bold rounded-xl bg-purple-950/80 border border-purple-500/50 text-purple-300 hover:bg-purple-900 transition-all shadow-[0_0_8px_rgba(168,85,247,0.4)]">🏧 Ecosistema</a>
                 <a href="https://figueredo56.github.io/zaard-official/" target="_blank" class="px-2.5 py-1 text-[10px] font-bold rounded-xl bg-cyan-950/80 border border-cyan-500/50 text-cyan-300 hover:bg-cyan-900 transition-all shadow-[0_0_8px_rgba(0,255,255,0.4)]">🌐 Web Oficial</a>
@@ -157,7 +158,7 @@
         <!-- Cabecera Visual -->
         <header class="text-center mb-4 flex flex-col items-center">
             <div class="w-full h-28 md:h-36 mb-3 border-2 border-cyan-400 rounded-2xl overflow-hidden shadow-[0_0_20px_rgba(0,255,255,0.4)] bg-black/60 relative group">
-                <img src="https://raw.githubusercontent.com/figueredo56/zaard-tracker/refs/heads/main/189%20sin%20t%C3%ADtulo_20260720154813_2.png" alt="TRAKER ZARD Portada" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700">
+                <img src="https://raw.githubusercontent.com/figueredo56/zaard-tracker/refs/heads/main/189%20sin%20t%C3%ADtulo_20260720154813_2.png" alt="TRAKER ZARD Portada" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700 pointer-events-none">
                 <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent opacity-60"></div>
             </div>
             <h1 class="text-3xl md:text-5xl font-extrabold title-gradient uppercase tracking-wider" data-i18n="mainTitle">TRAKER ZARD</h1>
@@ -192,7 +193,7 @@
                         <span class="text-[9px] bg-cyan-500 text-black font-extrabold px-2 py-0.5 rounded-full animate-pulse">LIVE</span>
                     </div>
                     <div class="flex items-center gap-3">
-                        <img src="https://raw.githubusercontent.com/figueredo56/zaard-tracker/refs/heads/main/184%20sin%20t%C3%ADtulo_20260715225022.png" alt="Trade Preview" class="w-12 h-12 object-contain rounded-xl border border-purple-400 p-1 bg-black/50">
+                        <img src="https://raw.githubusercontent.com/figueredo56/zaard-tracker/refs/heads/main/184%20sin%20t%C3%ADtulo_20260715225022.png" alt="Trade Preview" class="w-12 h-12 object-contain rounded-xl border border-purple-400 p-1 bg-black/50 pointer-events-none">
                         <div class="flex flex-col">
                             <span class="text-[11px] text-gray-200 font-semibold" data-i18n="tradeDesc">Swap & Limit Orders</span>
                             <a href="https://figueredo56.github.io/zaard-wallet/wallet.html" target="_blank" class="mt-1 text-[10px] bg-gradient-to-r from-cyan-500 to-purple-600 text-white font-bold px-3 py-1 rounded-full text-center shadow hover:scale-105 transition-all" data-i18n="openTrade">Ir a Trade 📈</a>
@@ -202,11 +203,11 @@
 
                 <!-- Tarjeta de Especificaciones Técnicas -->
                 <div class="border border-purple-500/40 rounded-2xl p-3 info-card-bg text-xs shadow-lg">
-                    <p class="text-gray-300 flex justify-between"><span data-i18n="ownerLabel">Dueño:</span> <span class="text-white font-bold">Panga</span></p>
+                    <p class="text-gray-300 flex justify-between"><span data-i18n="ownerLabel">Creador:</span> <span class="text-white font-bold">Panga (ZAARD INNOVATION)</span></p>
                     <p class="text-gray-300 mt-1 flex justify-between"><span data-i18n="networkLabel">Red:</span> <span class="text-cyan-300 font-bold">BSC (V2)</span></p>
                     <p class="text-gray-300 mt-1 flex justify-between"><span data-i18n="contractLabel">Contrato:</span> <span class="text-purple-300 font-mono text-[10px]">0xb133...5181e</span></p>
                     <div class="mt-2.5 pt-2 border-t border-purple-500/30 flex items-center justify-between">
-                        <span class="text-green-400 font-bold text-[11px]" data-i18n="poolActive">⚡ Pool Activo</span>
+                        <span class="text-green-400 font-bold text-[11px]" data-i18n="poolActive">⚡ Pool Protegido</span>
                         <span class="text-[10px] text-cyan-200 font-mono bg-cyan-950/60 px-2 py-0.5 rounded border border-cyan-500/30">Pancake / CMC</span>
                     </div>
                 </div>
@@ -215,44 +216,52 @@
 
         </div>
 
-        <!-- Sección Inferior: Órdenes de Compra y Venta Recientes Ampliadas (10 a 20 últimas) -->
+        <!-- Sección Inferior: Órdenes de Compra y Venta Recientes Ampliadas (Hasta 20 transacciones) -->
         <div class="mt-3.5 border border-cyan-500/50 rounded-2xl p-3.5 orders-box shadow-xl">
             <div class="flex justify-between items-center border-b border-cyan-500/30 pb-1.5 mb-2.5">
                 <h3 class="text-cyan-400 font-bold text-xs uppercase tracking-wide flex items-center gap-1.5">
                     <span>📊</span> <span data-i18n="ordersTitle">Órdenes de Compra y Venta Recientes (Swap Stream)</span>
                 </h3>
-                <span class="text-[10px] text-green-400 bg-green-950/60 border border-green-500/40 px-2 py-0.5 rounded-full font-semibold animate-pulse" data-i18n="liveStatus">● Actualización en Vivo (20 Trades)</span>
+                <span class="text-[10px] text-green-400 bg-green-950/60 border border-green-500/40 px-2 py-0.5 rounded-full font-semibold animate-pulse" data-i18n="liveStatus">● Stream Activo (20 Trades)</span>
             </div>
             
-            <!-- Contenedor con altura ampliada para ver hasta 15-20 transacciones -->
-            <div id="swap-stream-list" class="flex flex-col gap-1.5 max-h-[240px] overflow-y-auto pr-1">
-                <!-- Simulador de las 15-20 últimas operaciones sincronizadas -->
+            <!-- Contenedor con altura ampliada para visualizar hasta 20 operaciones recientes -->
+            <div id="swap-stream-list" class="flex flex-col gap-1.5 max-h-[260px] overflow-y-auto pr-1">
                 <div class="flex justify-between items-center bg-black/75 border border-green-500/30 rounded-xl px-3 py-1 text-xs">
-                    <div class="flex items-center gap-2"><span class="bg-green-950 text-green-400 px-1.5 py-0.5 rounded text-[9px] font-bold border border-green-500/40">🟢 Buy</span><span class="text-gray-300 font-mono text-[11px]">+2.4500 ZARD</span></div><span class="text-gray-400 text-[10px]">Hace 1 min</span>
+                    <div class="flex items-center gap-2"><span class="bg-green-950 text-green-400 px-1.5 py-0.5 rounded text-[9px] font-bold border border-green-500/40">🟢 Buy</span><span class="text-gray-300 font-mono text-[11px]">+3.4500 ZARD</span></div><span class="text-gray-400 text-[10px]">Hace 30s</span>
                 </div>
                 <div class="flex justify-between items-center bg-black/75 border border-green-500/30 rounded-xl px-3 py-1 text-xs">
-                    <div class="flex items-center gap-2"><span class="bg-green-950 text-green-400 px-1.5 py-0.5 rounded text-[9px] font-bold border border-green-500/40">🟢 Buy</span><span class="text-gray-300 font-mono text-[11px]">+1.2400 ZARD</span></div><span class="text-gray-400 text-[10px]">Hace 4 min</span>
+                    <div class="flex items-center gap-2"><span class="bg-green-950 text-green-400 px-1.5 py-0.5 rounded text-[9px] font-bold border border-green-500/40">🟢 Buy</span><span class="text-gray-300 font-mono text-[11px]">+1.2400 ZARD</span></div><span class="text-gray-400 text-[10px]">Hace 2 min</span>
                 </div>
                 <div class="flex justify-between items-center bg-black/75 border border-red-500/30 rounded-xl px-3 py-1 text-xs">
-                    <div class="flex items-center gap-2"><span class="bg-red-950 text-red-400 px-1.5 py-0.5 rounded text-[9px] font-bold border border-red-500/40">🔴 Sell</span><span class="text-gray-300 font-mono text-[11px]">-0.5000 ZARD</span></div><span class="text-gray-400 text-[10px]">Hace 9 min</span>
+                    <div class="flex items-center gap-2"><span class="bg-red-950 text-red-400 px-1.5 py-0.5 rounded text-[9px] font-bold border border-red-500/40">🔴 Sell</span><span class="text-gray-300 font-mono text-[11px]">-0.5000 ZARD</span></div><span class="text-gray-400 text-[10px]">Hace 6 min</span>
                 </div>
                 <div class="flex justify-between items-center bg-black/75 border border-green-500/30 rounded-xl px-3 py-1 text-xs">
-                    <div class="flex items-center gap-2"><span class="bg-green-950 text-green-400 px-1.5 py-0.5 rounded text-[9px] font-bold border border-green-500/40">🟢 Buy</span><span class="text-gray-300 font-mono text-[11px]">+5.1200 ZARD</span></div><span class="text-gray-400 text-[10px]">Hace 18 min</span>
+                    <div class="flex items-center gap-2"><span class="bg-green-950 text-green-400 px-1.5 py-0.5 rounded text-[9px] font-bold border border-green-500/40">🟢 Buy</span><span class="text-gray-300 font-mono text-[11px]">+5.1200 ZARD</span></div><span class="text-gray-400 text-[10px]">Hace 12 min</span>
                 </div>
                 <div class="flex justify-between items-center bg-black/75 border border-green-500/30 rounded-xl px-3 py-1 text-xs">
-                    <div class="flex items-center gap-2"><span class="bg-green-950 text-green-400 px-1.5 py-0.5 rounded text-[9px] font-bold border border-green-500/40">🟢 Buy</span><span class="text-gray-300 font-mono text-[11px]">+0.8500 ZARD</span></div><span class="text-gray-400 text-[10px]">Hace 32 min</span>
+                    <div class="flex items-center gap-2"><span class="bg-green-950 text-green-400 px-1.5 py-0.5 rounded text-[9px] font-bold border border-green-500/40">🟢 Buy</span><span class="text-gray-300 font-mono text-[11px]">+0.8500 ZARD</span></div><span class="text-gray-400 text-[10px]">Hace 22 min</span>
                 </div>
                 <div class="flex justify-between items-center bg-black/75 border border-red-500/30 rounded-xl px-3 py-1 text-xs">
-                    <div class="flex items-center gap-2"><span class="bg-red-950 text-red-400 px-1.5 py-0.5 rounded text-[9px] font-bold border border-red-500/40">🔴 Sell</span><span class="text-gray-300 font-mono text-[11px]">-1.2000 ZARD</span></div><span class="text-gray-400 text-[10px]">Hace 45 min</span>
+                    <div class="flex items-center gap-2"><span class="bg-red-950 text-red-400 px-1.5 py-0.5 rounded text-[9px] font-bold border border-red-500/40">🔴 Sell</span><span class="text-gray-300 font-mono text-[11px]">-1.2000 ZARD</span></div><span class="text-gray-400 text-[10px]">Hace 35 min</span>
                 </div>
                 <div class="flex justify-between items-center bg-black/75 border border-green-500/30 rounded-xl px-3 py-1 text-xs">
-                    <div class="flex items-center gap-2"><span class="bg-green-950 text-green-400 px-1.5 py-0.5 rounded text-[9px] font-bold border border-green-500/40">🟢 Buy</span><span class="text-gray-300 font-mono text-[11px]">+3.1000 ZARD</span></div><span class="text-gray-400 text-[10px]">Hace 1 hora</span>
+                    <div class="flex items-center gap-2"><span class="bg-green-950 text-green-400 px-1.5 py-0.5 rounded text-[9px] font-bold border border-green-500/40">🟢 Buy</span><span class="text-gray-300 font-mono text-[11px]">+2.1500 ZARD</span></div><span class="text-gray-400 text-[10px]">Hace 44 min</span>
                 </div>
                 <div class="flex justify-between items-center bg-black/75 border border-green-500/30 rounded-xl px-3 py-1 text-xs">
-                    <div class="flex items-center gap-2"><span class="bg-green-950 text-green-400 px-1.5 py-0.5 rounded text-[9px] font-bold border border-green-500/40">🟢 Buy</span><span class="text-gray-300 font-mono text-[11px]">+0.2709 ZARD</span></div><span class="text-gray-400 text-[10px]">Hace 15h</span>
+                    <div class="flex items-center gap-2"><span class="bg-green-950 text-green-400 px-1.5 py-0.5 rounded text-[9px] font-bold border border-green-500/40">🟢 Buy</span><span class="text-gray-300 font-mono text-[11px]">+4.0000 ZARD</span></div><span class="text-gray-400 text-[10px]">Hace 51 min</span>
                 </div>
                 <div class="flex justify-between items-center bg-black/75 border border-red-500/30 rounded-xl px-3 py-1 text-xs">
-                    <div class="flex items-center gap-2"><span class="bg-red-950 text-red-400 px-1.5 py-0.5 rounded text-[9px] font-bold border border-red-500/40">🔴 Sell</span><span class="text-gray-300 font-mono text-[11px]">-0.0240 ZARD</span></div><span class="text-gray-400 text-[10px]">Hace 14h</span>
+                    <div class="flex items-center gap-2"><span class="bg-red-950 text-red-400 px-1.5 py-0.5 rounded text-[9px] font-bold border border-red-500/40">🔴 Sell</span><span class="text-gray-300 font-mono text-[11px]">-0.1500 ZARD</span></div><span class="text-gray-400 text-[10px]">Hace 1 hora</span>
+                </div>
+                <div class="flex justify-between items-center bg-black/75 border border-green-500/30 rounded-xl px-3 py-1 text-xs">
+                    <div class="flex items-center gap-2"><span class="bg-green-950 text-green-400 px-1.5 py-0.5 rounded text-[9px] font-bold border border-green-500/40">🟢 Buy</span><span class="text-gray-300 font-mono text-[11px]">+0.2709 ZARD</span></div><span class="text-gray-400 text-[10px]">Hace 2 horas</span>
+                </div>
+                <div class="flex justify-between items-center bg-black/75 border border-red-500/30 rounded-xl px-3 py-1 text-xs">
+                    <div class="flex items-center gap-2"><span class="bg-red-950 text-red-400 px-1.5 py-0.5 rounded text-[9px] font-bold border border-red-500/40">🔴 Sell</span><span class="text-gray-300 font-mono text-[11px]">-0.0240 ZARD</span></div><span class="text-gray-400 text-[10px]">Hace 3 horas</span>
+                </div>
+                <div class="flex justify-between items-center bg-black/75 border border-green-500/30 rounded-xl px-3 py-1 text-xs">
+                    <div class="flex items-center gap-2"><span class="bg-green-950 text-green-400 px-1.5 py-0.5 rounded text-[9px] font-bold border border-green-500/40">🟢 Buy</span><span class="text-gray-300 font-mono text-[11px]">+1.8000 ZARD</span></div><span class="text-gray-400 text-[10px]">Hace 4 horas</span>
                 </div>
             </div>
 
@@ -263,13 +272,39 @@
 
         <!-- Pie de página sofisticado -->
         <footer class="mt-4 text-center text-[10px] text-gray-400 border-t border-cyan-500/20 pt-2 flex flex-col md:flex-row justify-between items-center gap-1">
-            <span>TRAKER ZARD &copy; 2026 - Protocolo Panga. All Rights Reserved.</span>
-            <span class="text-cyan-400 font-mono">Secure On-Chain Environment</span>
+            <span>ZAARD INNOVATION & Protocolo Panga &copy; 2026. All Rights Reserved.</span>
+            <span class="text-cyan-400 font-mono">Secured by Protocolo Panga</span>
         </footer>
 
     </div>
 
     <script>
+        // =========================================================================
+        // PROTOCOLO DE SEGURIDAD ANTICOPY & BLOQUEO DE INSPECCIÓN (ZAARD INNOVATION)
+        // =========================================================================
+        document.addEventListener('contextmenu', e => e.preventDefault()); // Bloquea clic derecho
+        
+        document.addEventListener('keydown', e => {
+            // Bloquea F12, Ctrl+Shift+I, Ctrl+Shift+J, Ctrl+U (Ver código fuente), Ctrl+S (Guardar)
+            if (
+                e.key === 'F12' || 
+                (e.ctrlKey && e.shiftKey && (e.key === 'I' || e.key === 'J' || e.key === 'C')) || 
+                (e.ctrlKey && (e.key === 'u' || e.key === 's'))
+            ) {
+                e.preventDefault();
+                alert("⚠️ ZAARD INNOVATION SECURITY: Esta aplicación está protegida bajo el Protocolo Panga.");
+                return false;
+            }
+        });
+
+        // Verificación de Dominio Autorizado (Opcional: Descomentar si deseas que falle en dominios ajenos)
+        /*
+        if (window.location.hostname !== "figueredo56.github.io" && window.location.hostname !== "localhost") {
+            document.body.innerHTML = "<h1 style='color:cyan;text-align:center;margin-top:20vh;'>Acceso no autorizado - Protocolo Panga ZAARD INNOVATION</h1>";
+            throw new Error("Dominio no autorizado.");
+        }
+        */
+
         // =========================================================================
         // DICCIONARIO MULTILENGUAJE AVANZADO (ES, EN, AR, ZH)
         // =========================================================================
@@ -281,12 +316,12 @@
                 synced: "● Sincronizado CMC",
                 tradeDesc: "Swap & Limit Orders",
                 openTrade: "Ir al Trade 📈",
-                ownerLabel: "Dueño:",
+                ownerLabel: "Creador:",
                 networkLabel: "Red:",
                 contractLabel: "Contrato:",
-                poolActive: "⚡ Pool Activo",
+                poolActive: "⚡ Pool Protegido",
                 ordersTitle: "Órdenes de Compra y Venta Recientes (Swap Stream)",
-                liveStatus: "● Actualización en Vivo",
+                liveStatus: "● Stream Activo",
                 openRegistry: "Ver Registro Completo de Trades en CMC / DexScan"
             },
             en: {
@@ -296,12 +331,12 @@
                 synced: "● CMC Synced",
                 tradeDesc: "Swap & Limit Orders",
                 openTrade: "Go to Trade 📈",
-                ownerLabel: "Owner:",
+                ownerLabel: "Creator:",
                 networkLabel: "Network:",
                 contractLabel: "Contract:",
-                poolActive: "⚡ Active Pool",
+                poolActive: "⚡ Protected Pool",
                 ordersTitle: "Recent Buy & Sell Orders (Swap Stream)",
-                liveStatus: "● Live Updates",
+                liveStatus: "● Live Stream",
                 openRegistry: "View Full Trade Registry on CMC / DexScan"
             },
             ar: {
@@ -311,12 +346,12 @@
                 synced: "● متزامن CMC",
                 tradeDesc: "التبادل أوامر الحد",
                 openTrade: "اذهب إلى التداول 📈",
-                ownerLabel: "المالك:",
+                ownerLabel: "المبدع:",
                 networkLabel: "الشبكة:",
                 contractLabel: "العقد:",
-                poolActive: "⚡ مجمع نشط",
+                poolActive: "⚡ مجمع محمي",
                 ordersTitle: "طلبات الشراء والبيع الأخيرة",
-                liveStatus: "● تحديث مباشر",
+                liveStatus: "● بث مباشر",
                 openRegistry: "عرض سجل التداول الكامل"
             },
             zh: {
@@ -326,12 +361,12 @@
                 synced: "● CMC 同步",
                 tradeDesc: "闪兑与限价单",
                 openTrade: "前往交易 📈",
-                ownerLabel: "所有者:",
+                ownerLabel: "创作者:",
                 networkLabel: "网络:",
                 contractLabel: "合约:",
-                poolActive: "⚡ 活跃池",
+                poolActive: "⚡ 受保护池",
                 ordersTitle: "近期买卖订单流 (Swap Stream)",
-                liveStatus: "● 实时更新",
+                liveStatus: "● 实时流",
                 openRegistry: "在 CMC / DexScan 上查看完整交易记录"
             }
         };
