@@ -46,7 +46,7 @@
             font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
             margin: 0;
             padding: 6px 12px;
-            user-select: none; /* Bloquea la selección de texto */
+            user-select: none;
         }
 
         @keyframes triColorGlow {
@@ -68,6 +68,22 @@
             }
         }
 
+        /* Animación específica verde y morada para el reproductor flotante */
+        @keyframes greenPurpleGlow {
+            0% {
+                border-color: #22c55e;
+                box-shadow: 0 0 15px rgba(34, 197, 94, 0.5), inset 0 0 8px rgba(34, 197, 94, 0.2);
+            }
+            50% {
+                border-color: #a855f7;
+                box-shadow: 0 0 20px rgba(168, 85, 247, 0.7), inset 0 0 12px rgba(168, 85, 247, 0.3);
+            }
+            100% {
+                border-color: #22c55e;
+                box-shadow: 0 0 15px rgba(34, 197, 94, 0.5), inset 0 0 8px rgba(34, 197, 94, 0.2);
+            }
+        }
+
         .frame-gold {
             border: 2px solid #00ffff;
             border-radius: 20px;
@@ -77,8 +93,10 @@
         }
 
         .glow-player {
-            border: 2px solid #00ffff;
-            animation: triColorGlow 4s infinite ease-in-out;
+            border: 2px solid #22c55e;
+            background: rgba(5, 2, 15, 0.75);
+            backdrop-filter: blur(12px);
+            animation: greenPurpleGlow 3s infinite ease-in-out;
         }
 
         .title-gradient {
@@ -121,13 +139,27 @@
 </head>
 <body class="flex items-center justify-center min-h-screen">
 
-    <!-- Reproductor de audio flotante -->
-    <div class="fixed bottom-3 right-3 z-50 bg-black/95 glow-player p-2.5 rounded-2xl shadow-2xl flex items-center gap-2.5">
-        <span class="text-[11px] text-cyan-300 font-bold uppercase tracking-wider hidden md:inline">🎶 El Chupulún de Zaard</span>
-        <audio id="zaard-audio" controls autoplay loop class="h-8 w-36 md:w-44 accent-cyan-400">
-            <source src="El Chupulún de Zaard.mp3" type="audio/mpeg">
-            Tu navegador no soporta audio.
-        </audio>
+    <!-- Reproductor de audio flotante minimalista, transparente, palpitante verde/morado, del lado izquierdo -->
+    <div class="fixed bottom-3 left-3 z-50 glow-player px-3 py-1.5 rounded-full shadow-2xl flex items-center gap-2.5">
+        <audio id="zaard-audio" src="El Chupulún de Zaard.mp3" preload="auto" loop></audio>
+        
+        <!-- Botón Play (Triángulo) -->
+        <button onclick="togglePlay()" id="play-btn" class="text-green-400 hover:text-cyan-300 transition-all transform hover:scale-110 focus:outline-none" title="Reproducir">
+            <svg class="w-4 h-4 fill-current" viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg>
+        </button>
+
+        <!-- Botón Stop (Cuadrado) -->
+        <button onclick="stopAudio()" class="text-purple-400 hover:text-pink-300 transition-all transform hover:scale-110 focus:outline-none" title="Detener">
+            <svg class="w-3.5 h-3.5 fill-current" viewBox="0 0 24 24"><rect x="6" y="6" width="12" height="12"/></svg>
+        </button>
+
+        <!-- Minutero pequeño -->
+        <span id="audio-timer" class="text-[10px] font-mono text-cyan-200 tracking-wider">0:00</span>
+
+        <!-- Botón Mute / Unmute compacto -->
+        <button onclick="toggleMute()" id="mute-btn" class="text-gray-400 hover:text-white transition-all text-xs focus:outline-none" title="Silenciar">
+            🔊
+        </button>
     </div>
 
     <div class="frame-gold w-full max-w-4xl p-3 md:p-6 mx-auto">
@@ -139,7 +171,7 @@
                 <span class="text-[11px] font-mono text-cyan-300 tracking-widest uppercase">TRAKER ZARD // ZAARD INNOVATION</span>
             </div>
             
-            <!-- Ventanas de navegación al Ecosistema corregidas con emojis pedidos -->
+            <!-- Ventanas de navegación al Ecosistema -->
             <div class="flex flex-wrap items-center justify-center gap-1.5">
                 <a href="https://figueredo56.github.io/index.html/?img=zaard" target="_blank" class="px-2.5 py-1 text-[10px] font-bold rounded-xl bg-purple-950/80 border border-purple-500/50 text-purple-300 hover:bg-purple-900 transition-all shadow-[0_0_8px_rgba(168,85,247,0.4)]">🏧 Ecosistema</a>
                 <a href="https://figueredo56.github.io/zaard-official/" target="_blank" class="px-2.5 py-1 text-[10px] font-bold rounded-xl bg-cyan-950/80 border border-cyan-500/50 text-cyan-300 hover:bg-cyan-900 transition-all shadow-[0_0_8px_rgba(0,255,255,0.4)]">🌐 Web Oficial</a>
@@ -282,10 +314,9 @@
         // =========================================================================
         // PROTOCOLO DE SEGURIDAD ANTICOPY & BLOQUEO DE INSPECCIÓN (ZAARD INNOVATION)
         // =========================================================================
-        document.addEventListener('contextmenu', e => e.preventDefault()); // Bloquea clic derecho
+        document.addEventListener('contextmenu', e => e.preventDefault());
         
         document.addEventListener('keydown', e => {
-            // Bloquea F12, Ctrl+Shift+I, Ctrl+Shift+J, Ctrl+U (Ver código fuente), Ctrl+S (Guardar)
             if (
                 e.key === 'F12' || 
                 (e.ctrlKey && e.shiftKey && (e.key === 'I' || e.key === 'J' || e.key === 'C')) || 
@@ -297,13 +328,61 @@
             }
         });
 
-        // Verificación de Dominio Autorizado (Opcional: Descomentar si deseas que falle en dominios ajenos)
-        /*
-        if (window.location.hostname !== "figueredo56.github.io" && window.location.hostname !== "localhost") {
-            document.body.innerHTML = "<h1 style='color:cyan;text-align:center;margin-top:20vh;'>Acceso no autorizado - Protocolo Panga ZAARD INNOVATION</h1>";
-            throw new Error("Dominio no autorizado.");
+        // =========================================================================
+        // CONTROL DEL REPRODUCTOR MINIMALISTA FLOTANTE
+        // =========================================================================
+        const audio = document.getElementById('zaard-audio');
+        const playBtn = document.getElementById('play-btn');
+        const timerDisplay = document.getElementById('audio-timer');
+        const muteBtn = document.getElementById('mute-btn');
+
+        audio.volume = 0.4;
+
+        function formatTime(seconds) {
+            const mins = Math.floor(seconds / 60);
+            const secs = Math.floor(seconds % 60);
+            return `${mins}:${secs < 10 ? '0' : ''}${secs}`;
         }
-        */
+
+        audio.addEventListener('timeupdate', () => {
+            timerDisplay.textContent = formatTime(audio.currentTime);
+        });
+
+        function togglePlay() {
+            if (audio.paused) {
+                audio.play().then(() => {
+                    playBtn.innerHTML = '<svg class="w-4 h-4 fill-current" viewBox="0 0 24 24"><rect x="6" y="5" width="4" height="14"/><rect x="14" y="5" width="4" height="14"/></svg>'; // Icono de pausa
+                }).catch(err => console.log("Play bloqueado:", err));
+            } else {
+                audio.pause();
+                playBtn.innerHTML = '<svg class="w-4 h-4 fill-current" viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg>'; // Icono de play (triángulo)
+            }
+        }
+
+        function stopAudio() {
+            audio.pause();
+            audio.currentTime = 0;
+            playBtn.innerHTML = '<svg class="w-4 h-4 fill-current" viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg>';
+            timerDisplay.textContent = "0:00";
+        }
+
+        function toggleMute() {
+            audio.muted = !audio.muted;
+            muteBtn.textContent = audio.muted ? '🔇' : '🔊';
+        }
+
+        // Intento de reproducción automática al cargar
+        window.addEventListener('DOMContentLoaded', () => {
+            audio.play().then(() => {
+                playBtn.innerHTML = '<svg class="w-4 h-4 fill-current" viewBox="0 0 24 24"><rect x="6" y="5" width="4" height="14"/><rect x="14" y="5" width="4" height="14"/></svg>';
+            }).catch(error => {
+                console.log("Autoplay bloqueado, esperando interacción:", error);
+                document.body.addEventListener('click', () => {
+                    audio.play();
+                    playBtn.innerHTML = '<svg class="w-4 h-4 fill-current" viewBox="0 0 24 24"><rect x="6" y="5" width="4" height="14"/><rect x="14" y="5" width="4" height="14"/></svg>';
+                }, { once: true });
+            });
+        });
 
         // =========================================================================
         // DICCIONARIO MULTILENGUAJE AVANZADO (ES, EN, AR, ZH)
@@ -401,15 +480,6 @@
         window.addEventListener('DOMContentLoaded', () => {
             const savedLang = localStorage.getItem('zaard_lang') || 'es';
             changeLanguage(savedLang);
-
-            const audio = document.getElementById('zaard-audio');
-            audio.volume = 0.3;
-            audio.play().catch(error => {
-                console.log("Autoplay bloqueado por el navegador:", error);
-                document.body.addEventListener('click', () => {
-                    audio.play();
-                }, { once: true });
-            });
         });
 
         // =========================================================================
@@ -417,7 +487,6 @@
         // =========================================================================
         const ZARD_CONTRACT = "0xb133033d44b61746c022fb25c070c5599e55181e";
 
-        // Inyección dinámica de enlaces oficiales vinculados a CMC / DexScan
         document.getElementById('dexscreener-iframe').src = `https://dexscreener.com/bsc/${ZARD_CONTRACT}?embed=1&theme=dark&trades=1&info=0`;
         document.getElementById('dexscreener-stream-link').href = `https://dexscreener.com/bsc/${ZARD_CONTRACT}`;
     </script>
