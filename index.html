@@ -139,7 +139,7 @@
 <body class="flex items-center justify-center min-h-screen">
 
     <!-- Modal de Bienvenida (English / Technical Suite Intro) -->
-    <div id="welcome-modal" class="fixed inset-0 z-50 flex items-center justify-center bg-black/9onda backdrop-blur-md p-4 bg-black/85">
+    <div id="welcome-modal" class="fixed inset-0 z-50 flex items-center justify-center bg-black/85 backdrop-blur-md p-4">
         <div class="frame-gold w-full max-w-md p-5 text-center space-y-4 space-nebula-bg relative shadow-2xl">
             <div class="w-full h-32 rounded-xl overflow-hidden border border-cyan-400 shadow-[0_0_15px_rgba(0,255,255,0.4)]">
                 <img src="https://raw.githubusercontent.com/figueredo56/zaard-tracker/refs/heads/main/189%20sin%20t%C3%ADtulo_20260811194341_1.png" alt="ZARD Welcome" class="w-full h-full object-cover">
@@ -186,11 +186,11 @@
                 <span class="text-[11px] font-mono text-cyan-300 tracking-widest uppercase">TRAKER ZARD // ZAARD INNOVATION</span>
             </div>
             
-            <!-- Ventanas de navegación al Ecosistema -->
+            <!-- Ventanas de navegación al Ecosistema (Wallet actualizada) -->
             <div class="flex flex-wrap items-center justify-center gap-1.5">
                 <a href="https://figueredo56.github.io/index.html/?img=zaard" target="_blank" class="px-2.5 py-1 text-[10px] font-bold rounded-xl bg-purple-950/80 border border-purple-500/50 text-purple-300 hover:bg-purple-900 transition-all shadow-[0_0_8px_rgba(168,85,247,0.4)]">🏧 Ecosistema</a>
                 <a href="https://figueredo56.github.io/zaard-official/" target="_blank" class="px-2.5 py-1 text-[10px] font-bold rounded-xl bg-cyan-950/80 border border-cyan-500/50 text-cyan-300 hover:bg-cyan-900 transition-all shadow-[0_0_8px_rgba(0,255,255,0.4)]">🌐 Web Oficial</a>
-                <a href="https://figueredo56.github.io/zaard-wallet/wallet.html" target="_blank" class="px-2.5 py-1 text-[10px] font-bold rounded-xl bg-emerald-950/80 border border-emerald-500/50 text-emerald-300 hover:bg-emerald-900 transition-all shadow-[0_0_8px_rgba(34,197,94,0.4)]">🚾 Wallet</a>
+                <a href="https://figueredo56.github.io/zaard-wallet/" target="_blank" class="px-2.5 py-1 text-[10px] font-bold rounded-xl bg-emerald-950/80 border border-emerald-500/50 text-emerald-300 hover:bg-emerald-900 transition-all shadow-[0_0_8px_rgba(34,197,94,0.4)]">🚾 Wallet</a>
             </div>
 
             <!-- Selector de Idiomas -->
@@ -233,7 +233,7 @@
             <!-- Panel Lateral de Control, Trade y Accesos -->
             <div class="flex flex-col gap-3">
                 
-                <!-- Apartado para Trade -->
+                <!-- Apartado para Trade (Enlace actualizado) -->
                 <div class="border border-cyan-400/80 rounded-2xl p-3 space-nebula-bg shadow-xl relative overflow-hidden group">
                     <div class="flex items-center justify-between mb-2">
                         <span class="text-xs font-bold text-cyan-300 uppercase tracking-wide">⚡ Pro Trade Suite</span>
@@ -243,7 +243,7 @@
                         <img src="https://raw.githubusercontent.com/figueredo56/zaard-tracker/refs/heads/main/184%20sin%20t%C3%ADtulo_20260715225022.png" alt="Trade Preview" class="w-12 h-12 object-contain rounded-xl border border-purple-400 p-1 bg-black/50 pointer-events-none">
                         <div class="flex flex-col">
                             <span class="text-[11px] text-gray-200 font-semibold" data-i18n="tradeDesc">Swap & Limit Orders</span>
-                            <a href="https://figueredo56.github.io/zaard-wallet/wallet.html" target="_blank" class="mt-1 text-[10px] bg-gradient-to-r from-cyan-500 to-purple-600 text-white font-bold px-3 py-1 rounded-full text-center shadow hover:scale-105 transition-all" data-i18n="openTrade">Ir a Trade 📈</a>
+                            <a href="https://figueredo56.github.io/zaard-wallet/" target="_blank" class="mt-1 text-[10px] bg-gradient-to-r from-cyan-500 to-purple-600 text-white font-bold px-3 py-1 rounded-full text-center shadow hover:scale-105 transition-all" data-i18n="openTrade">Ir a Trade 📈</a>
                         </div>
                     </div>
                 </div>
@@ -373,11 +373,11 @@
         function togglePlay() {
             if (audio.paused) {
                 audio.play().then(() => {
-                    playBtn.innerHTML = '<svg class="w-4 h-4 fill-current" viewBox="0 0 24 24"><rect x="6" y="5" width="4" height="14"/><rect x="14" y="5" width="4" height="14"/></svg>'; // Icono de pausa
+                    playBtn.innerHTML = '<svg class="w-4 h-4 fill-current" viewBox="0 0 24 24"><rect x="6" y="5" width="4" height="14"/><rect x="14" y="5" width="4" height="14"/></svg>';
                 }).catch(err => console.log("Play bloqueado:", err));
             } else {
                 audio.pause();
-                playBtn.innerHTML = '<svg class="w-4 h-4 fill-current" viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg>'; // Icono de play (triángulo)
+                playBtn.innerHTML = '<svg class="w-4 h-4 fill-current" viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg>';
             }
         }
 
@@ -393,7 +393,6 @@
             muteBtn.textContent = audio.muted ? '🔇' : '🔊';
         }
 
-        // Intento de reproducción automática al cargar
         window.addEventListener('DOMContentLoaded', () => {
             audio.play().then(() => {
                 playBtn.innerHTML = '<svg class="w-4 h-4 fill-current" viewBox="0 0 24 24"><rect x="6" y="5" width="4" height="14"/><rect x="14" y="5" width="4" height="14"/></svg>';
