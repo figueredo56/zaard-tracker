@@ -8,14 +8,14 @@
     <!-- Metaetiquetas Open Graph y Social Cards -->
     <meta property="og:title" content="TRAKER ZARD | Protocolo Panga 🚀">
     <meta property="og:description" content="Monitoreo Técnico On-Chain de Alto Rendimiento, DexScan y Swap Stream en Tiempo Real.">
-    <meta property="og:image" content="https://raw.githubusercontent.com/figueredo56/zaard-tracker/refs/heads/main/189%20sin%20t%C3%ADtulo_20260720154813_2.png">
+    <meta property="og:image" content="https://raw.githubusercontent.com/figueredo56/zaard-tracker/refs/heads/main/189%20sin%20t%C3%ADtulo_20260811194341_1.png">
     <meta property="og:url" content="https://figueredo56.github.io/zaard-tracker/">
     <meta property="og:type" content="website">
     
     <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:title" content="TRAKER ZARD | Protocolo Panga">
     <meta name="twitter:description" content="Monitoreo On-Chain Next-Gen con soporte multilingüe y DexScan integrado.">
-    <meta name="twitter:image" content="https://raw.githubusercontent.com/figueredo56/zaard-tracker/refs/heads/main/189%20sin%20t%C3%ADtulo_20260720154813_2.png">
+    <meta name="twitter:image" content="https://raw.githubusercontent.com/figueredo56/zaard-tracker/refs/heads/main/189%20sin%20t%C3%ADtulo_20260811194341_1.png">
 
     <script src="https://cdn.tailwindcss.com"></script>
     <script>
@@ -68,7 +68,6 @@
             }
         }
 
-        /* Animación específica verde y morada para el reproductor flotante */
         @keyframes greenPurpleGlow {
             0% {
                 border-color: #22c55e;
@@ -139,8 +138,24 @@
 </head>
 <body class="flex items-center justify-center min-h-screen">
 
+    <!-- Modal de Bienvenida (English / Technical Suite Intro) -->
+    <div id="welcome-modal" class="fixed inset-0 z-50 flex items-center justify-center bg-black/9onda backdrop-blur-md p-4 bg-black/85">
+        <div class="frame-gold w-full max-w-md p-5 text-center space-y-4 space-nebula-bg relative shadow-2xl">
+            <div class="w-full h-32 rounded-xl overflow-hidden border border-cyan-400 shadow-[0_0_15px_rgba(0,255,255,0.4)]">
+                <img src="https://raw.githubusercontent.com/figueredo56/zaard-tracker/refs/heads/main/189%20sin%20t%C3%ADtulo_20260811194341_1.png" alt="ZARD Welcome" class="w-full h-full object-cover">
+            </div>
+            <h2 class="text-xl font-extrabold title-gradient uppercase tracking-wider">Welcome to TRAKER ZARD</h2>
+            <p class="text-[11px] text-cyan-200 font-mono leading-relaxed px-1">
+                Panga Protocol Next-Gen On-Chain Monitoring Suite. Explore the Binance Smart Chain (BSC) high-performance ecosystem featuring an exclusive total supply of 180 ZARD tokens, real-time DexScan streams, and advanced trading tools.
+            </p>
+            <button onclick="closeWelcomeModal()" class="w-full py-2.5 rounded-xl bg-gradient-to-r from-cyan-500 via-purple-600 to-emerald-500 text-black font-extrabold text-xs uppercase tracking-widest shadow-[0_0_15px_rgba(0,255,255,0.6)] hover:scale-105 transition-all">
+                Enter Suite 🚀
+            </button>
+        </div>
+    </div>
+
     <!-- Reproductor de audio flotante minimalista, transparente, palpitante verde/morado, del lado izquierdo -->
-    <div class="fixed bottom-3 left-3 z-50 glow-player px-3 py-1.5 rounded-full shadow-2xl flex items-center gap-2.5">
+    <div class="fixed bottom-3 left-3 z-40 glow-player px-3 py-1.5 rounded-full shadow-2xl flex items-center gap-2.5">
         <audio id="zaard-audio" src="El Chupulún de Zaard.mp3" preload="auto" loop></audio>
         
         <!-- Botón Play (Triángulo) -->
@@ -187,10 +202,10 @@
             </div>
         </div>
 
-        <!-- Cabecera Visual -->
+        <!-- Cabecera Visual con la nueva imagen -->
         <header class="text-center mb-4 flex flex-col items-center">
             <div class="w-full h-28 md:h-36 mb-3 border-2 border-cyan-400 rounded-2xl overflow-hidden shadow-[0_0_20px_rgba(0,255,255,0.4)] bg-black/60 relative group">
-                <img src="https://raw.githubusercontent.com/figueredo56/zaard-tracker/refs/heads/main/189%20sin%20t%C3%ADtulo_20260720154813_2.png" alt="TRAKER ZARD Portada" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700 pointer-events-none">
+                <img src="https://raw.githubusercontent.com/figueredo56/zaard-tracker/refs/heads/main/189%20sin%20t%C3%ADtulo_20260811194341_1.png" alt="TRAKER ZARD Portada" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700 pointer-events-none">
                 <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent opacity-60"></div>
             </div>
             <h1 class="text-3xl md:text-5xl font-extrabold title-gradient uppercase tracking-wider" data-i18n="mainTitle">TRAKER ZARD</h1>
@@ -311,6 +326,13 @@
     </div>
 
     <script>
+        // =========================================================================
+        // CONTROL DE MODAL DE BIENVENIDA
+        // =========================================================================
+        function closeWelcomeModal() {
+            document.getElementById('welcome-modal').style.display = 'none';
+        }
+
         // =========================================================================
         // PROTOCOLO DE SEGURIDAD ANTICOPY & BLOQUEO DE INSPECCIÓN (ZAARD INNOVATION)
         // =========================================================================
