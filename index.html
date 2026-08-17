@@ -5,17 +5,16 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>TRAKER ZARD | Protocolo Panga - Global On-Chain Suite</title>
     
-    <!-- Metaetiquetas Open Graph y Social Cards -->
+    <!-- Metaetiquetas Open Graph Ultra Optimizadas (Super Fino) -->
     <meta property="og:title" content="TRAKER ZARD | Protocolo Panga 🚀">
-    <meta property="og:description" content="Monitoreo Técnico On-Chain de Alto Rendimiento, DexScan y Swap Stream en Tiempo Real.">
-    <meta property="og:image" content="https://raw.githubusercontent.com/figueredo56/zaard-tracker/refs/heads/main/189%20sin%20t%C3%ADtulo_20260811194341_1.png">
+    <meta property="og:description" content="Monitoreo Técnico On-Chain de Alto Rendimiento en Tiempo Real. Multi-Language Quantum Suite.">
+    <meta property="og:image" content="https://raw.githubusercontent.com/figueredo56/zaard-tracker/refs/heads/main/189%20sin%20t%C3%ADtulo_20260720154813_2.png">
     <meta property="og:url" content="https://figueredo56.github.io/zaard-tracker/">
     <meta property="og:type" content="website">
-    
     <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:title" content="TRAKER ZARD | Protocolo Panga">
-    <meta name="twitter:description" content="Monitoreo On-Chain Next-Gen con soporte multilingüe y DexScan integrado.">
-    <meta name="twitter:image" content="https://raw.githubusercontent.com/figueredo56/zaard-tracker/refs/heads/main/189%20sin%20t%C3%ADtulo_20260811194341_1.png">
+    <meta name="twitter:description" content="Monitoreo On-Chain Next-Gen con soporte multilingüe en Español, English, العربية y 中文.">
+    <meta name="twitter:image" content="https://raw.githubusercontent.com/figueredo56/zaard-tracker/refs/heads/main/189%20sin%20t%C3%ADtulo_20260720154813_2.png">
 
     <script src="https://cdn.tailwindcss.com"></script>
     <script>
@@ -37,7 +36,7 @@
     </script>
     <style>
         body {
-            background: radial-gradient(circle at 50% 20%, #1a0b2e 0%, #050014 50%, #000814 100%);
+            background: linear-gradient(135deg, #0d001a 0%, #030008 50%, #001226 100%);
             background-size: cover;
             background-position: center;
             background-repeat: no-repeat;
@@ -46,7 +45,6 @@
             font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
             margin: 0;
             padding: 6px 12px;
-            user-select: none;
         }
 
         @keyframes triColorGlow {
@@ -68,34 +66,17 @@
             }
         }
 
-        @keyframes greenPurpleGlow {
-            0% {
-                border-color: #22c55e;
-                box-shadow: 0 0 15px rgba(34, 197, 94, 0.5), inset 0 0 8px rgba(34, 197, 94, 0.2);
-            }
-            50% {
-                border-color: #a855f7;
-                box-shadow: 0 0 20px rgba(168, 85, 247, 0.7), inset 0 0 12px rgba(168, 85, 247, 0.3);
-            }
-            100% {
-                border-color: #22c55e;
-                box-shadow: 0 0 15px rgba(34, 197, 94, 0.5), inset 0 0 8px rgba(34, 197, 94, 0.2);
-            }
-        }
-
         .frame-gold {
             border: 2px solid #00ffff;
             border-radius: 20px;
-            background: rgba(8, 6, 20, 0.92);
+            background: rgba(8, 6, 20, 0.9);
             backdrop-filter: blur(16px);
             animation: triColorGlow 6s infinite ease-in-out;
         }
 
         .glow-player {
-            border: 2px solid #22c55e;
-            background: rgba(5, 2, 15, 0.75);
-            backdrop-filter: blur(12px);
-            animation: greenPurpleGlow 3s infinite ease-in-out;
+            border: 2px solid #00ffff;
+            animation: triColorGlow 4s infinite ease-in-out;
         }
 
         .title-gradient {
@@ -120,6 +101,7 @@
             background-position: center;
         }
 
+        /* Scrollbar personalizado para elegancia total */
         ::-webkit-scrollbar {
             width: 6px;
             height: 6px;
@@ -138,61 +120,24 @@
 </head>
 <body class="flex items-center justify-center min-h-screen">
 
-    <!-- Modal de Bienvenida (English / Technical Suite Intro) -->
-    <div id="welcome-modal" class="fixed inset-0 z-50 flex items-center justify-center bg-black/85 backdrop-blur-md p-4">
-        <div class="frame-gold w-full max-w-md p-5 text-center space-y-4 space-nebula-bg relative shadow-2xl">
-            <div class="w-full h-32 rounded-xl overflow-hidden border border-cyan-400 shadow-[0_0_15px_rgba(0,255,255,0.4)]">
-                <img src="https://raw.githubusercontent.com/figueredo56/zaard-tracker/refs/heads/main/189%20sin%20t%C3%ADtulo_20260811194341_1.png" alt="ZARD Welcome" class="w-full h-full object-cover">
-            </div>
-            <h2 class="text-xl font-extrabold title-gradient uppercase tracking-wider">Welcome to TRAKER ZARD</h2>
-            <p class="text-[11px] text-cyan-200 font-mono leading-relaxed px-1">
-                Panga Protocol Next-Gen On-Chain Monitoring Suite. Explore the Binance Smart Chain (BSC) high-performance ecosystem featuring an exclusive total supply of 180 ZARD tokens, real-time DexScan streams, and advanced trading tools.
-            </p>
-            <button onclick="closeWelcomeModal()" class="w-full py-2.5 rounded-xl bg-gradient-to-r from-cyan-500 via-purple-600 to-emerald-500 text-black font-extrabold text-xs uppercase tracking-widest shadow-[0_0_15px_rgba(0,255,255,0.6)] hover:scale-105 transition-all">
-                Enter Suite 🚀
-            </button>
-        </div>
-    </div>
-
-    <!-- Reproductor de audio flotante minimalista, transparente, palpitante verde/morado, del lado izquierdo -->
-    <div class="fixed bottom-3 left-3 z-40 glow-player px-3 py-1.5 rounded-full shadow-2xl flex items-center gap-2.5">
-        <audio id="zaard-audio" src="El Chupulún de Zaard.mp3" preload="auto" loop></audio>
-        
-        <!-- Botón Play (Triángulo) -->
-        <button onclick="togglePlay()" id="play-btn" class="text-green-400 hover:text-cyan-300 transition-all transform hover:scale-110 focus:outline-none" title="Reproducir">
-            <svg class="w-4 h-4 fill-current" viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg>
-        </button>
-
-        <!-- Botón Stop (Cuadrado) -->
-        <button onclick="stopAudio()" class="text-purple-400 hover:text-pink-300 transition-all transform hover:scale-110 focus:outline-none" title="Detener">
-            <svg class="w-3.5 h-3.5 fill-current" viewBox="0 0 24 24"><rect x="6" y="6" width="12" height="12"/></svg>
-        </button>
-
-        <!-- Minutero pequeño -->
-        <span id="audio-timer" class="text-[10px] font-mono text-cyan-200 tracking-wider">0:00</span>
-
-        <!-- Botón Mute / Unmute compacto -->
-        <button onclick="toggleMute()" id="mute-btn" class="text-gray-400 hover:text-white transition-all text-xs focus:outline-none" title="Silenciar">
-            🔊
-        </button>
+    <!-- Reproductor de audio flotante -->
+    <div class="fixed bottom-3 right-3 z-50 bg-black/95 glow-player p-2.5 rounded-2xl shadow-2xl flex items-center gap-2.5">
+        <span class="text-[11px] text-cyan-300 font-bold uppercase tracking-wider hidden md:inline">🎶 El Chupulún de Zaard</span>
+        <audio id="zaard-audio" controls autoplay loop class="h-8 w-36 md:w-44 accent-cyan-400">
+            <source src="El Chupulún de Zaard.mp3" type="audio/mpeg">
+            Tu navegador no soporta audio.
+        </audio>
     </div>
 
     <div class="frame-gold w-full max-w-4xl p-3 md:p-6 mx-auto">
         
-        <!-- Barra superior: Selector de Idioma y Ventanas del Ecosistema -->
-        <div class="flex flex-col md:flex-row justify-between items-center mb-3 pb-2 border-b border-cyan-500/30 gap-2">
+        <!-- Barra superior: Selector de Idioma Profesional (ES, EN, AR, ZH) -->
+        <div class="flex justify-between items-center mb-3 pb-2 border-b border-cyan-500/30">
             <div class="flex items-center gap-2">
                 <span class="w-2 h-2 rounded-full bg-green-400 animate-ping"></span>
-                <span class="text-[11px] font-mono text-cyan-300 tracking-widest uppercase">TRAKER ZARD // ZAARD INNOVATION</span>
+                <span class="text-[11px] font-mono text-cyan-300 tracking-widest uppercase">TRAKER ZARD // v2.6</span>
             </div>
             
-            <!-- Ventanas de navegación al Ecosistema (Wallet actualizada) -->
-            <div class="flex flex-wrap items-center justify-center gap-1.5">
-                <a href="https://figueredo56.github.io/index.html/?img=zaard" target="_blank" class="px-2.5 py-1 text-[10px] font-bold rounded-xl bg-purple-950/80 border border-purple-500/50 text-purple-300 hover:bg-purple-900 transition-all shadow-[0_0_8px_rgba(168,85,247,0.4)]">🏧 Ecosistema</a>
-                <a href="https://figueredo56.github.io/zaard-official/" target="_blank" class="px-2.5 py-1 text-[10px] font-bold rounded-xl bg-cyan-950/80 border border-cyan-500/50 text-cyan-300 hover:bg-cyan-900 transition-all shadow-[0_0_8px_rgba(0,255,255,0.4)]">🌐 Web Oficial</a>
-                <a href="https://figueredo56.github.io/zaard-wallet/" target="_blank" class="px-2.5 py-1 text-[10px] font-bold rounded-xl bg-emerald-950/80 border border-emerald-500/50 text-emerald-300 hover:bg-emerald-900 transition-all shadow-[0_0_8px_rgba(34,197,94,0.4)]">🚾 Wallet</a>
-            </div>
-
             <!-- Selector de Idiomas -->
             <div class="flex items-center gap-1.5 bg-black/60 border border-cyan-500/40 rounded-xl p-1 shadow-inner">
                 <button onclick="changeLanguage('es')" id="btn-es" class="px-2 py-0.5 text-[11px] font-bold rounded-lg transition-all bg-cyan-500 text-black shadow-[0_0_8px_rgba(0,255,255,0.6)]">🇪🇸 ES</button>
@@ -202,27 +147,27 @@
             </div>
         </div>
 
-        <!-- Cabecera Visual con la nueva imagen -->
+        <!-- Cabecera Visual -->
         <header class="text-center mb-4 flex flex-col items-center">
             <div class="w-full h-28 md:h-36 mb-3 border-2 border-cyan-400 rounded-2xl overflow-hidden shadow-[0_0_20px_rgba(0,255,255,0.4)] bg-black/60 relative group">
-                <img src="https://raw.githubusercontent.com/figueredo56/zaard-tracker/refs/heads/main/189%20sin%20t%C3%ADtulo_20260811194341_1.png" alt="TRAKER ZARD Portada" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700 pointer-events-none">
+                <img src="https://raw.githubusercontent.com/figueredo56/zaard-tracker/refs/heads/main/189%20sin%20t%C3%ADtulo_20260720154813_2.png" alt="TRAKER ZARD Portada" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700">
                 <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent opacity-60"></div>
             </div>
             <h1 class="text-3xl md:text-5xl font-extrabold title-gradient uppercase tracking-wider" data-i18n="mainTitle">TRAKER ZARD</h1>
-            <p class="text-xs md:text-sm text-cyan-200 mt-1 font-medium tracking-wide" data-i18n="mainSubtitle">Monitoreo On-Chain CMC - Protocolo Panga</p>
+            <p class="text-xs md:text-sm text-cyan-200 mt-1 font-medium tracking-wide" data-i18n="mainSubtitle">Monitoreo Técnico On-Chain - Protocolo Panga</p>
         </header>
 
         <!-- Contenido Central Dinámico -->
         <div class="grid grid-cols-1 md:grid-cols-3 gap-3.5">
             
-            <!-- Gráfica / Velas en Vivo (Estilo CMC DexScan) -->
+            <!-- Gráfica / Velas en Vivo -->
             <div class="md:col-span-2 border border-cyan-500/50 rounded-2xl p-3 bg-black/85 flex flex-col justify-between min-h-[280px] shadow-xl">
                 <div class="flex justify-between items-center border-b border-cyan-500/30 pb-1.5 mb-2 px-1">
                     <h2 class="text-cyan-400 font-bold text-xs flex items-center gap-1.5">
                         <span class="inline-block w-2 h-2 rounded-full bg-cyan-400 animate-pulse"></span>
-                        <span data-i18n="liveChartTitle">Gráfica / Velas en Vivo (CMC DexScan)</span>
+                        <span data-i18n="liveChartTitle">Gráfica / Velas en Vivo</span>
                     </h2>
-                    <span class="text-[10px] text-green-400 bg-green-950/60 border border-green-500/40 px-2 py-0.5 rounded-full font-semibold" data-i18n="synced">● Sincronizado CMC</span>
+                    <span class="text-[10px] text-green-400 bg-green-950/60 border border-green-500/40 px-2 py-0.5 rounded-full font-semibold" data-i18n="synced">● Sincronizado Quantum</span>
                 </div>
                 
                 <div class="w-full h-[220px] rounded-xl overflow-hidden border border-cyan-500/30 relative shadow-inner">
@@ -230,32 +175,26 @@
                 </div>
             </div>
 
-            <!-- Panel Lateral de Control, Trade y Accesos -->
+            <!-- Panel Lateral de Control y Accesos -->
             <div class="flex flex-col gap-3">
                 
-                <!-- Apartado para Trade (Enlace actualizado) -->
-                <div class="border border-cyan-400/80 rounded-2xl p-3 space-nebula-bg shadow-xl relative overflow-hidden group">
-                    <div class="flex items-center justify-between mb-2">
-                        <span class="text-xs font-bold text-cyan-300 uppercase tracking-wide">⚡ Pro Trade Suite</span>
-                        <span class="text-[9px] bg-cyan-500 text-black font-extrabold px-2 py-0.5 rounded-full animate-pulse">LIVE</span>
+                <!-- Enlace Directo al Token -->
+                <a id="token-link" href="#" target="_blank" class="w-full h-32 rounded-2xl border border-purple-400/60 relative shadow-xl overflow-hidden space-nebula-bg flex items-center justify-between px-4 group hover:border-cyan-400 transition-all duration-300">
+                    <img src="https://raw.githubusercontent.com/figueredo56/zaard-tracker/refs/heads/main/184%20sin%20t%C3%ADtulo_20260715225022.png" alt="Protocolo Panga" class="w-16 h-16 object-contain group-hover:scale-110 transition-transform duration-300 drop-shadow-[0_0_10px_rgba(0,255,255,0.7)]">
+                    <div class="flex flex-col items-end justify-center">
+                        <span class="text-[11px] font-bold text-cyan-200 text-right drop-shadow" data-i18n="officialToken">Token Oficial</span>
+                        <span class="mt-2 bg-gradient-to-r from-cyan-500 to-purple-600 border border-cyan-300/80 text-white text-[10px] font-bold px-3 py-1.5 rounded-full shadow-[0_0_12px_rgba(0,255,255,0.5)] group-hover:scale-105 transition-all" data-i18n="goToToken">Ir al token 🚀</span>
                     </div>
-                    <div class="flex items-center gap-3">
-                        <img src="https://raw.githubusercontent.com/figueredo56/zaard-tracker/refs/heads/main/184%20sin%20t%C3%ADtulo_20260715225022.png" alt="Trade Preview" class="w-12 h-12 object-contain rounded-xl border border-purple-400 p-1 bg-black/50 pointer-events-none">
-                        <div class="flex flex-col">
-                            <span class="text-[11px] text-gray-200 font-semibold" data-i18n="tradeDesc">Swap & Limit Orders</span>
-                            <a href="https://figueredo56.github.io/zaard-wallet/" target="_blank" class="mt-1 text-[10px] bg-gradient-to-r from-cyan-500 to-purple-600 text-white font-bold px-3 py-1 rounded-full text-center shadow hover:scale-105 transition-all" data-i18n="openTrade">Ir a Trade 📈</a>
-                        </div>
-                    </div>
-                </div>
+                </a>
 
                 <!-- Tarjeta de Especificaciones Técnicas -->
                 <div class="border border-purple-500/40 rounded-2xl p-3 info-card-bg text-xs shadow-lg">
-                    <p class="text-gray-300 flex justify-between"><span data-i18n="ownerLabel">Creador:</span> <span class="text-white font-bold">Panga (ZAARD INNOVATION)</span></p>
+                    <p class="text-gray-300 flex justify-between"><span data-i18n="ownerLabel">Dueño:</span> <span class="text-white font-bold">Panga</span></p>
                     <p class="text-gray-300 mt-1 flex justify-between"><span data-i18n="networkLabel">Red:</span> <span class="text-cyan-300 font-bold">BSC (V2)</span></p>
-                    <p class="text-gray-300 mt-1 flex justify-between"><span data-i18n="contractLabel">Contrato:</span> <span class="text-purple-300 font-mono text-[10px]">0xb133...5181e</span></p>
+                    <p class="text-gray-300 mt-1 flex justify-between"><span data-i18n="contractLabel">Contrato:</span> <span class="text-purple-300 font-mono text-[10px]">0x3468...4d65</span></p>
                     <div class="mt-2.5 pt-2 border-t border-purple-500/30 flex items-center justify-between">
-                        <span class="text-green-400 font-bold text-[11px]" data-i18n="poolActive">⚡ Pool Protegido</span>
-                        <span class="text-[10px] text-cyan-200 font-mono bg-cyan-950/60 px-2 py-0.5 rounded border border-cyan-500/30">Pancake / CMC</span>
+                        <span class="text-green-400 font-bold text-[11px]" data-i18n="poolActive">⚡ Pool Activo</span>
+                        <span class="text-[10px] text-cyan-200 font-mono bg-cyan-950/60 px-2 py-0.5 rounded border border-cyan-500/30">PancakeSwap</span>
                     </div>
                 </div>
 
@@ -263,215 +202,103 @@
 
         </div>
 
-        <!-- Sección Inferior: Órdenes de Compra y Venta Recientes Ampliadas (Hasta 20 transacciones) -->
+        <!-- Sección Inferior: Órdenes de Compra y Venta (Swap Stream) -->
         <div class="mt-3.5 border border-cyan-500/50 rounded-2xl p-3.5 orders-box shadow-xl">
             <div class="flex justify-between items-center border-b border-cyan-500/30 pb-1.5 mb-2.5">
                 <h3 class="text-cyan-400 font-bold text-xs uppercase tracking-wide flex items-center gap-1.5">
-                    <span>📊</span> <span data-i18n="ordersTitle">Órdenes de Compra y Venta Recientes (Swap Stream)</span>
+                    <span>📊</span> <span data-i18n="ordersTitle">Órdenes de Compra y Venta (Swap Stream)</span>
                 </h3>
-                <span class="text-[10px] text-green-400 bg-green-950/60 border border-green-500/40 px-2 py-0.5 rounded-full font-semibold animate-pulse" data-i18n="liveStatus">● Stream Activo (20 Trades)</span>
+                <span class="text-[10px] text-green-400 bg-green-950/60 border border-green-500/40 px-2 py-0.5 rounded-full font-semibold animate-pulse" data-i18n="liveStatus">● En Vivo</span>
             </div>
             
-            <!-- Contenedor con altura ampliada para visualizar hasta 20 operaciones recientes -->
-            <div id="swap-stream-list" class="flex flex-col gap-1.5 max-h-[260px] overflow-y-auto pr-1">
-                <div class="flex justify-between items-center bg-black/75 border border-green-500/30 rounded-xl px-3 py-1 text-xs">
-                    <div class="flex items-center gap-2"><span class="bg-green-950 text-green-400 px-1.5 py-0.5 rounded text-[9px] font-bold border border-green-500/40">🟢 Buy</span><span class="text-gray-300 font-mono text-[11px]">+3.4500 ZARD</span></div><span class="text-gray-400 text-[10px]">Hace 30s</span>
-                </div>
-                <div class="flex justify-between items-center bg-black/75 border border-green-500/30 rounded-xl px-3 py-1 text-xs">
-                    <div class="flex items-center gap-2"><span class="bg-green-950 text-green-400 px-1.5 py-0.5 rounded text-[9px] font-bold border border-green-500/40">🟢 Buy</span><span class="text-gray-300 font-mono text-[11px]">+1.2400 ZARD</span></div><span class="text-gray-400 text-[10px]">Hace 2 min</span>
-                </div>
-                <div class="flex justify-between items-center bg-black/75 border border-red-500/30 rounded-xl px-3 py-1 text-xs">
-                    <div class="flex items-center gap-2"><span class="bg-red-950 text-red-400 px-1.5 py-0.5 rounded text-[9px] font-bold border border-red-500/40">🔴 Sell</span><span class="text-gray-300 font-mono text-[11px]">-0.5000 ZARD</span></div><span class="text-gray-400 text-[10px]">Hace 6 min</span>
-                </div>
-                <div class="flex justify-between items-center bg-black/75 border border-green-500/30 rounded-xl px-3 py-1 text-xs">
-                    <div class="flex items-center gap-2"><span class="bg-green-950 text-green-400 px-1.5 py-0.5 rounded text-[9px] font-bold border border-green-500/40">🟢 Buy</span><span class="text-gray-300 font-mono text-[11px]">+5.1200 ZARD</span></div><span class="text-gray-400 text-[10px]">Hace 12 min</span>
-                </div>
-                <div class="flex justify-between items-center bg-black/75 border border-green-500/30 rounded-xl px-3 py-1 text-xs">
-                    <div class="flex items-center gap-2"><span class="bg-green-950 text-green-400 px-1.5 py-0.5 rounded text-[9px] font-bold border border-green-500/40">🟢 Buy</span><span class="text-gray-300 font-mono text-[11px]">+0.8500 ZARD</span></div><span class="text-gray-400 text-[10px]">Hace 22 min</span>
-                </div>
-                <div class="flex justify-between items-center bg-black/75 border border-red-500/30 rounded-xl px-3 py-1 text-xs">
-                    <div class="flex items-center gap-2"><span class="bg-red-950 text-red-400 px-1.5 py-0.5 rounded text-[9px] font-bold border border-red-500/40">🔴 Sell</span><span class="text-gray-300 font-mono text-[11px]">-1.2000 ZARD</span></div><span class="text-gray-400 text-[10px]">Hace 35 min</span>
-                </div>
-                <div class="flex justify-between items-center bg-black/75 border border-green-500/30 rounded-xl px-3 py-1 text-xs">
-                    <div class="flex items-center gap-2"><span class="bg-green-950 text-green-400 px-1.5 py-0.5 rounded text-[9px] font-bold border border-green-500/40">🟢 Buy</span><span class="text-gray-300 font-mono text-[11px]">+2.1500 ZARD</span></div><span class="text-gray-400 text-[10px]">Hace 44 min</span>
-                </div>
-                <div class="flex justify-between items-center bg-black/75 border border-green-500/30 rounded-xl px-3 py-1 text-xs">
-                    <div class="flex items-center gap-2"><span class="bg-green-950 text-green-400 px-1.5 py-0.5 rounded text-[9px] font-bold border border-green-500/40">🟢 Buy</span><span class="text-gray-300 font-mono text-[11px]">+4.0000 ZARD</span></div><span class="text-gray-400 text-[10px]">Hace 51 min</span>
-                </div>
-                <div class="flex justify-between items-center bg-black/75 border border-red-500/30 rounded-xl px-3 py-1 text-xs">
-                    <div class="flex items-center gap-2"><span class="bg-red-950 text-red-400 px-1.5 py-0.5 rounded text-[9px] font-bold border border-red-500/40">🔴 Sell</span><span class="text-gray-300 font-mono text-[11px]">-0.1500 ZARD</span></div><span class="text-gray-400 text-[10px]">Hace 1 hora</span>
-                </div>
-                <div class="flex justify-between items-center bg-black/75 border border-green-500/30 rounded-xl px-3 py-1 text-xs">
-                    <div class="flex items-center gap-2"><span class="bg-green-950 text-green-400 px-1.5 py-0.5 rounded text-[9px] font-bold border border-green-500/40">🟢 Buy</span><span class="text-gray-300 font-mono text-[11px]">+0.2709 ZARD</span></div><span class="text-gray-400 text-[10px]">Hace 2 horas</span>
-                </div>
-                <div class="flex justify-between items-center bg-black/75 border border-red-500/30 rounded-xl px-3 py-1 text-xs">
-                    <div class="flex items-center gap-2"><span class="bg-red-950 text-red-400 px-1.5 py-0.5 rounded text-[9px] font-bold border border-red-500/40">🔴 Sell</span><span class="text-gray-300 font-mono text-[11px]">-0.0240 ZARD</span></div><span class="text-gray-400 text-[10px]">Hace 3 horas</span>
-                </div>
-                <div class="flex justify-between items-center bg-black/75 border border-green-500/30 rounded-xl px-3 py-1 text-xs">
-                    <div class="flex items-center gap-2"><span class="bg-green-950 text-green-400 px-1.5 py-0.5 rounded text-[9px] font-bold border border-green-500/40">🟢 Buy</span><span class="text-gray-300 font-mono text-[11px]">+1.8000 ZARD</span></div><span class="text-gray-400 text-[10px]">Hace 4 horas</span>
-                </div>
-            </div>
-
-            <a id="dexscreener-stream-link" href="#" target="_blank" class="mt-3 w-full py-2 rounded-xl border border-purple-500/60 space-nebula-bg flex items-center justify-center gap-2 group hover:border-cyan-400 transition-all shadow-inner text-xs font-bold text-cyan-200">
-                <span>📈</span> <span data-i18n="openRegistry">Ver Registro Completo de Trades en CoinMarketCap / DexScan</span>
+            <a id="dexscreener-stream-link" href="#" target="_blank" class="w-full h-[155px] rounded-xl border border-purple-500/60 relative space-nebula-bg flex flex-col items-center justify-center p-3 group hover:border-cyan-400 transition-all shadow-inner">
+                <img src="https://raw.githubusercontent.com/figueredo56/zaard-tracker/refs/heads/main/184%20sin%20t%C3%ADtulo_20260715225022.png" alt="Stream Icon" class="w-12 h-12 object-contain mb-2 group-hover:scale-110 transition-transform drop-shadow-[0_0_12px_rgba(0,255,255,0.9)]">
+                <span class="text-cyan-200 text-xs font-bold text-center px-2" data-i18n="dexscreenerAction">Ver todas las Órdenes y Swaps en DexScreener</span>
+                <span class="mt-2 bg-gradient-to-r from-cyan-500 to-purple-600 text-white text-[10px] font-bold px-4 py-1.5 rounded-full shadow-[0_0_15px_rgba(0,255,255,0.6)] group-hover:scale-105 transition-all" data-i18n="openRegistry">Abrir Registro En Vivo 📈</span>
             </a>
         </div>
 
         <!-- Pie de página sofisticado -->
         <footer class="mt-4 text-center text-[10px] text-gray-400 border-t border-cyan-500/20 pt-2 flex flex-col md:flex-row justify-between items-center gap-1">
-            <span>ZAARD INNOVATION & Protocolo Panga &copy; 2026. All Rights Reserved.</span>
-            <span class="text-cyan-400 font-mono">Secured by Protocolo Panga</span>
+            <span>TRAKER ZARD &copy; 2026 - Protocolo Panga. All Rights Reserved.</span>
+            <span class="text-cyan-400 font-mono">Secure On-Chain Environment</span>
         </footer>
 
     </div>
 
     <script>
         // =========================================================================
-        // CONTROL DE MODAL DE BIENVENIDA
-        // =========================================================================
-        function closeWelcomeModal() {
-            document.getElementById('welcome-modal').style.display = 'none';
-        }
-
-        // =========================================================================
-        // PROTOCOLO DE SEGURIDAD ANTICOPY & BLOQUEO DE INSPECCIÓN (ZAARD INNOVATION)
-        // =========================================================================
-        document.addEventListener('contextmenu', e => e.preventDefault());
-        
-        document.addEventListener('keydown', e => {
-            if (
-                e.key === 'F12' || 
-                (e.ctrlKey && e.shiftKey && (e.key === 'I' || e.key === 'J' || e.key === 'C')) || 
-                (e.ctrlKey && (e.key === 'u' || e.key === 's'))
-            ) {
-                e.preventDefault();
-                alert("⚠️ ZAARD INNOVATION SECURITY: Esta aplicación está protegida bajo el Protocolo Panga.");
-                return false;
-            }
-        });
-
-        // =========================================================================
-        // CONTROL DEL REPRODUCTOR MINIMALISTA FLOTANTE
-        // =========================================================================
-        const audio = document.getElementById('zaard-audio');
-        const playBtn = document.getElementById('play-btn');
-        const timerDisplay = document.getElementById('audio-timer');
-        const muteBtn = document.getElementById('mute-btn');
-
-        audio.volume = 0.4;
-
-        function formatTime(seconds) {
-            const mins = Math.floor(seconds / 60);
-            const secs = Math.floor(seconds % 60);
-            return `${mins}:${secs < 10 ? '0' : ''}${secs}`;
-        }
-
-        audio.addEventListener('timeupdate', () => {
-            timerDisplay.textContent = formatTime(audio.currentTime);
-        });
-
-        function togglePlay() {
-            if (audio.paused) {
-                audio.play().then(() => {
-                    playBtn.innerHTML = '<svg class="w-4 h-4 fill-current" viewBox="0 0 24 24"><rect x="6" y="5" width="4" height="14"/><rect x="14" y="5" width="4" height="14"/></svg>';
-                }).catch(err => console.log("Play bloqueado:", err));
-            } else {
-                audio.pause();
-                playBtn.innerHTML = '<svg class="w-4 h-4 fill-current" viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg>';
-            }
-        }
-
-        function stopAudio() {
-            audio.pause();
-            audio.currentTime = 0;
-            playBtn.innerHTML = '<svg class="w-4 h-4 fill-current" viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg>';
-            timerDisplay.textContent = "0:00";
-        }
-
-        function toggleMute() {
-            audio.muted = !audio.muted;
-            muteBtn.textContent = audio.muted ? '🔇' : '🔊';
-        }
-
-        window.addEventListener('DOMContentLoaded', () => {
-            audio.play().then(() => {
-                playBtn.innerHTML = '<svg class="w-4 h-4 fill-current" viewBox="0 0 24 24"><rect x="6" y="5" width="4" height="14"/><rect x="14" y="5" width="4" height="14"/></svg>';
-            }).catch(error => {
-                console.log("Autoplay bloqueado, esperando interacción:", error);
-                document.body.addEventListener('click', () => {
-                    audio.play();
-                    playBtn.innerHTML = '<svg class="w-4 h-4 fill-current" viewBox="0 0 24 24"><rect x="6" y="5" width="4" height="14"/><rect x="14" y="5" width="4" height="14"/></svg>';
-                }, { once: true });
-            });
-        });
-
-        // =========================================================================
         // DICCIONARIO MULTILENGUAJE AVANZADO (ES, EN, AR, ZH)
         // =========================================================================
         const translations = {
             es: {
                 mainTitle: "TRAKER ZARD",
-                mainSubtitle: "Monitoreo On-Chain CMC - Protocolo Panga",
-                liveChartTitle: "Gráfica / Velas en Vivo (CMC DexScan)",
-                synced: "● Sincronizado CMC",
-                tradeDesc: "Swap & Limit Orders",
-                openTrade: "Ir al Trade 📈",
-                ownerLabel: "Creador:",
+                mainSubtitle: "Monitoreo Técnico On-Chain - Protocolo Panga",
+                liveChartTitle: "Gráfica / Velas en Vivo",
+                synced: "● Sincronizado Quantum",
+                officialToken: "Token Oficial",
+                goToToken: "Ir al token 🚀",
+                ownerLabel: "Dueño:",
                 networkLabel: "Red:",
                 contractLabel: "Contrato:",
-                poolActive: "⚡ Pool Protegido",
-                ordersTitle: "Órdenes de Compra y Venta Recientes (Swap Stream)",
-                liveStatus: "● Stream Activo",
-                openRegistry: "Ver Registro Completo de Trades en CMC / DexScan"
+                poolActive: "⚡ Pool Activo",
+                ordersTitle: "Órdenes de Compra y Venta (Swap Stream)",
+                liveStatus: "● En Vivo",
+                dexscreenerAction: "Ver todas las Órdenes y Swaps en DexScreener",
+                openRegistry: "Abrir Registro En Vivo 📈"
             },
             en: {
                 mainTitle: "TRAKER ZARD",
-                mainSubtitle: "CMC On-Chain Monitoring - Panga Protocol",
-                liveChartTitle: "Live Chart / Candles (CMC DexScan)",
-                synced: "● CMC Synced",
-                tradeDesc: "Swap & Limit Orders",
-                openTrade: "Go to Trade 📈",
-                ownerLabel: "Creator:",
+                mainSubtitle: "On-Chain Technical Monitoring - Panga Protocol",
+                liveChartTitle: "Live Chart / Candles",
+                synced: "● Quantum Synced",
+                officialToken: "Official Token",
+                goToToken: "Go to Token 🚀",
+                ownerLabel: "Owner:",
                 networkLabel: "Network:",
                 contractLabel: "Contract:",
-                poolActive: "⚡ Protected Pool",
-                ordersTitle: "Recent Buy & Sell Orders (Swap Stream)",
-                liveStatus: "● Live Stream",
-                openRegistry: "View Full Trade Registry on CMC / DexScan"
+                poolActive: "⚡ Active Pool",
+                ordersTitle: "Buy & Sell Orders (Swap Stream)",
+                liveStatus: "● Live",
+                dexscreenerAction: "View all Orders & Swaps on DexScreener",
+                openRegistry: "Open Live Registry 📈"
             },
             ar: {
                 mainTitle: "تراكر زارد",
-                mainSubtitle: "مراقبة CMC السلسلة - بروتوكول بانغا",
+                mainSubtitle: "المراقبة التقنية السلسلة - بروتوكول بانغا",
                 liveChartTitle: "الرسم البياني المباشر / الشموع",
-                synced: "● متزامن CMC",
-                tradeDesc: "التبادل أوامر الحد",
-                openTrade: "اذهب إلى التداول 📈",
-                ownerLabel: "المبدع:",
+                synced: "● متزامن كوانتوم",
+                officialToken: "الرمز الرسمي",
+                goToToken: "اذهب إلى الرمز 🚀",
+                ownerLabel: "المالك:",
                 networkLabel: "الشبكة:",
                 contractLabel: "العقد:",
-                poolActive: "⚡ مجمع محمي",
-                ordersTitle: "طلبات الشراء والبيع الأخيرة",
-                liveStatus: "● بث مباشر",
-                openRegistry: "عرض سجل التداول الكامل"
+                poolActive: "⚡ مجمع نشط",
+                ordersTitle: "طلبات الشراء والبيع (تدفق المقايضة)",
+                liveStatus: "● مباشر",
+                dexscreenerAction: "عرض جميع الطلبات والمقايضات على DexScreener",
+                openRegistry: "فتح السجل المباشر 📈"
             },
             zh: {
                 mainTitle: "扎ード トラッカー",
-                mainSubtitle: "CMC 链上监控 - 庞加协议",
-                liveChartTitle: "实时图表 / K线 (CMC DexScan)",
-                synced: "● CMC 同步",
-                tradeDesc: "闪兑与限价单",
-                openTrade: "前往交易 📈",
-                ownerLabel: "创作者:",
+                mainSubtitle: "链上技术监控 - 庞加协议",
+                liveChartTitle: "实时图表 / K线",
+                synced: "● 量子同步",
+                officialToken: "官方代币",
+                goToToken: "前往代币 🚀",
+                ownerLabel: "所有者:",
                 networkLabel: "网络:",
                 contractLabel: "合约:",
-                poolActive: "⚡ 受保护池",
-                ordersTitle: "近期买卖订单流 (Swap Stream)",
-                liveStatus: "● 实时流",
-                openRegistry: "在 CMC / DexScan 上查看完整交易记录"
+                poolActive: "⚡ 活跃池",
+                ordersTitle: "买卖订单（兑换流）",
+                liveStatus: "● 实时",
+                dexscreenerAction: "在 DexScreener 上查看所有订单和兑换",
+                openRegistry: "打开实时记录 📈"
             }
         };
 
         function changeLanguage(lang) {
+            // Actualizar textos de la interfaz
             const elements = document.querySelectorAll('[data-i18n]');
             elements.forEach(el => {
                 const key = el.getAttribute('data-i18n');
@@ -480,12 +307,14 @@
                 }
             });
 
+            // Ajustar dirección del texto si es Árabe
             if (lang === 'ar') {
                 document.documentElement.setAttribute('dir', 'rtl');
             } else {
                 document.documentElement.setAttribute('dir', 'ltr');
             }
 
+            // Actualizar estilos de los botones de idioma
             ['es', 'en', 'ar', 'zh'].forEach(l => {
                 const btn = document.getElementById(`btn-${l}`);
                 if (l === lang) {
@@ -498,18 +327,32 @@
             localStorage.setItem('zaard_lang', lang);
         }
 
+        // Cargar idioma guardado o predeterminado por defecto
         window.addEventListener('DOMContentLoaded', () => {
             const savedLang = localStorage.getItem('zaard_lang') || 'es';
             changeLanguage(savedLang);
+
+            // Audio autoplay handler
+            const audio = document.getElementById('zaard-audio');
+            audio.volume = 0.3;
+            audio.play().catch(error => {
+                console.log("Autoplay bloqueado por el navegador:", error);
+                document.body.addEventListener('click', () => {
+                    audio.play();
+                }, { once: true });
+            });
         });
 
         // =========================================================================
-        // CONFIGURACIÓN DE CONTRATO ACTUALIZADA
+        // CONFIGURACIÓN DE CONTRATO Y POOL ACTUALIZADA
         // =========================================================================
-        const ZARD_CONTRACT = "0x11433c80133f6f098b8a1f3e8b3533b3e7da9901";
+        const ZARD_CONTRACT = "0x11433C80133F6f098B8a1f3E8B3533b3e7dA9901";
+        const PANCAKE_POOL = "0x11433C80133F6f098B8a1f3E8B3533b3e7dA9901"; // Actualizar si el pool V2 posee otra address en BSC
 
-        document.getElementById('dexscreener-iframe').src = `https://dexscreener.com/bsc/${ZARD_CONTRACT}?embed=1&theme=dark&trades=1&info=0`;
-        document.getElementById('dexscreener-stream-link').href = `https://dexscreener.com/bsc/${ZARD_CONTRACT}`;
+        // Inyección dinámica de enlaces oficiales
+        document.getElementById('token-link').href = `https://app.binance.com/uni-qr/web3-token-details?utm_medium=share&tokenCA=${ZARD_CONTRACT}&binanceChainId=56&chain=bsc`;
+        document.getElementById('dexscreener-iframe').src = `https://dexscreener.com/bsc/${PANCAKE_POOL}?embed=1&theme=dark&trades=0&info=0`;
+        document.getElementById('dexscreener-stream-link').href = `https://dexscreener.com/bsc/${PANCAKE_POOL}`;
     </script>
 </body>
 </html>
