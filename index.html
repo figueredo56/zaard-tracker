@@ -2,7 +2,7 @@
 <html lang="es" class="dark">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
     <title>TRAKER ZARD | Global On-Chain Suite</title>
     
     <!-- Metaetiquetas Open Graph -->
@@ -11,10 +11,6 @@
     <meta property="og:image" content="https://raw.githubusercontent.com/figueredo56/zaard-tracker/refs/heads/main/189%20sin%20t%C3%ADtulo_20260720005119_1.png">
     <meta property="og:url" content="https://figueredo56.github.io/zaard-tracker/">
     <meta property="og:type" content="website">
-    <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:title" content="TRAKER ZARD | Protocolo Oficial">
-    <meta name="twitter:description" content="Monitoreo On-Chain Next-Gen con soporte multilingüe.">
-    <meta name="twitter:image" content="https://raw.githubusercontent.com/figueredo56/zaard-tracker/refs/heads/main/189%20sin%20t%C3%ADtulo_20260720005119_1.png">
 
     <script src="https://cdn.tailwindcss.com"></script>
     <script>
@@ -35,25 +31,38 @@
         }
     </script>
     <style>
+        * {
+            box-sizing: border-box;
+        }
         body {
             background: #030008;
             color: #fff;
             font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
             margin: 0;
             padding: 8px;
+            width: 100vw;
             min-height: 100vh;
             display: flex;
             justify-content: center;
-            align-items: center;
+            align-items: flex-start;
+            overflow-x: hidden;
+        }
+
+        .main-container {
+            width: 100%;
+            max-width: 440px;
+            margin: 0 auto;
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
         }
 
         .main-frame {
-            border: 1px solid rgba(0, 255, 255, 0.3);
-            border-radius: 16px;
+            border: 1px solid rgba(0, 255, 255, 0.25);
+            border-radius: 14px;
             background: #06040f;
-            box-shadow: 0 0 20px rgba(0, 0, 0, 0.8), inset 0 0 15px rgba(0, 255, 255, 0.03);
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.9);
             width: 100%;
-            max-width: 480px;
         }
 
         .title-gradient {
@@ -63,12 +72,8 @@
         }
 
         .clean-card {
-            background: rgba(12, 10, 25, 0.8);
+            background: rgba(12, 10, 25, 0.85);
             border: 1px solid rgba(0, 255, 255, 0.15);
-            transition: all 0.2s ease;
-        }
-        .clean-card:hover {
-            border-color: rgba(0, 255, 255, 0.4);
         }
 
         ::-webkit-scrollbar {
@@ -86,87 +91,88 @@
 </head>
 <body>
 
-    <div class="main-frame p-3 sm:p-4 my-2 flex flex-col items-center gap-3">
-        
-        <!-- 1. PORTADA MÁS PEQUEÑA Y CUADRADA -->
-        <div class="w-full h-28 sm:h-32 rounded-xl overflow-hidden border border-cyan-500/30 bg-black/60 shadow-md">
-            <img src="https://raw.githubusercontent.com/figueredo56/zaard-tracker/refs/heads/main/189%20sin%20t%C3%ADtulo_20260720005119_1.png" alt="Portada ZARD" class="w-full h-full object-cover object-center">
-        </div>
-
-        <!-- TÍTULO Y SUBTÍTULO -->
-        <div class="text-center w-full">
-            <h1 class="text-xl sm:text-2xl font-extrabold title-gradient uppercase tracking-wider" data-i18n="mainTitle">TRAKER ZARD</h1>
-            <p class="text-[11px] text-gray-400 mt-0.5" data-i18n="mainSubtitle">Monitoreo On-Chain - Ecosistema ZAARD</p>
-        </div>
-
-        <!-- 2. BANDERAS DE IDIOMA PROFESIONALES -->
-        <div class="flex justify-center items-center gap-1.5 w-full">
-            <div class="flex items-center gap-1 bg-black/85 border border-cyan-500/20 rounded-lg p-1">
-                <button onclick="changeLanguage('es')" id="btn-es" class="flex items-center gap-1 px-2 py-0.5 text-xs font-bold rounded transition-all bg-cyan-500 text-black shadow-sm">
-                    <span>🇪🇸</span> <span class="text-[10px]">ES</span>
-                </button>
-                <button onclick="changeLanguage('en')" id="btn-en" class="flex items-center gap-1 px-2 py-0.5 text-xs font-bold rounded transition-all text-gray-400 hover:text-white bg-transparent">
-                    <span>🇬🇧</span> <span class="text-[10px]">EN</span>
-                </button>
-                <button onclick="changeLanguage('ar')" id="btn-ar" class="flex items-center gap-1 px-2 py-0.5 text-xs font-bold rounded transition-all text-gray-400 hover:text-white bg-transparent">
-                    <span>🇸🇦</span> <span class="text-[10px]">AR</span>
-                </button>
-                <button onclick="changeLanguage('zh')" id="btn-zh" class="flex items-center gap-1 px-2 py-0.5 text-xs font-bold rounded transition-all text-gray-400 hover:text-white bg-transparent">
-                    <span>🇨🇳</span> <span class="text-[10px]">ZH</span>
-                </button>
-            </div>
-        </div>
-
-        <!-- 3. GRÁFICA DE VELAS MÁS GRANDE -->
-        <div class="w-full clean-card rounded-xl p-2.5 shadow-lg">
-            <div class="flex justify-between items-center border-b border-cyan-500/10 pb-1.5 mb-2">
-                <h2 class="text-cyan-400 font-bold text-xs flex items-center gap-1.5">
-                    <span class="w-1.5 h-1.5 rounded-full bg-cyan-400 animate-pulse"></span>
-                    <span data-i18n="liveChartTitle">Gráfica / Velas en Vivo</span>
-                </h2>
-                <span class="text-[9px] text-green-400 bg-green-950/40 border border-green-500/30 px-1.5 py-0.5 rounded font-medium" data-i18n="synced">● Sincronizado</span>
-            </div>
-            <!-- Altura aumentada para ver bien las velas -->
-            <div class="w-full h-[360px] sm:h-[400px] rounded-lg overflow-hidden border border-cyan-500/20 bg-black">
-                <iframe id="dexscreener-iframe" src="" width="100%" height="100%" style="border:0;"></iframe>
-            </div>
-        </div>
-
-        <!-- 4. LOGO PEQUEÑO Y BOTÓN "IR AL TOKEN" ESTILIZADO -->
-        <a id="token-link" href="#" target="_blank" class="w-full clean-card rounded-xl p-2.5 flex items-center justify-between group shadow-sm">
-            <div class="flex items-center gap-2.5">
-                <div class="w-8 h-8 rounded-full border border-cyan-400/40 p-0.5 bg-black flex items-center justify-center shrink-0">
-                    <img src="https://raw.githubusercontent.com/figueredo56/zaard-tracker/refs/heads/main/184%20sin%20t%C3%ADtulo_20260715225022.png" alt="Logo ZARD" class="w-full h-full object-cover rounded-full">
-                </div>
-                <div class="flex flex-col text-left">
-                    <span class="text-xs font-bold text-cyan-200" data-i18n="officialToken">Token Oficial ZARD</span>
-                    <span class="text-[9px] text-gray-400">Binance Web3 Suite</span>
-                </div>
-            </div>
-            <span class="bg-cyan-500 hover:bg-cyan-400 text-black text-[11px] font-bold px-3 py-1.5 rounded-lg shadow-sm group-hover:scale-105 transition-all whitespace-nowrap" data-i18n="goToToken">Ir al Token 🚀</span>
-        </a>
-
-        <!-- 5. ÓRDENES / COMPRAS Y VENTAS EN VIVO LIMPIO -->
-        <div class="w-full clean-card rounded-xl p-2.5 shadow-lg">
-            <div class="flex justify-between items-center border-b border-cyan-500/10 pb-1.5 mb-2">
-                <h3 class="text-cyan-400 font-bold text-xs uppercase tracking-wide flex items-center gap-1.5">
-                    <span>📊</span> <span data-i18n="ordersTitle">Compras y Ventas en Vivo</span>
-                </h3>
-                <span class="text-[9px] text-green-400 bg-green-950/40 border border-green-500/30 px-1.5 py-0.5 rounded font-medium animate-pulse" data-i18n="liveStatus">● Actualizado</span>
-            </div>
+    <div class="main-container py-2">
+        <div class="main-frame p-3 flex flex-col items-center gap-2.5">
             
-            <a id="dexscreener-stream-link" href="#" target="_blank" class="w-full bg-black/60 border border-cyan-500/20 hover:border-cyan-400 rounded-lg flex items-center justify-between p-2.5 group transition-all text-left">
-                <span class="text-gray-300 text-xs font-medium group-hover:text-cyan-200" data-i18n="dexscreenerAction">Ver historial detallado de transacciones</span>
-                <span class="text-cyan-400 text-[11px] font-bold group-hover:translate-x-0.5 transition-transform">Abrir Feed 📈</span>
+            <!-- 1. PORTADA PEQUEÑA Y FINA -->
+            <div class="w-full h-20 sm:h-24 rounded-lg overflow-hidden border border-cyan-500/30 bg-black shadow-sm">
+                <img src="https://raw.githubusercontent.com/figueredo56/zaard-tracker/refs/heads/main/189%20sin%20t%C3%ADtulo_20260720005119_1.png" alt="Portada ZARD" class="w-full h-full object-cover object-center">
+            </div>
+
+            <!-- TÍTULO Y SUBTÍTULO -->
+            <div class="text-center w-full">
+                <h1 class="text-lg sm:text-xl font-extrabold title-gradient uppercase tracking-wider" data-i18n="mainTitle">TRAKER ZARD</h1>
+                <p class="text-[10px] text-gray-400" data-i18n="mainSubtitle">Monitoreo On-Chain - Ecosistema ZAARD</p>
+            </div>
+
+            <!-- BANDERAS DE IDIOMA -->
+            <div class="flex justify-center items-center gap-1 w-full">
+                <div class="flex items-center gap-1 bg-black/85 border border-cyan-500/20 rounded-md p-0.5">
+                    <button onclick="changeLanguage('es')" id="btn-es" class="flex items-center gap-1 px-2 py-0.5 text-[11px] font-bold rounded transition-all bg-cyan-500 text-black">
+                        <span>🇪🇸</span> <span>ES</span>
+                    </button>
+                    <button onclick="changeLanguage('en')" id="btn-en" class="flex items-center gap-1 px-2 py-0.5 text-[11px] font-bold rounded transition-all text-gray-400 hover:text-white bg-transparent">
+                        <span>🇬🇧</span> <span>EN</span>
+                    </button>
+                    <button onclick="changeLanguage('ar')" id="btn-ar" class="flex items-center gap-1 px-2 py-0.5 text-[11px] font-bold rounded transition-all text-gray-400 hover:text-white bg-transparent">
+                        <span>🇸🇦</span> <span>AR</span>
+                    </button>
+                    <button onclick="changeLanguage('zh')" id="btn-zh" class="flex items-center gap-1 px-2 py-0.5 text-[11px] font-bold rounded transition-all text-gray-400 hover:text-white bg-transparent">
+                        <span>🇨🇳</span> <span>ZH</span>
+                    </button>
+                </div>
+            </div>
+
+            <!-- 2. LOGO PEQUEÑO Y BOTÓN "IR AL TOKEN" AL LADO -->
+            <a id="token-link" href="#" target="_blank" class="w-full clean-card rounded-lg p-2 flex items-center justify-between group shadow-sm hover:border-cyan-400 transition-all">
+                <div class="flex items-center gap-2">
+                    <div class="w-7 h-7 rounded-full border border-cyan-400/50 p-0.5 bg-black flex items-center justify-center shrink-0">
+                        <img src="https://raw.githubusercontent.com/figueredo56/zaard-tracker/refs/heads/main/184%20sin%20t%C3%ADtulo_20260715225022.png" alt="Logo ZARD" class="w-full h-full object-cover rounded-full">
+                    </div>
+                    <div class="flex flex-col text-left">
+                        <span class="text-[11px] font-bold text-cyan-200" data-i18n="officialToken">Token Oficial ZARD</span>
+                        <span class="text-[9px] text-gray-400">Binance Web3 Suite</span>
+                    </div>
+                </div>
+                <span class="bg-cyan-500 hover:bg-cyan-400 text-black text-[10px] font-bold px-2.5 py-1 rounded shadow-sm group-hover:scale-105 transition-all whitespace-nowrap" data-i18n="goToToken">Ir al Token 🚀</span>
             </a>
+
+            <!-- 3. GRÁFICA DE VELAS EN VIVO -->
+            <div class="w-full clean-card rounded-lg p-2 shadow-sm">
+                <div class="flex justify-between items-center border-b border-cyan-500/10 pb-1 mb-1.5">
+                    <h2 class="text-cyan-400 font-bold text-[11px] flex items-center gap-1">
+                        <span class="w-1.5 h-1.5 rounded-full bg-cyan-400 animate-pulse"></span>
+                        <span data-i18n="liveChartTitle">Gráfica / Velas en Vivo</span>
+                    </h2>
+                    <span class="text-[9px] text-green-400 bg-green-950/40 border border-green-500/30 px-1.5 py-0.2 rounded font-medium" data-i18n="synced">● Sincronizado</span>
+                </div>
+                <div class="w-full h-[320px] rounded overflow-hidden border border-cyan-500/20 bg-black">
+                    <iframe id="dexscreener-iframe" src="" width="100%" height="100%" style="border:0;"></iframe>
+                </div>
+            </div>
+
+            <!-- 4. ÓRDENES / COMPRAS Y VENTAS EN VIVO -->
+            <div class="w-full clean-card rounded-lg p-2 shadow-sm">
+                <div class="flex justify-between items-center border-b border-cyan-500/10 pb-1 mb-1.5">
+                    <h3 class="text-cyan-400 font-bold text-[11px] uppercase tracking-wide flex items-center gap-1">
+                        <span>📊</span> <span data-i18n="ordersTitle">Compras y Ventas en Vivo</span>
+                    </h3>
+                    <span class="text-[9px] text-green-400 bg-green-950/40 border border-green-500/30 px-1.5 py-0.2 rounded font-medium animate-pulse" data-i18n="liveStatus">● En Vivo</span>
+                </div>
+                
+                <a id="dexscreener-stream-link" href="#" target="_blank" class="w-full bg-black/60 border border-cyan-500/20 hover:border-cyan-400 rounded-lg flex items-center justify-between p-2 group transition-all text-left">
+                    <span class="text-gray-300 text-[11px] font-medium group-hover:text-cyan-200" data-i18n="dexscreenerAction">Ver historial detallado de transacciones</span>
+                    <span class="text-cyan-400 text-[10px] font-bold group-hover:translate-x-0.5 transition-transform">Abrir Feed 📈</span>
+                </a>
+            </div>
+
+            <!-- Pie de página -->
+            <footer class="w-full text-center text-[9px] text-gray-500 border-t border-cyan-500/10 pt-1.5 flex justify-between items-center">
+                <span>TRAKER ZARD &copy; 2026</span>
+                <span class="text-cyan-500/70 font-mono">Secure Environment</span>
+            </footer>
+
         </div>
-
-        <!-- Pie de página -->
-        <footer class="w-full text-center text-[9px] text-gray-500 border-t border-cyan-500/10 pt-2 flex justify-between items-center">
-            <span>TRAKER ZARD &copy; 2026</span>
-            <span class="text-cyan-500/70 font-mono">Secure Environment</span>
-        </footer>
-
     </div>
 
     <script>
@@ -179,7 +185,7 @@
                 officialToken: "Token Oficial ZARD",
                 goToToken: "Ir al Token 🚀",
                 ordersTitle: "Compras y Ventas en Vivo",
-                liveStatus: "● Actualizado",
+                liveStatus: "● En Vivo",
                 dexscreenerAction: "Ver historial detallado de transacciones"
             },
             en: {
@@ -190,7 +196,7 @@
                 officialToken: "Official ZARD Token",
                 goToToken: "Go to Token 🚀",
                 ordersTitle: "Live Buys & Sells",
-                liveStatus: "● Updated",
+                liveStatus: "● Live",
                 dexscreenerAction: "View detailed transaction history"
             },
             ar: {
@@ -201,7 +207,7 @@
                 officialToken: "رمز زارد الرسمي",
                 goToToken: "اذهب إلى الرمز 🚀",
                 ordersTitle: "المشتريات والمبيعات المباشرة",
-                liveStatus: "● محدث",
+                liveStatus: "● مباشر",
                 dexscreenerAction: "عرض سجل المعاملات المفصل"
             },
             zh: {
@@ -212,7 +218,7 @@
                 officialToken: "官方代币 ZARD",
                 goToToken: "前往代币 🚀",
                 ordersTitle: "实时买卖单",
-                liveStatus: "● 已更新",
+                liveStatus: "● 实时",
                 dexscreenerAction: "查看详细交易历史"
             }
         };
@@ -236,9 +242,9 @@
                 const btn = document.getElementById(`btn-${l}`);
                 if (btn) {
                     if (l === lang) {
-                        btn.className = "flex items-center gap-1 px-2 py-0.5 text-xs font-bold rounded transition-all bg-cyan-500 text-black shadow-sm";
+                        btn.className = "flex items-center gap-1 px-2 py-0.5 text-[11px] font-bold rounded transition-all bg-cyan-500 text-black";
                     } else {
-                        btn.className = "flex items-center gap-1 px-2 py-0.5 text-xs font-bold rounded transition-all text-gray-400 hover:text-white bg-transparent";
+                        btn.className = "flex items-center gap-1 px-2 py-0.5 text-[11px] font-bold rounded transition-all text-gray-400 hover:text-white bg-transparent";
                     }
                 }
             });
