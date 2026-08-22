@@ -2,6 +2,7 @@
 <html lang="es" class="dark">
 <head>
     <meta charset="UTF-8">
+    <!-- Bloqueo estricto de zoom para que NUNCA se vea alejado o en miniatura -->
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
     <title>TRAKER ZARD | Global On-Chain Suite</title>
     
@@ -33,6 +34,7 @@
     <style>
         * {
             box-sizing: border-box;
+            touch-action: manipulation; /* Mejora la respuesta táctil en móviles */
         }
         body {
             background: #030008;
