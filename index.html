@@ -2,7 +2,6 @@
 <html lang="es" class="dark">
 <head>
     <meta charset="UTF-8">
-    <!-- Bloqueo estricto de zoom para que NUNCA se vea alejado o en miniatura -->
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
     <title>TRAKER ZARD | Global On-Chain Suite</title>
     
@@ -34,7 +33,7 @@
     <style>
         * {
             box-sizing: border-box;
-            touch-action: manipulation; /* Mejora la respuesta táctil en móviles */
+            touch-action: manipulation;
         }
         body {
             background: #030008;
@@ -78,6 +77,25 @@
             border: 1px solid rgba(0, 255, 255, 0.15);
         }
 
+        /* Estilo optimizado para el banner superior: se adapta solo sin deformarse */
+        .banner-container {
+            width: 100%;
+            border-radius: 8px;
+            overflow: hidden;
+            border: 1px solid rgba(0, 255, 255, 0.3);
+            background: #000;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        .banner-container img {
+            width: 100%;
+            height: auto;
+            max-height: 130px;
+            object-fit: contain; /* Muestra la imagen completa sin recortarla ni deformarla */
+            display: block;
+        }
+
         ::-webkit-scrollbar {
             width: 4px;
             height: 4px;
@@ -96,9 +114,9 @@
     <div class="main-container py-2">
         <div class="main-frame p-3 flex flex-col items-center gap-2.5">
             
-            <!-- 1. PORTADA PEQUEÑA Y FINA -->
-            <div class="w-full h-20 sm:h-24 rounded-lg overflow-hidden border border-cyan-500/30 bg-black shadow-sm">
-                <img src="https://raw.githubusercontent.com/figueredo56/zaard-tracker/refs/heads/main/189%20sin%20t%C3%ADtulo_20260720005119_1.png" alt="Portada ZARD" class="w-full h-full object-cover object-center">
+            <!-- 1. PORTADA ADAPTABLE (Ya no se corta ni se ve fea) -->
+            <div class="banner-container">
+                <img src="https://raw.githubusercontent.com/figueredo56/zaard-tracker/refs/heads/main/189%20sin%20t%C3%ADtulo_20260720005119_1.png" alt="Portada ZARD">
             </div>
 
             <!-- TÍTULO Y SUBTÍTULO -->
@@ -125,7 +143,7 @@
                 </div>
             </div>
 
-            <!-- 2. LOGO PEQUEÑO Y BOTÓN "IR AL TOKEN" AL LADO -->
+            <!-- 2. LOGO PEQUEÑO Y BOTÓN "IR AL TOKEN" -->
             <a id="token-link" href="#" target="_blank" class="w-full clean-card rounded-lg p-2 flex items-center justify-between group shadow-sm hover:border-cyan-400 transition-all">
                 <div class="flex items-center gap-2">
                     <div class="w-7 h-7 rounded-full border border-cyan-400/50 p-0.5 bg-black flex items-center justify-center shrink-0">
