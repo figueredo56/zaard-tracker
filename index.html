@@ -24,7 +24,7 @@
                             gold: '#d4af37',
                             purple: '#a855f7',
                             emerald: '#22c55e',
-                            darkBg: '#050014'
+                            darkBg: '#030008'
                         }
                     }
                 }
@@ -41,14 +41,14 @@
             color: #fff;
             font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
             margin: 0;
-            padding: 8px;
+            padding: 12px 8px;
             width: 100vw;
             min-height: 100vh;
             display: flex;
             justify-content: center;
             align-items: flex-start;
             overflow-x: hidden;
-            background-image: radial-gradient(circle at 50% 0%, rgba(168, 85, 247, 0.12) 0%, transparent 60%);
+            background-image: radial-gradient(circle at 50% 0%, rgba(212, 175, 55, 0.08) 0%, transparent 70%);
         }
 
         .main-container {
@@ -57,42 +57,48 @@
             margin: 0 auto;
             display: flex;
             flex-direction: column;
-            gap: 12px;
+            gap: 16px;
         }
 
         .main-frame {
-            border: 2px solid rgba(212, 175, 55, 0.35);
-            border-radius: 16px;
-            background: linear-gradient(135deg, rgba(10,8,25,0.95), rgba(5,0,20,0.98));
-            box-shadow: 0 0 35px rgba(212, 175, 55, 0.15), inset 0 0 20px rgba(0, 255, 255, 0.05);
+            border: 2px solid rgba(212, 175, 55, 0.4);
+            border-radius: 20px;
+            background: linear-gradient(145deg, rgba(12,10,28,0.98), rgba(4,2,12,0.99));
+            box-shadow: 0 0 40px rgba(212, 175, 55, 0.12), 0 10px 30px rgba(0,0,0,0.9);
             width: 100%;
+            padding: 16px;
+            display: flex;
+            flex-direction: column;
+            gap: 14px;
         }
 
         .title-gradient {
-            background: linear-gradient(135deg, #00ffff 0%, #d4af37 50%, #a855f7 100%);
+            background: linear-gradient(135deg, #00ffff 0%, #d4af37 55%, #a855f7 100%);
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
-            text-shadow: 0 0 15px rgba(0, 255, 255, 0.3);
+            text-shadow: 0 0 20px rgba(0, 255, 255, 0.25);
         }
 
         .clean-card {
-            background: rgba(12, 10, 25, 0.9);
+            background: rgba(16, 14, 35, 0.95);
             border: 1px solid rgba(0, 255, 255, 0.25);
-            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.6);
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.7);
             transition: all 0.3s ease;
+            border-radius: 14px;
+            padding: 12px;
         }
         .clean-card:hover {
             border-color: #d4af37;
-            box-shadow: 0 0 20px rgba(212, 175, 55, 0.25);
+            box-shadow: 0 0 25px rgba(212, 175, 55, 0.2);
         }
 
         .banner-container {
             width: 100%;
-            border-radius: 10px;
+            border-radius: 12px;
             overflow: hidden;
-            border: 2px solid rgba(212, 175, 55, 0.4);
+            border: 2px solid rgba(212, 175, 55, 0.5);
             background: #000;
-            box-shadow: 0 0 20px rgba(212, 175, 55, 0.2);
+            box-shadow: 0 0 25px rgba(212, 175, 55, 0.25);
             display: flex;
             justify-content: center;
             align-items: center;
@@ -100,7 +106,7 @@
         .banner-container img {
             width: 100%;
             height: auto;
-            max-height: 130px;
+            max-height: 150px;
             object-fit: cover;
             display: block;
         }
@@ -120,8 +126,8 @@
 </head>
 <body>
 
-    <div class="main-container py-2">
-        <div class="main-frame p-3.5 flex flex-col items-center gap-3">
+    <div class="main-container">
+        <div class="main-frame">
             
             <!-- 1. PORTADA SUPERIOR -->
             <div class="banner-container">
@@ -129,76 +135,78 @@
             </div>
 
             <!-- TÍTULO Y SUBTÍTULO -->
-            <div class="text-center w-full">
-                <h1 class="text-xl sm:text-2xl font-extrabold title-gradient uppercase tracking-wider" data-i18n="mainTitle">TRAKER ZARD</h1>
-                <p class="text-[10px] text-cyan-300 font-medium tracking-widest uppercase mt-0.5" data-i18n="mainSubtitle">Monitoreo On-Chain - Ecosistema ZAARD</p>
+            <div class="text-center w-full space-y-1">
+                <h1 class="text-2xl font-black title-gradient uppercase tracking-wider" data-i18n="mainTitle">TRAKER ZARD</h1>
+                <p class="text-[11px] text-cyan-300 font-semibold tracking-widest uppercase" data-i18n="mainSubtitle">Monitoreo On-Chain - Ecosistema ZAARD</p>
             </div>
 
             <!-- BANDERAS DE IDIOMA -->
-            <div class="flex justify-center items-center gap-1 w-full">
-                <div class="flex items-center gap-1 bg-black/85 border border-cyan-500/30 rounded-md p-0.5 shadow-inner">
-                    <button onclick="changeLanguage('es')" id="btn-es" class="flex items-center gap-1 px-2 py-0.5 text-[11px] font-bold rounded transition-all bg-cyan-500 text-black shadow-sm">
+            <div class="flex justify-center items-center w-full">
+                <div class="flex items-center gap-1 bg-black/90 border border-cyan-500/30 rounded-lg p-1 shadow-inner">
+                    <button onclick="changeLanguage('es')" id="btn-es" class="flex items-center gap-1 px-2.5 py-1 text-[11px] font-bold rounded-md transition-all bg-cyan-400 text-black shadow">
                         <span>🇪🇸</span> <span>ES</span>
                     </button>
-                    <button onclick="changeLanguage('en')" id="btn-en" class="flex items-center gap-1 px-2 py-0.5 text-[11px] font-bold rounded transition-all text-gray-400 hover:text-white bg-transparent">
+                    <button onclick="changeLanguage('en')" id="btn-en" class="flex items-center gap-1 px-2.5 py-1 text-[11px] font-bold rounded-md transition-all text-gray-400 hover:text-white bg-transparent">
                         <span>🇬🇧</span> <span>EN</span>
                     </button>
-                    <button onclick="changeLanguage('ar')" id="btn-ar" class="flex items-center gap-1 px-2 py-0.5 text-[11px] font-bold rounded transition-all text-gray-400 hover:text-white bg-transparent">
+                    <button onclick="changeLanguage('ar')" id="btn-ar" class="flex items-center gap-1 px-2.5 py-1 text-[11px] font-bold rounded-md transition-all text-gray-400 hover:text-white bg-transparent">
                         <span>🇸🇦</span> <span>AR</span>
                     </button>
-                    <button onclick="changeLanguage('zh')" id="btn-zh" class="flex items-center gap-1 px-2 py-0.5 text-[11px] font-bold rounded transition-all text-gray-400 hover:text-white bg-transparent">
+                    <button onclick="changeLanguage('zh')" id="btn-zh" class="flex items-center gap-1 px-2.5 py-1 text-[11px] font-bold rounded-md transition-all text-gray-400 hover:text-white bg-transparent">
                         <span>🇨🇳</span> <span>ZH</span>
                     </button>
                 </div>
             </div>
 
-            <!-- 2. TARJETA DEL TOKEN CON LOGO Y BOTÓN -->
-            <a id="token-link" href="#" target="_blank" class="w-full clean-card rounded-xl p-3 flex items-center justify-between gap-2.5 group">
+            <!-- 2. TARJETA DEL TOKEN CON BOTÓN CLARO Y DISEÑO PREMIUM -->
+            <a id="token-link" href="#" target="_blank" class="clean-card flex items-center justify-between gap-3 group">
                 <div class="flex items-center gap-3 min-w-0">
-                    <div class="w-9 h-9 rounded-full border-2 border-amber-400/70 p-0.5 bg-black flex items-center justify-center shrink-0 overflow-hidden shadow-[0_0_10px_rgba(212,175,55,0.4)]">
+                    <div class="w-10 h-10 rounded-full border-2 border-amber-400 p-0.5 bg-black flex items-center justify-center shrink-0 overflow-hidden shadow-[0_0_12px_rgba(212,175,55,0.5)]">
                         <img src="https://raw.githubusercontent.com/figueredo56/zaard-tracker/refs/heads/main/184%20sin%20t%C3%ADtulo_20260715225022.png" alt="Logo ZARD" class="w-full h-full object-cover rounded-full">
                     </div>
                     <div class="flex flex-col text-left min-w-0">
                         <span class="text-[12px] font-extrabold text-amber-300 truncate" data-i18n="officialToken">Token Oficial ZARD</span>
-                        <span class="text-[9px] text-cyan-400 font-mono tracking-tight truncate">Binance Web3 Protocol Suite</span>
+                        <span class="text-[9px] text-cyan-300 font-mono tracking-tight truncate">Binance Web3 Protocol Suite</span>
                     </div>
                 </div>
-                <span class="bg-gradient-to-r from-cyan-400 to-amber-400 hover:from-cyan-300 hover:to-amber-300 text-black text-[10px] font-extrabold px-3 py-1.5 rounded-lg shadow-md group-hover:scale-105 transition-all shrink-0 whitespace-nowrap uppercase tracking-wider" data-i18n="goToToken">Ir al Token 🚀</span>
+                <span class="bg-gradient-to-r from-cyan-400 to-amber-400 text-black text-[10px] font-black px-3.5 py-2 rounded-lg shadow-md group-hover:scale-105 transition-all shrink-0 uppercase tracking-wide">
+                    <span data-i18n="goToToken">Ir al Token</span> 🚀
+                </span>
             </a>
 
-            <!-- 3. GRÁFICA DE VELAS EN VIVO Y ORDENES (MEJORADA Y PROFESIONAL) -->
-            <div class="w-full clean-card rounded-xl p-2.5 shadow-md">
-                <div class="flex justify-between items-center border-b border-cyan-500/20 pb-1.5 mb-2">
-                    <h2 class="text-cyan-400 font-extrabold text-[11px] flex items-center gap-1.5 uppercase tracking-wide">
+            <!-- 3. GRÁFICA DE VELAS EN VIVO Y ORDENES -->
+            <div class="clean-card flex flex-col gap-2">
+                <div class="flex justify-between items-center border-b border-cyan-500/20 pb-2">
+                    <h2 class="text-cyan-300 font-extrabold text-[12px] flex items-center gap-2 uppercase tracking-wide">
                         <span class="w-2 h-2 rounded-full bg-emerald-400 animate-ping"></span>
                         <span data-i18n="liveChartTitle">Gráfica / Velas y Órdenes en Vivo</span>
                     </h2>
-                    <span class="text-[9px] text-emerald-300 bg-emerald-950/60 border border-emerald-500/40 px-2 py-0.5 rounded font-bold uppercase tracking-wider" data-i18n="synced">● Nodo Seguro BSC</span>
+                    <span class="text-[9px] text-emerald-300 bg-emerald-950/80 border border-emerald-500/40 px-2 py-0.5 rounded font-bold uppercase tracking-wider" data-i18n="synced">● Nodo BSC</span>
                 </div>
-                <div class="w-full h-[450px] rounded-lg overflow-hidden border border-cyan-500/30 bg-black shadow-inner">
-                    <iframe id="dexscreener-iframe" src="" width="100%" height="100%" style="border:0;"></iframe>
+                <div class="w-full h-[460px] rounded-lg overflow-hidden border border-cyan-500/30 bg-black shadow-inner">
+                    <iframe id="dexscreener-iframe" src="" width="100%" height="100%" style="border:0; background: #000;"></iframe>
                 </div>
             </div>
 
-            <!-- 4. COMPRAS Y VENTAS EN VIVO (CTA AVANZADO) -->
-            <div class="w-full clean-card rounded-xl p-2.5 shadow-md">
-                <div class="flex justify-between items-center border-b border-cyan-500/20 pb-1.5 mb-2">
-                    <h3 class="text-amber-300 font-extrabold text-[11px] uppercase tracking-wide flex items-center gap-1.5">
+            <!-- 4. FLUJO DE TRANSACCIONES MARKET -->
+            <div class="clean-card flex flex-col gap-2">
+                <div class="flex justify-between items-center border-b border-cyan-500/20 pb-2">
+                    <h3 class="text-amber-300 font-extrabold text-[12px] uppercase tracking-wide flex items-center gap-1.5">
                         <span>⚡</span> <span data-i18n="ordersTitle">Flujo de Transacciones Market</span>
                     </h3>
-                    <span class="text-[9px] text-emerald-400 bg-emerald-950/60 border border-emerald-500/40 px-2 py-0.5 rounded font-bold animate-pulse" data-i18n="liveStatus">● Real-Time Feed</span>
+                    <span class="text-[9px] text-emerald-400 bg-emerald-950/80 border border-emerald-500/40 px-2 py-0.5 rounded font-bold animate-pulse" data-i18n="liveStatus">● Real-Time</span>
                 </div>
                 
-                <a id="dexscreener-stream-link" href="#" target="_blank" class="w-full bg-gradient-to-r from-black via-slate-900 to-black border border-cyan-500/30 hover:border-amber-400 rounded-lg flex items-center justify-between p-2.5 group transition-all text-left shadow-sm">
+                <a id="dexscreener-stream-link" href="#" target="_blank" class="w-full bg-black/80 border border-cyan-500/30 hover:border-amber-400 rounded-xl flex items-center justify-between p-3 group transition-all text-left shadow-sm">
                     <span class="text-gray-200 text-[11px] font-semibold group-hover:text-cyan-300" data-i18n="dexscreenerAction">Ver historial detallado de swaps y liquidez</span>
-                    <span class="text-amber-400 text-[10px] font-extrabold group-hover:translate-x-1 transition-transform uppercase">Abrir Feed 📈</span>
+                    <span class="text-amber-400 text-[11px] font-black group-hover:translate-x-1 transition-transform uppercase">Feed 📈</span>
                 </a>
             </div>
 
             <!-- Pie de página -->
-            <footer class="w-full text-center text-[9px] text-gray-400 border-t border-cyan-500/20 pt-2 flex justify-between items-center font-mono">
+            <footer class="w-full text-center text-[10px] text-gray-400 border-t border-cyan-500/20 pt-3 flex justify-between items-center font-mono">
                 <span>TRAKER ZARD &copy; 2026</span>
-                <span class="text-amber-400 font-bold tracking-widest">DECENTRALIZED 100%</span>
+                <span class="text-amber-400 font-bold tracking-widest">100% DECENTRALIZED</span>
             </footer>
 
         </div>
@@ -209,45 +217,45 @@
             es: {
                 mainTitle: "TRAKER ZARD",
                 mainSubtitle: "Monitoreo On-Chain - Ecosistema ZAARD",
-                liveChartTitle: "Gráfica / Velas y Órdenes en Vivo",
-                synced: "● Nodo Seguro BSC",
+                liveChartTitle: "Gráfica / Velas y Órdenes",
+                synced: "● Nodo BSC",
                 officialToken: "Token Oficial ZARD",
-                goToToken: "Ir al Token 🚀",
+                goToToken: "Ir al Token",
                 ordersTitle: "Flujo de Transacciones Market",
-                liveStatus: "● Real-Time Feed",
+                liveStatus: "● Real-Time",
                 dexscreenerAction: "Ver historial detallado de swaps y liquidez"
             },
             en: {
                 mainTitle: "TRAKER ZARD",
                 mainSubtitle: "On-Chain Monitoring - ZAARD Ecosystem",
                 liveChartTitle: "Live Chart / Candles & Orders",
-                synced: "● Secure BSC Node",
+                synced: "● BSC Node",
                 officialToken: "Official ZARD Token",
-                goToToken: "Go to Token 🚀",
+                goToToken: "Go to Token",
                 ordersTitle: "Market Transaction Flow",
-                liveStatus: "● Real-Time Feed",
+                liveStatus: "● Real-Time",
                 dexscreenerAction: "View detailed swaps and liquidity history"
             },
             ar: {
                 mainTitle: "تراكر زارد",
                 mainSubtitle: "مراقبة سلسة - نظام زارد",
-                liveChartTitle: "الرسم البياني والطلبات المباشرة",
-                synced: "● عقدة أمان BSC",
+                liveChartTitle: "الرسم البياني والطلبات",
+                synced: "● عقدة BSC",
                 officialToken: "رمز زارد الرسمي",
-                goToToken: "اذهب إلى الرمز 🚀",
+                goToToken: "اذهب للرمز",
                 ordersTitle: "تدفق المعاملات الفورية",
-                liveStatus: "● بث مباشر",
+                liveStatus: "● مباشر",
                 dexscreenerAction: "عرض سجل الصفقات والسيولة المفصل"
             },
             zh: {
                 mainTitle: "扎ード トラッカー",
                 mainSubtitle: "链上监控 - 扎ード生态系统",
                 liveChartTitle: "实时图表 / K线与订单",
-                synced: "● BSC 安全节点",
+                synced: "● BSC 节点",
                 officialToken: "官方代币 ZARD",
-                goToToken: "前往代币 🚀",
+                goToToken: "前往代币",
                 ordersTitle: "市场交易流",
-                liveStatus: "● 实时动态",
+                liveStatus: "● 实时",
                 dexscreenerAction: "查看详细兑换和流动性历史"
             }
         };
@@ -271,9 +279,9 @@
                 const btn = document.getElementById(`btn-${l}`);
                 if (btn) {
                     if (l === lang) {
-                        btn.className = "flex items-center gap-1 px-2 py-0.5 text-[11px] font-bold rounded transition-all bg-cyan-500 text-black shadow-sm";
+                        btn.className = "flex items-center gap-1 px-2.5 py-1 text-[11px] font-bold rounded-md transition-all bg-cyan-400 text-black shadow";
                     } else {
-                        btn.className = "flex items-center gap-1 px-2 py-0.5 text-[11px] font-bold rounded transition-all text-gray-400 hover:text-white bg-transparent";
+                        btn.className = "flex items-center gap-1 px-2.5 py-1 text-[11px] font-bold rounded-md transition-all text-gray-400 hover:text-white bg-transparent";
                     }
                 }
             });
@@ -286,11 +294,11 @@
             changeLanguage(savedLang);
         });
 
-        // Configuración oficial actualizada con el nuevo contrato y parámetros visuales avanzados
+        // Contrato oficial actualizado y parametrización correcta para carga instantánea del widget
         const ZARD_CONTRACT = "0x973ba2c1dccd0820f1e026d6b1f01c55c4085d38";
         
         document.getElementById('token-link').href = `https://app.binance.com/uni-qr/web3-token-details?utm_medium=share&tokenCA=${ZARD_CONTRACT}&binanceChainId=56&chain=bsc`;
-        document.getElementById('dexscreener-iframe').src = `https://dexscreener.com/bsc/${ZARD_CONTRACT}?embed=1&theme=dark&trades=1&info=0`;
+        document.getElementById('dexscreener-iframe').src = `https://dexscreener.com/bsc/${ZARD_CONTRACT}?embed=1&theme=dark&trades=1&info=0&chartLeftToolbar=0`;
         document.getElementById('dexscreener-stream-link').href = `https://dexscreener.com/bsc/${ZARD_CONTRACT}`;
     </script>
 </body>
