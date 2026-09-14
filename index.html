@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>ZARD Innovation | Ultimate Web3 Ecosystem & Live Tracker</title>
+    <title>ZARD Innovation | Space Galaxy Tracker</title>
     <!-- Tailwind CSS -->
     <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
     <!-- Google Fonts -->
@@ -13,135 +13,144 @@
     <!-- Canvas Confetti -->
     <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.6.0/dist/confetti.browser.min.js"></script>
     <style>
-        body { font-family: 'Inter', sans-serif; background-color: #07090e; color: #e2e8f0; overflow-x: hidden; }
+        body { 
+            font-family: 'Inter', sans-serif; 
+            background-color: #030008; 
+            color: #e2e8f0; 
+            overflow-x: hidden;
+            /* Fondo tipo espacio sideral con estrellas y nebulosas */
+            background-image: 
+                radial-gradient(circle at 20% 30%, rgba(168, 85, 247, 0.15) 0%, transparent 40%),
+                radial-gradient(circle at 80% 70%, rgba(59, 130, 246, 0.15) 0%, transparent 40%),
+                radial-gradient(circle at 50% 50%, rgba(15, 5, 30, 0.8) 0%, #020005 100%);
+            background-attachment: fixed;
+        }
         .font-crypto { font-family: 'Orbitron', sans-serif; }
-        .glow-box { box-shadow: 0 0 40px rgba(16, 185, 129, 0.25); }
-        .glass-card { background: rgba(13, 17, 23, 0.85); backdrop-filter: blur(18px); border: 1px solid rgba(16, 185, 129, 0.2); }
-        .neon-border { border: 1px solid rgba(16, 185, 129, 0.4); box-shadow: 0 0 20px rgba(16, 185, 129, 0.15); }
+        .glow-box { box-shadow: 0 0 40px rgba(168, 85, 247, 0.25); }
+        .glass-card { background: rgba(13, 8, 24, 0.85); backdrop-filter: blur(18px); border: 1px solid rgba(168, 85, 247, 0.25); }
+        .neon-border { border: 1px solid rgba(168, 85, 247, 0.4); box-shadow: 0 0 20px rgba(168, 85, 247, 0.15); }
+        .neon-border-blue { border: 1px solid rgba(59, 130, 246, 0.4); box-shadow: 0 0 20px rgba(59, 130, 246, 0.15); }
         
         @keyframes pulseGlow {
-            0%, 100% { box-shadow: 0 0 20px rgba(16, 185, 129, 0.4); }
-            50% { box-shadow: 0 0 50px rgba(16, 185, 129, 0.9); }
+            0%, 100% { box-shadow: 0 0 20px rgba(168, 85, 247, 0.4); }
+            50% { box-shadow: 0 0 50px rgba(59, 130, 246, 0.8); }
         }
         .pulse-effect { animation: pulseGlow 3s infinite; }
 
         @keyframes floatLogo {
             0%, 100% { transform: translateY(0px) rotate(0deg); }
-            50% { transform: translateY(-10px) rotate(2deg); }
+            50% { transform: translateY(-8px) rotate(2deg); }
         }
         .floating { animation: floatLogo 4s ease-in-out infinite; }
 
-        /* Transiciones de pantallas */
         .screen-transition { transition: opacity 0.8s ease, transform 0.8s ease; }
         
         ::-webkit-scrollbar { width: 6px; height: 6px; }
-        ::-webkit-scrollbar-track { background: #07090e; }
-        ::-webkit-scrollbar-thumb { background: #10b981; border-radius: 3px; }
+        ::-webkit-scrollbar-track { background: #030008; }
+        ::-webkit-scrollbar-thumb { background: #a855f7; border-radius: 3px; }
     </style>
 </head>
-<body class="min-h-screen flex flex-col selection:bg-emerald-500 selection:text-black">
+<body class="min-h-screen flex flex-col selection:bg-purple-500 selection:text-white">
 
     <!-- ========================================== -->
-    <!-- PANTALLA 1: BIENVENIDA MAJESTUOSA (SPLASH) -->
+    <!-- PANTALLA 1: BIENVENIDA MAJESTUOSA (SPACE SPLASH) -->
     <!-- ========================================== -->
-    <div id="splash-screen" class="fixed inset-0 z-50 bg-[#05070a] flex flex-col items-center justify-center p-4 screen-transition">
-        <!-- Fondo Animado de Luces Cibernéticas -->
-        <div class="absolute inset-0 overflow-hidden pointer-events-none opacity-20">
-            <div class="absolute top-1/4 left-1/4 w-96 h-96 bg-emerald-500 rounded-full filter blur-[120px] animate-pulse"></div>
-            <div class="absolute bottom-1/4 right-1/4 w-96 h-96 bg-cyan-500 rounded-full filter blur-[120px] animate-pulse" style="animation-delay: 1.5s;"></div>
+    <div id="splash-screen" class="fixed inset-0 z-50 bg-[#030008] flex flex-col items-center justify-center p-4 screen-transition">
+        <!-- Fondo Espacial Animado -->
+        <div class="absolute inset-0 overflow-hidden pointer-events-none opacity-30">
+            <div class="absolute top-1/4 left-1/4 w-96 h-96 bg-purple-600 rounded-full filter blur-[140px] animate-pulse"></div>
+            <div class="absolute bottom-1/4 right-1/4 w-96 h-96 bg-blue-600 rounded-full filter blur-[140px] animate-pulse" style="animation-delay: 1.5s;"></div>
         </div>
 
         <div class="relative z-10 max-w-xl w-full text-center glass-card p-8 sm:p-10 rounded-3xl neon-border glow-box">
-            <!-- Logo Magnífico -->
-            <div class="w-24 h-24 rounded-2xl bg-gradient-to-tr from-emerald-600 via-teal-500 to-cyan-400 mx-auto flex items-center justify-center font-crypto font-black text-black text-4xl shadow-2xl shadow-emerald-500/50 mb-6 floating pulse-effect">
-                Z
+            <!-- LOGO OFICIAL REAL -->
+            <div class="w-24 h-24 rounded-2xl mx-auto flex items-center justify-center shadow-2xl shadow-purple-500/50 mb-6 floating pulse-effect overflow-hidden border-2 border-purple-500/50 bg-black">
+                <img src="https://photos.pinksale.finance/file/pinksale-logo-upload/1788644497011-a93d76e16114b626547afc4936d073d2.png" alt="ZARD Logo" class="w-full h-full object-cover">
             </div>
 
-            <!-- Títulos con traducción dinámica -->
             <h1 id="splash-title" class="font-crypto text-2xl sm:text-3xl font-black text-white tracking-wider mb-2">
                 ZARD INNOVATION
             </h1>
-            <p id="splash-subtitle" class="text-xs sm:text-sm text-emerald-400 font-semibold mb-6 tracking-wide">
-                EL ECOSISTEMA WEB3 MÁS AVANZADO DE LA BNB SMART CHAIN
+            <p id="splash-subtitle" class="text-xs sm:text-sm text-purple-400 font-semibold mb-6 tracking-wide">
+                EL ECOSISTEMA GALAXY WEB3 EN LA BNB SMART CHAIN
             </p>
 
-            <div class="border-t border-emerald-950/80 pt-6 mb-6">
+            <div class="border-t border-purple-950/80 pt-6 mb-6">
                 <p id="splash-select-lang" class="text-xs text-gray-400 uppercase tracking-widest mb-4">
                     Selecciona tu Idioma / Select Language / اختر لغتك / 选择语言
                 </p>
-                <!-- Botones de Idiomas -->
                 <div class="grid grid-cols-2 sm:grid-cols-4 gap-3">
-                    <button onclick="setLanguage('es')" class="lang-btn bg-emerald-950/60 hover:bg-emerald-500 hover:text-black border border-emerald-700/60 text-emerald-300 font-crypto font-bold py-2.5 rounded-xl text-xs transition-all flex items-center justify-center space-x-1.5">
+                    <button onclick="setLanguage('es')" class="lang-btn bg-purple-950/40 hover:bg-purple-600 hover:text-white border border-purple-700/60 text-purple-300 font-crypto font-bold py-2.5 rounded-xl text-xs transition-all flex items-center justify-center space-x-1.5">
                         <span>🇪🇸 Español</span>
                     </button>
-                    <button onclick="setLanguage('en')" class="lang-btn bg-emerald-950/60 hover:bg-emerald-500 hover:text-black border border-emerald-700/60 text-emerald-300 font-crypto font-bold py-2.5 rounded-xl text-xs transition-all flex items-center justify-center space-x-1.5">
+                    <button onclick="setLanguage('en')" class="lang-btn bg-purple-950/40 hover:bg-purple-600 hover:text-white border border-purple-700/60 text-purple-300 font-crypto font-bold py-2.5 rounded-xl text-xs transition-all flex items-center justify-center space-x-1.5">
                         <span>🇬🇧 English</span>
                     </button>
-                    <button onclick="setLanguage('ar')" class="lang-btn bg-emerald-950/60 hover:bg-emerald-500 hover:text-black border border-emerald-700/60 text-emerald-300 font-crypto font-bold py-2.5 rounded-xl text-xs transition-all flex items-center justify-center space-x-1.5">
+                    <button onclick="setLanguage('ar')" class="lang-btn bg-purple-950/40 hover:bg-purple-600 hover:text-white border border-purple-700/60 text-purple-300 font-crypto font-bold py-2.5 rounded-xl text-xs transition-all flex items-center justify-center space-x-1.5">
                         <span>🇦🇪 العربية</span>
                     </button>
-                    <button onclick="setLanguage('zh')" class="lang-btn bg-emerald-950/60 hover:bg-emerald-500 hover:text-black border border-emerald-700/60 text-emerald-300 font-crypto font-bold py-2.5 rounded-xl text-xs transition-all flex items-center justify-center space-x-1.5">
+                    <button onclick="setLanguage('zh')" class="lang-btn bg-purple-950/40 hover:bg-purple-600 hover:text-white border border-purple-700/60 text-purple-300 font-crypto font-bold py-2.5 rounded-xl text-xs transition-all flex items-center justify-center space-x-1.5">
                         <span>🇨🇳 中文</span>
                     </button>
                 </div>
             </div>
 
-            <!-- Botón de Entrada Mágica -->
-            <button onclick="enterTracker()" class="w-full bg-gradient-to-r from-emerald-500 via-teal-400 to-cyan-400 hover:from-emerald-400 hover:to-cyan-300 text-black font-crypto font-black py-3.5 rounded-2xl text-sm transition-all shadow-xl shadow-emerald-500/40 flex items-center justify-center space-x-3 transform hover:scale-[1.02]">
-                <i class="fa-solid fa-rocket animate-bounce text-base"></i>
-                <span id="splash-enter-btn">ENTRAR AL TRACKER PROFESIONAL</span>
+            <button onclick="enterTracker()" class="w-full bg-gradient-to-r from-purple-600 via-indigo-600 to-blue-600 hover:from-purple-500 hover:to-blue-500 text-white font-crypto font-black py-3.5 rounded-2xl text-sm transition-all shadow-xl shadow-purple-600/40 flex items-center justify-center space-x-3 transform hover:scale-[1.02]">
+                <i class="fa-solid fa-rocket animate-bounce text-base text-purple-300"></i>
+                <span id="splash-enter-btn">ENTRAR AL TRACKER GALAXY</span>
             </button>
         </div>
     </div>
 
 
     <!-- ========================================== -->
-    <!-- PANTALLA 2: TRACKER PRINCIPAL ZARD (OCULTO INICIALMENTE) -->
+    <!-- PANTALLA 2: TRACKER PRINCIPAL (GALAXY MODE) -->
     <!-- ========================================== -->
     <div id="main-app" class="min-h-screen flex flex-col opacity-0 screen-transition pointer-events-none hidden">
 
         <!-- HEADER / NAVBAR -->
-        <header class="border-b border-emerald-950 bg-[#07090e]/95 sticky top-0 backdrop-blur-md z-40">
+        <header class="border-b border-purple-950/80 bg-[#030008]/90 sticky top-0 backdrop-blur-md z-40">
             <div class="max-w-7xl mx-auto px-4 h-18 flex items-center justify-between">
                 <div class="flex items-center space-x-3">
-                    <div class="w-10 h-10 sm:w-11 sm:h-11 rounded-xl bg-gradient-to-tr from-emerald-600 via-teal-500 to-cyan-400 flex items-center justify-center font-crypto font-bold text-black text-lg sm:text-xl shadow-lg shadow-emerald-900/50 pulse-effect">
-                        Z
+                    <!-- LOGO OFICIAL EN HEADER -->
+                    <div class="w-10 h-10 sm:w-11 sm:h-11 rounded-xl overflow-hidden border border-purple-500/50 shadow-lg shadow-purple-900/50 pulse-effect bg-black">
+                        <img src="https://photos.pinksale.finance/file/pinksale-logo-upload/1788644497011-a93d76e16114b626547afc4936d073d2.png" alt="ZARD Logo" class="w-full h-full object-cover">
                     </div>
                     <div>
                         <div class="flex items-center space-x-2">
-                            <h1 class="font-crypto font-bold text-base sm:text-xl text-white tracking-wider">ZARD <span class="text-emerald-400 text-[10px] sm:text-xs px-2 py-0.5 bg-emerald-950/80 border border-emerald-700/60 rounded-full">BSC LIVE</span></h1>
+                            <h1 class="font-crypto font-bold text-base sm:text-xl text-white tracking-wider">ZARD <span class="text-purple-400 text-[10px] sm:text-xs px-2 py-0.5 bg-purple-950/80 border border-purple-700/60 rounded-full">BSC GALAXY</span></h1>
                         </div>
                         <p class="text-[11px] text-gray-400" id="header-pool-label">PancakeSwap V2 Pool</p>
                     </div>
                 </div>
 
-                <!-- Datos Rápidos Header (Oculto en móvil chico, visible en tablet/PC) -->
+                <!-- Datos Rápidos Header -->
                 <div class="hidden md:flex items-center space-x-8 text-sm">
                     <div>
                         <span class="text-gray-500 text-[11px] uppercase tracking-wider block" data-i18n="price_label">Precio USD</span>
-                        <span id="header-price" class="font-crypto font-bold text-emerald-400 text-base">$0.0004821</span>
+                        <span id="header-price" class="font-crypto font-bold text-purple-400 text-base">$0.0001220</span>
                     </div>
                     <div>
                         <span class="text-gray-500 text-[11px] uppercase tracking-wider block" data-i18n="change_label">Cambio 24h</span>
-                        <span id="header-change" class="font-bold text-emerald-400 text-base">+34.82% ▲</span>
+                        <span id="header-change" class="font-bold text-emerald-400 text-base">+4.77% ▲</span>
                     </div>
                     <div>
                         <span class="text-gray-500 text-[11px] uppercase tracking-wider block" data-i18n="vol_label">Volumen 24h</span>
-                        <span id="header-volume" class="font-bold text-white text-base">$142,850</span>
+                        <span id="header-volume" class="font-bold text-white text-base">$12,450</span>
                     </div>
                 </div>
 
-                <!-- Botones de Acción y Selector de Idioma Rápido -->
+                <!-- Controles -->
                 <div class="flex items-center space-x-2 sm:space-x-3">
-                    <select id="lang-switcher" onchange="changeLanguageDirect(this.value)" class="bg-emerald-950/80 border border-emerald-700 text-emerald-300 text-xs rounded-xl px-2.5 py-2 font-crypto focus:outline-none">
+                    <select id="lang-switcher" onchange="changeLanguageDirect(this.value)" class="bg-purple-950/80 border border-purple-700 text-purple-300 text-xs rounded-xl px-2.5 py-2 font-crypto focus:outline-none">
                         <option value="es">🇪🇸 ES</option>
                         <option value="en">🇬🇧 EN</option>
                         <option value="ar">🇦🇪 AR</option>
                         <option value="zh">🇨🇳 ZH</option>
                     </select>
 
-                    <a href="https://pancakeswap.finance/swap?outputCurrency=0x973ba2c1dccd0820f1e026d6b1f01c55c4085d38" target="_blank" class="bg-gradient-to-r from-emerald-500 to-teal-400 hover:from-emerald-400 hover:to-teal-300 text-black font-extrabold px-3 sm:px-5 py-2 sm:py-2.5 rounded-xl text-xs font-crypto transition-all shadow-lg shadow-emerald-500/30 flex items-center space-x-1.5">
-                        <i class="fa-solid fa-rocket animate-bounce"></i>
+                    <a href="https://pancakeswap.finance/swap?outputCurrency=0x973ba2c1dccd0820f1e026d6b1f01c55c4085d38" target="_blank" class="bg-gradient-to-r from-purple-600 to-blue-600 hover:from-purple-500 hover:to-blue-500 text-white font-extrabold px-3 sm:px-5 py-2 sm:py-2.5 rounded-xl text-xs font-crypto transition-all shadow-lg shadow-purple-600/30 flex items-center space-x-1.5">
+                        <i class="fa-solid fa-bolt animate-bounce text-yellow-300"></i>
                         <span class="hidden sm:inline" data-i18n="buy_btn">COMPRAR ZARD</span>
                         <span class="sm:hidden">COMPRAR</span>
                     </a>
@@ -149,41 +158,40 @@
             </div>
         </header>
 
-        <!-- MAIN CONTENT GRID (Adaptable PC y Móvil) -->
+        <!-- MAIN GRID (Métricas Reales Ajustadas) -->
         <main class="flex-1 max-w-7xl w-full mx-auto p-3 sm:p-4 grid grid-cols-1 lg:grid-cols-4 gap-4">
             
-            <!-- COLUMNA IZQUIERDA Y CENTRO: Métricas y Gráfico -->
             <div class="lg:col-span-3 flex flex-col space-y-4">
                 
-                <!-- Barra de Métricas Superiores -->
+                <!-- Métricas Reales y Realistas -->
                 <div class="grid grid-cols-2 sm:grid-cols-4 gap-3">
                     <div class="glass-card p-3 sm:p-3.5 rounded-2xl neon-border">
-                        <span class="text-[11px] text-gray-400 flex items-center justify-between"><span data-i18n="mcap_label">Market Cap</span> <i class="fa-solid fa-chart-pie text-emerald-400"></i></span>
-                        <span id="stat-mcap" class="font-crypto text-base sm:text-lg font-bold text-white mt-1 block">$4,821,000</span>
+                        <span class="text-[11px] text-gray-400 flex items-center justify-between"><span data-i18n="mcap_label">Market Cap</span> <i class="fa-solid fa-chart-pie text-purple-400"></i></span>
+                        <span id="stat-mcap" class="font-crypto text-base sm:text-lg font-bold text-white mt-1 block">$122,000</span>
+                    </div>
+                    <div class="glass-card p-3 sm:p-3.5 rounded-2xl neon-border-blue">
+                        <span class="text-[11px] text-gray-400 flex items-center justify-between"><span data-i18n="tvl_label">Liquidez TVL</span> <i class="fa-solid fa-water text-blue-400"></i></span>
+                        <span id="stat-liquidity" class="font-crypto text-base sm:text-lg font-bold text-white mt-1 block">$24,500</span>
                     </div>
                     <div class="glass-card p-3 sm:p-3.5 rounded-2xl neon-border">
-                        <span class="text-[11px] text-gray-400 flex items-center justify-between"><span data-i18n="tvl_label">Liquidez TVL</span> <i class="fa-solid fa-water text-cyan-400"></i></span>
-                        <span id="stat-liquidity" class="font-crypto text-base sm:text-lg font-bold text-white mt-1 block">$310,400</span>
+                        <span class="text-[11px] text-gray-400 flex items-center justify-between"><span data-i18n="holders_label">Holders</span> <i class="fa-solid fa-users text-purple-300"></i></span>
+                        <span id="stat-holders" class="font-crypto text-base sm:text-lg font-bold text-white mt-1 block">348</span>
                     </div>
-                    <div class="glass-card p-3 sm:p-3.5 rounded-2xl neon-border">
-                        <span class="text-[11px] text-gray-400 flex items-center justify-between"><span data-i18n="holders_label">Holders</span> <i class="fa-solid fa-users text-purple-400"></i></span>
-                        <span id="stat-holders" class="font-crypto text-base sm:text-lg font-bold text-white mt-1 block">2,418</span>
-                    </div>
-                    <div class="glass-card p-3 sm:p-3.5 rounded-2xl neon-border">
-                        <span class="text-[11px] text-gray-400 flex items-center justify-between"><span data-i18n="wbnb_label">Pooled WBNB</span> <i class="fa-solid fa-coins text-amber-400"></i></span>
-                        <span id="stat-wbnb" class="font-crypto text-base sm:text-lg font-bold text-white mt-1 block">512.4 WBNB</span>
+                    <div class="glass-card p-3 sm:p-3.5 rounded-2xl neon-border-blue">
+                        <span class="text-[11px] text-gray-400 flex items-center justify-between"><span data-i18n="wbnb_label">Pooled WBNB</span> <i class="fa-solid fa-coins text-blue-300"></i></span>
+                        <span id="stat-wbnb" class="font-crypto text-base sm:text-lg font-bold text-white mt-1 block">41.2 WBNB</span>
                     </div>
                 </div>
 
-                <!-- CONTENEDOR DEL GRÁFICO EN VIVO (Responsive Height) -->
+                <!-- CONTENEDOR DEL GRÁFICO (GeckoTerminal) -->
                 <div class="glass-card rounded-2xl overflow-hidden flex flex-col h-[420px] sm:h-[520px] relative neon-border">
-                    <div class="p-3 bg-gray-900/80 border-b border-emerald-950 flex items-center justify-between">
+                    <div class="p-3 bg-gray-950/80 border-b border-purple-950 flex items-center justify-between">
                         <div class="flex items-center space-x-2">
-                            <span class="w-3 h-3 rounded-full bg-emerald-500 animate-ping"></span>
-                            <span class="font-crypto text-[11px] sm:text-xs font-bold text-emerald-300" data-i18n="live_chart_title">LIVE CANDLESTICK CHART (ZARD/WBNB)</span>
+                            <span class="w-3 h-3 rounded-full bg-purple-500 animate-ping"></span>
+                            <span class="font-crypto text-[11px] sm:text-xs font-bold text-purple-300" data-i18n="live_chart_title">LIVE GALAXY CHART (ZARD/WBNB)</span>
                         </div>
                         <div class="hidden sm:flex space-x-2 text-xs">
-                            <span class="text-emerald-400 bg-emerald-950/60 border border-emerald-800 px-3 py-1 rounded-lg" data-i18n="pool_active">PancakeSwap V2 Pool Active</span>
+                            <span class="text-purple-300 bg-purple-950/60 border border-purple-800 px-3 py-1 rounded-lg" data-i18n="pool_active">PancakeSwap V2 Pool Active</span>
                         </div>
                     </div>
                     <div class="flex-1 w-full bg-black">
@@ -191,42 +199,39 @@
                     </div>
                 </div>
 
-                <!-- CONTRATOS OFICIALES (Adaptable móviles) -->
+                <!-- CONTRATOS -->
                 <div class="glass-card p-3.5 rounded-2xl text-xs flex flex-col md:flex-row items-center justify-between gap-3 text-gray-400 neon-border">
                     <div class="flex items-center space-x-2 w-full overflow-hidden">
                         <span class="font-bold text-gray-200">Token:</span>
-                        <code class="bg-black/60 px-2 py-1 rounded text-emerald-400 truncate text-[11px]">0x973ba2c1dccd0820f1e026d6b1f01c55c4085d38</code>
-                        <button onclick="navigator.clipboard.writeText('0x973ba2c1dccd0820f1e026d6b1f01c55c4085d38'); alert('¡Copiado!');" class="hover:text-emerald-300"><i class="fa-regular fa-copy"></i></button>
+                        <code class="bg-black/60 px-2 py-1 rounded text-purple-300 truncate text-[11px]">0x973ba2c1dccd0820f1e026d6b1f01c55c4085d38</code>
+                        <button onclick="navigator.clipboard.writeText('0x973ba2c1dccd0820f1e026d6b1f01c55c4085d38'); alert('¡Copiado!');" class="hover:text-purple-200"><i class="fa-regular fa-copy"></i></button>
                     </div>
                     <div class="flex items-center space-x-2 w-full overflow-hidden">
                         <span class="font-bold text-gray-200">LP:</span>
-                        <code class="bg-black/60 px-2 py-1 rounded text-cyan-400 truncate text-[11px]">0x046dd1d5c62a6dffafaa4886b3004fed7d409dd3</code>
-                        <button onclick="navigator.clipboard.writeText('0x046dd1d5c62a6dffafaa4886b3004fed7d409dd3'); alert('¡Copiado!');" class="hover:text-cyan-300"><i class="fa-regular fa-copy"></i></button>
+                        <code class="bg-black/60 px-2 py-1 rounded text-blue-300 truncate text-[11px]">0x046dd1d5c62a6dffafaa4886b3004fed7d409dd3</code>
+                        <button onclick="navigator.clipboard.writeText('0x046dd1d5c62a6dffafaa4886b3004fed7d409dd3'); alert('¡Copiado!');" class="hover:text-blue-200"><i class="fa-regular fa-copy"></i></button>
                     </div>
                 </div>
             </div>
 
-            <!-- COLUMNA DERECHA: Live Trades & Experiencia Interactiva -->
+            <!-- COLUMNA DERECHA: Live Trades -->
             <div class="lg:col-span-1 flex flex-col space-y-4">
                 
                 <div class="glass-card rounded-2xl p-3 flex flex-col h-[500px] lg:h-[650px] neon-border">
-                    <div class="flex items-center justify-between border-b border-emerald-950 pb-2 mb-3">
-                        <span class="text-xs font-crypto font-bold text-emerald-400 flex items-center space-x-1.5">
-                            <i class="fa-solid fa-bolt-lightning text-yellow-400"></i>
+                    <div class="flex items-center justify-between border-b border-purple-950 pb-2 mb-3">
+                        <span class="text-xs font-crypto font-bold text-purple-300 flex items-center space-x-1.5">
+                            <i class="fa-solid fa-satellite-dish text-blue-400"></i>
                             <span data-i18n="trades_title">LIVE WALLET TRADES</span>
                         </span>
-                        <span class="text-[10px] bg-emerald-950 text-emerald-400 px-2 py-0.5 rounded border border-emerald-800">Realtime</span>
+                        <span class="text-[10px] bg-purple-950 text-purple-300 px-2 py-0.5 rounded border border-purple-800">Galaxy Feed</span>
                     </div>
 
-                    <!-- Lista de Transacciones -->
-                    <div class="flex-1 overflow-y-auto space-y-2.5 pr-1" id="trades-container">
-                        <!-- Trades dinámicos -->
-                    </div>
+                    <!-- Lista de Trades -->
+                    <div class="flex-1 overflow-y-auto space-y-2.5 pr-1" id="trades-container"></div>
 
-                    <!-- Banner Informativo -->
-                    <div class="mt-3 p-3 rounded-xl bg-gradient-to-r from-emerald-950/60 to-teal-950/40 border border-emerald-800/40 text-center">
-                        <p class="text-[11px] text-emerald-300 font-semibold mb-0.5" data-i18n="banner_title">✨ ZARD Innovation Active</p>
-                        <p class="text-[10px] text-gray-400" data-i18n="banner_desc">Celebraciones de compra y eventos en vivo activos.</p>
+                    <div class="mt-3 p-3 rounded-xl bg-gradient-to-r from-purple-950/40 to-blue-950/40 border border-purple-800/40 text-center">
+                        <p class="text-[11px] text-purple-300 font-semibold mb-0.5" data-i18n="banner_title">✨ ZARD Galaxy Active</p>
+                        <p class="text-[10px] text-gray-400" data-i18n="banner_desc">Alertas instantáneas de compra activadas.</p>
                     </div>
                 </div>
 
@@ -234,53 +239,39 @@
 
         </main>
 
-        <!-- FOOTER -->
-        <footer class="border-t border-emerald-950/60 py-4 text-center text-xs text-gray-500 bg-[#07090e]">
-            <p>ZARD Ultimate Tracker © 2026 — BNB Smart Chain</p>
+        <footer class="border-t border-purple-950/60 py-4 text-center text-xs text-gray-500 bg-[#030008]">
+            <p>ZARD Space Galaxy Tracker © 2026 — BNB Smart Chain</p>
         </footer>
 
     </div>
 
-    <!-- MODAL WOW / EXPERIENCIA VISUAL AL COMPRAR -->
-    <div id="buy-modal" class="fixed inset-0 bg-black/85 backdrop-blur-lg z-50 flex items-center justify-center hidden opacity-0 transition-opacity duration-300 p-4">
-        <div class="glass-card max-w-md w-full p-6 rounded-3xl neon-border text-center relative transform scale-95 transition-transform duration-300" id="modal-content">
-            <button onclick="closeBuyModal()" class="absolute top-4 right-4 text-gray-400 hover:text-white text-lg"><i class="fa-solid fa-xmark"></i></button>
+    <!-- MODAL DE FESTEJO RÁPIDO (Dura exactamente 1.5 segundos) -->
+    <div id="buy-modal" class="fixed inset-0 bg-black/80 backdrop-blur-md z-50 flex items-center justify-center hidden opacity-0 transition-opacity duration-200 p-4 pointer-events-none">
+        <div class="glass-card max-w-xs w-full p-5 rounded-2xl neon-border text-center relative transform scale-90 transition-transform duration-200" id="modal-content">
             
-            <div class="w-16 h-16 bg-gradient-to-tr from-emerald-500 to-teal-300 rounded-2xl mx-auto flex items-center justify-center text-black text-2xl font-bold shadow-lg shadow-emerald-500/50 mb-4 animate-bounce">
-                🚀
+            <div class="w-12 h-12 rounded-xl overflow-hidden mx-auto mb-3 border border-purple-400/60 shadow-lg shadow-purple-500/50 bg-black">
+                <img src="https://photos.pinksale.finance/file/pinksale-logo-upload/1788644497011-a93d76e16114b626547afc4936d073d2.png" alt="ZARD Logo" class="w-full h-full object-cover">
             </div>
 
-            <h3 class="font-crypto text-xl font-black text-white mb-1" data-i18n="modal_title">¡NUEVA COMPRA ZARD!</h3>
-            <p class="text-xs text-emerald-400 font-semibold mb-4" id="modal-details">¡Una ballena acaba de entrar al ecosistema!</p>
+            <h3 class="font-crypto text-sm font-black text-white mb-1" data-i18n="modal_title">¡COMPRA DETECTADA!</h3>
+            <p class="text-[11px] text-purple-300 font-semibold mb-2" id="modal-details">¡Nueva entrada en ZARD!</p>
 
-            <!-- Imagen Dinámica de Celebración -->
-            <div class="rounded-xl overflow-hidden mb-4 border border-emerald-800/60 relative group">
-                <img src="watermarked_img_4781088369783663397.jpg" alt="ZARD Celebration" class="w-full h-40 sm:h-44 object-cover transform group-hover:scale-105 transition-transform duration-500">
-                <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent flex items-end p-3">
-                    <span class="text-[11px] font-crypto text-emerald-300 font-bold">ZARD REWARD EVENT ACTIVE</span>
+            <div class="rounded-lg overflow-hidden border border-purple-800/60 relative">
+                <img src="https://photos.pinksale.finance/file/pinksale-logo-upload/1788644497011-a93d76e16114b626547afc4936d073d2.png" alt="ZARD" class="w-full h-24 object-cover filter brightness-75">
+                <div class="absolute inset-0 bg-gradient-to-t from-black/90 via-transparent flex items-end justify-center pb-2">
+                    <span class="text-[10px] font-crypto text-blue-300 font-bold">GALAXY REWARD ACTIVE</span>
                 </div>
-            </div>
-
-            <div class="flex space-x-2">
-                <a href="https://pancakeswap.finance/swap?outputCurrency=0x973ba2c1dccd0820f1e026d6b1f01c55c4085d38" target="_blank" class="flex-1 bg-emerald-500 hover:bg-emerald-400 text-black font-crypto font-bold py-2.5 rounded-xl text-xs transition-all shadow-lg shadow-emerald-500/30 flex items-center justify-center" data-i18n="modal_buy_more">
-                    ¡Comprar Más!
-                </a>
-                <button onclick="closeBuyModal()" class="px-4 py-2.5 bg-gray-800 hover:bg-gray-700 text-white font-crypto font-bold rounded-xl text-xs" data-i18n="modal_close">
-                    Cerrar
-                </button>
             </div>
         </div>
     </div>
 
-    <!-- SCRIPTS DE TRADUCCIÓN, ANIMACIÓN Y SIMULACIÓN -->
     <script>
-        // Diccionario de Traducciones (Español, Inglés, Árabe, Chino)
         const translations = {
             es: {
                 splash_title: "ZARD INNOVATION",
-                splash_subtitle: "EL ECOSISTEMA WEB3 MÁS AVANZADO DE LA BNB SMART CHAIN",
+                splash_subtitle: "EL ECOSISTEMA GALAXY WEB3 EN LA BNB SMART CHAIN",
                 splash_lang_label: "Selecciona tu Idioma",
-                splash_enter: "ENTRAR AL TRACKER PROFESIONAL",
+                splash_enter: "ENTRAR AL TRACKER GALAXY",
                 pool_label: "PancakeSwap V2 Pool",
                 price_label: "Precio USD",
                 change_label: "Cambio 24h",
@@ -289,21 +280,19 @@
                 tvl_label: "Liquidez TVL",
                 holders_label: "Holders",
                 wbnb_label: "Pooled WBNB",
-                live_chart_title: "GRÁFICO EN VIVO (ZARD/WBNB)",
+                live_chart_title: "GRÁFICO GALAXY (ZARD/WBNB)",
                 pool_active: "PancakeSwap V2 Pool Activo",
                 trades_title: "OPERACIONES EN VIVO",
-                banner_title: "✨ ZARD Innovation Activo",
-                banner_desc: "Celebraciones de compra y eventos en vivo activos.",
+                banner_title: "✨ ZARD Galaxy Active",
+                banner_desc: "Alertas instantáneas de compra activadas.",
                 buy_btn: "COMPRAR ZARD",
-                modal_title: "¡NUEVA COMPRA ZARD!",
-                modal_buy_more: "¡Comprar Más!",
-                modal_close: "Cerrar"
+                modal_title: "¡COMPRA ZARD DETECTADA!"
             },
             en: {
                 splash_title: "ZARD INNOVATION",
-                splash_subtitle: "THE MOST ADVANCED WEB3 ECOSYSTEM ON BNB SMART CHAIN",
+                splash_subtitle: "THE GALAXY WEB3 ECOSYSTEM ON BNB SMART CHAIN",
                 splash_lang_label: "Select Language",
-                splash_enter: "ENTER PROFESSIONAL TRACKER",
+                splash_enter: "ENTER GALAXY TRACKER",
                 pool_label: "PancakeSwap V2 Pool",
                 price_label: "USD Price",
                 change_label: "24h Change",
@@ -312,21 +301,19 @@
                 tvl_label: "Liquidity TVL",
                 holders_label: "Holders",
                 wbnb_label: "Pooled WBNB",
-                live_chart_title: "LIVE CANDLESTICK CHART (ZARD/WBNB)",
+                live_chart_title: "LIVE GALAXY CHART (ZARD/WBNB)",
                 pool_active: "PancakeSwap V2 Pool Active",
                 trades_title: "LIVE WALLET TRADES",
-                banner_title: "✨ ZARD Innovation Active",
-                banner_desc: "Buy celebrations and live reward events active.",
+                banner_title: "✨ ZARD Galaxy Active",
+                banner_desc: "Instant buy alerts active.",
                 buy_btn: "BUY ZARD",
-                modal_title: "NEW ZARD PURCHASE!",
-                modal_buy_more: "Buy More!",
-                modal_close: "Close"
+                modal_title: "NEW ZARD PURCHASE!"
             },
             ar: {
                 splash_title: "ابتكار زارد",
-                splash_subtitle: "أكثر نظام ويب 3 تطوراً على سلسلة ذكاء بي إن بي",
+                splash_subtitle: "نظام جالكسي ويب 3 على سلسلة ذكاء بي إن بي",
                 splash_lang_label: "اختر لغتك",
-                splash_enter: "الدخول إلى المتتبع الاحترافي",
+                splash_enter: "الدخول إلى متتبع جالكسي",
                 pool_label: "حوض بانكيك سوف V2",
                 price_label: "السعر بالدولار",
                 change_label: "تغيير 24 ساعة",
@@ -335,21 +322,19 @@
                 tvl_label: "السيولة TVL",
                 holders_label: "المحافظ المالك",
                 wbnb_label: "WBNB المجمعة",
-                live_chart_title: "رسم بياني حقيقي للشموع (ZARD/WBNB)",
+                live_chart_title: "رسم بياني حقيقي (ZARD/WBNB)",
                 pool_active: "حوض السيولة نشط",
                 trades_title: "صفقات المحافظ المباشرة",
-                banner_title: "✨ زارد إنوفيشن نشط",
-                banner_desc: "احتفالات الشراء والأحداث الحية مفعلة.",
+                banner_title: "✨ زارد جالكسي نشط",
+                banner_desc: "تنبيهات الشراء الفورية مفعلة.",
                 buy_btn: "شراء ZARD",
-                modal_title: "عملية شراء جديدة لـ ZARD!",
-                modal_buy_more: "اشتري المزيد!",
-                modal_close: "إغلاق"
+                modal_title: "عملية شراء جديدة لـ ZARD!"
             },
             zh: {
                 splash_title: "ZARD INNOVATION",
-                splash_subtitle: "BNB 智能链上最先进的 Web3 生态系统",
+                splash_subtitle: "BNB 智能链上的 GALAXY WEB3 生态系统",
                 splash_lang_label: "选择语言",
-                splash_enter: "进入专业追踪器",
+                splash_enter: "进入 GALAXY 追踪器",
                 pool_label: "PancakeSwap V2 池",
                 price_label: "美元价格",
                 change_label: "24小时涨跌",
@@ -358,62 +343,39 @@
                 tvl_label: "流动性 TVL",
                 holders_label: "持有人",
                 wbnb_label: "池内 WBNB",
-                live_chart_title: "实时K线图 (ZARD/WBNB)",
+                live_chart_title: "实时GALAXY图表 (ZARD/WBNB)",
                 pool_active: "PancakeSwap V2 池活跃",
                 trades_title: "实时钱包交易",
-                banner_title: "✨ ZARD 创新生态活跃",
-                banner_desc: "购买庆祝活动和实时奖励事件正在进行中。",
+                banner_title: "✨ ZARD Galaxy 活跃",
+                banner_desc: "即时购买提醒已激活。",
                 buy_btn: "购买 ZARD",
-                modal_title: "新的 ZARD 购买！",
-                modal_buy_more: "购买更多！",
-                modal_close: "关闭"
+                modal_title: "检测到新 ZARD 购买！"
             }
         };
 
-        let currentLang = 'es';
-
         function setLanguage(lang) {
-            currentLang = lang;
             document.getElementById('lang-switcher').value = lang;
+            if(lang === 'ar') { document.documentElement.dir = 'rtl'; } else { document.documentElement.dir = 'ltr'; }
             
-            // Si es árabe, activar dirección de texto RTL o dejar centrado elegante
-            if(lang === 'ar') {
-                document.documentElement.dir = 'rtl';
-            } else {
-                document.documentElement.dir = 'ltr';
-            }
-
-            // Actualizar textos de la pantalla de bienvenida
             document.getElementById('splash-title').innerText = translations[lang].splash_title;
             document.getElementById('splash-subtitle').innerText = translations[lang].splash_subtitle;
             document.getElementById('splash-select-lang').innerText = translations[lang].splash_lang_label;
             document.getElementById('splash-enter-btn').innerText = translations[lang].splash_enter;
 
-            // Actualizar elementos del tracker principal con atributo data-i18n
             document.querySelectorAll('[data-i18n]').forEach(el => {
                 const key = el.getAttribute('data-i18n');
-                if(translations[lang][key]) {
-                    el.innerText = translations[lang][key];
-                }
-            });
-
-            // Efecto visual de selección en botones de idioma
-            document.querySelectorAll('.lang-btn').forEach(btn => {
-                btn.classList.remove('border-emerald-400', 'bg-emerald-500', 'text-black');
+                if(translations[lang][key]) { el.innerText = translations[lang][key]; }
             });
         }
 
-        function changeLanguageDirect(lang) {
-            setLanguage(lang);
-        }
+        function changeLanguageDirect(lang) { setLanguage(lang); }
 
-        // Transición Majestuosa de Entrada al Tracker
         function enterTracker() {
             confetti({
-                particleCount: 150,
-                spread: 100,
+                particleCount: 120,
+                spread: 90,
                 origin: { y: 0.5 },
-                colors: ['#10b981', '#14b8a6', '#34d399', '#ffffff', '#059669']
+                colors: ['#a855f7', '#3b82f6', '#ffffff', '#9333ea']
             });
 
             const splash = document.getElementById('splash-screen');
@@ -427,60 +389,58 @@
             }, 800);
         }
 
-        // Lógica de Trades y Modales en Vivo
         const tradesContainer = document.getElementById('trades-container');
         const buyModal = document.getElementById('buy-modal');
         const modalContent = document.getElementById('modal-content');
         const modalDetails = document.getElementById('modal-details');
+        const mockWallets = ["0x71C...3a1", "0x9E2...8f4", "0x3B1...2c9", "0x8F4...1e0", "0x2A5...6d8", "0x4C9...9b2"];
 
-        const mockWallets = ["0x71C...3a1", "0x9E2...8f4", "0x3B1...2c9", "0x8F4...1e0", "0x2A5...6d8", "0x4C9...9b2", "0xF12...3a8"];
+        let modalTimeout = null;
 
-        function showBuyModal(wallet, amountUSD, zardAmount) {
-            modalDetails.innerHTML = `La wallet <span class="text-white font-mono">${wallet}</span> compró <strong class="text-white">$${amountUSD} USD</strong> (${zardAmount} ZARD)!`;
+        function showFastBuyModal(wallet, amountUSD, zardAmount) {
+            modalDetails.innerHTML = `<span class="text-white font-mono">${wallet}</span> compró <strong class="text-purple-300">$${amountUSD}</strong> (${zardAmount} ZARD)`;
             buyModal.classList.remove('hidden');
+            
             setTimeout(() => {
                 buyModal.classList.remove('opacity-0');
-                modalContent.classList.remove('scale-95');
+                modalContent.classList.remove('scale-90');
                 modalContent.classList.add('scale-100');
             }, 10);
-            
-            confetti({
-                particleCount: 100,
-                spread: 70,
-                origin: { y: 0.6 }
-            });
-        }
 
-        function closeBuyModal() {
-            buyModal.classList.add('opacity-0');
-            modalContent.classList.remove('scale-100');
-            modalContent.classList.add('scale-95');
-            setTimeout(() => {
-                buyModal.classList.add('hidden');
-            }, 300);
+            // Confetti rápido
+            confetti({ particleCount: 50, spread: 50, origin: { y: 0.7 }, colors: ['#a855f7', '#3b82f6'] });
+
+            // Se oculta exactamente a los 1.5 segundos (rápido y dinámico)
+            clearTimeout(modalTimeout);
+            modalTimeout = setTimeout(() => {
+                modalContent.classList.remove('scale-100');
+                modalContent.classList.add('scale-90');
+                buyModal.classList.add('opacity-0');
+                setTimeout(() => {
+                    buyModal.classList.add('hidden');
+                }, 200);
+            }, 1500);
         }
 
         function addLiveTrade() {
-            if(tradesContainer.innerHTML.includes('Sincronizando')) {
-                tradesContainer.innerHTML = '';
-            }
+            if(tradesContainer.innerHTML.includes('Sincronizando')) { tradesContainer.innerHTML = ''; }
             
-            const isBuy = Math.random() > 0.3;
-            const amountBNB = (Math.random() * 1.2 + 0.08).toFixed(3);
-            const amountUSD = (amountBNB * 600).toFixed(2);
-            const zardCount = (amountUSD * 2050).toLocaleString('en-US', {maximumFractionDigits: 0});
+            const isBuy = Math.random() > 0.35;
+            const amountBNB = (Math.random() * 0.5 + 0.02).toFixed(3);
+            const amountUSD = (amountBNB * 580).toFixed(2);
+            const zardCount = (amountUSD * 8200).toLocaleString('en-US', {maximumFractionDigits: 0});
             const wallet = mockWallets[Math.floor(Math.random() * mockWallets.length)];
 
             const tradeElement = document.createElement('div');
-            tradeElement.className = `p-2.5 rounded-xl text-xs flex items-center justify-between transition-all duration-500 transform translate-y-[-10px] opacity-0 ${isBuy ? 'bg-emerald-950/40 border border-emerald-800/50 hover:border-emerald-500/80 cursor-pointer' : 'bg-rose-950/30 border border-rose-900/50'}`;
+            tradeElement.className = `p-2.5 rounded-xl text-xs flex items-center justify-between transition-all duration-300 ${isBuy ? 'bg-purple-950/30 border border-purple-800/40 hover:border-purple-500 cursor-pointer' : 'bg-rose-950/20 border border-rose-900/30'}`;
             
             if(isBuy) {
-                tradeElement.onclick = () => showBuyModal(wallet, amountUSD, zardCount);
+                tradeElement.onclick = () => showFastBuyModal(wallet, amountUSD, zardCount);
             }
 
             tradeElement.innerHTML = `
                 <div>
-                    <span class="${isBuy ? 'text-emerald-400 font-bold bg-emerald-900/40 px-1.5 py-0.5 rounded' : 'text-rose-400 font-bold bg-rose-900/40 px-1.5 py-0.5 rounded'}">${isBuy ? '🟢 BUY' : '🔴 SELL'}</span>
+                    <span class="${isBuy ? 'text-purple-400 font-bold bg-purple-900/30 px-1.5 py-0.5 rounded' : 'text-rose-400 font-bold bg-rose-900/30 px-1.5 py-0.5 rounded'}">${isBuy ? '🟢 BUY' : '🔴 SELL'}</span>
                     <span class="text-gray-300 ml-1.5 font-mono">${wallet}</span>
                 </div>
                 <div class="text-right">
@@ -490,26 +450,21 @@
             `;
 
             tradesContainer.insertBefore(tradeElement, tradesContainer.firstChild);
-            
-            setTimeout(() => {
-                tradeElement.classList.remove('translate-y-[-10px]', 'opacity-0');
-            }, 50);
 
-            if(isBuy && amountUSD > 450 && Math.random() > 0.6) {
-                showBuyModal(wallet, amountUSD, zardCount);
+            // Disparar aleatoriamente la ventana emergente de 1.5 segundos cuando ocurre una compra
+            if(isBuy && Math.random() > 0.5) {
+                showFastBuyModal(wallet, amountUSD, zardCount);
             }
 
-            if (tradesContainer.children.length > 25) {
+            if (tradesContainer.children.length > 20) {
                 tradesContainer.removeChild(tradesContainer.lastChild);
             }
         }
 
-        setInterval(addLiveTrade, 3500);
+        setInterval(addLiveTrade, 4000);
 
         window.onload = () => {
-            for(let i=0; i<4; i++) {
-                addLiveTrade();
-            }
+            for(let i=0; i<3; i++) { addLiveTrade(); }
         }
     </script>
 </body>
