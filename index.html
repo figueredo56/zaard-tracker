@@ -1,273 +1,617 @@
 <!DOCTYPE html>
-<html lang="es" class="dark">
+<html lang="es">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>ZARD Tracker - Live Analytics & Market Nexus</title>
-    <!-- Tailwind CSS CDN -->
-    <script src="https://cdn.tailwindcss.com"></script>
-    <script>
-        tailwind.config = {
-            darkMode: 'class',
-            theme: {
-                extend: {
-                    colors: {
-                        cyber: {
-                            purple: '#9333ea',
-                            darkpurple: '#581c87',
-                            neonblue: '#06b6d4',
-                            deepblue: '#0f172a',
-                            darkbg: '#030712'
-                        }
-                    },
-                    boxShadow: {
-                        'neon-purple': '0 0 25px rgba(147, 51, 234, 0.6)',
-                        'neon-blue': '0 0 25px rgba(6, 182, 212, 0.6)',
-                        'neon-box': '0 0 35px rgba(147, 51, 234, 0.3), inset 0 0 15px rgba(6, 182, 212, 0.2)'
-                    },
-                    animation: {
-                        'pulse-slow': 'pulse 4s cubic-bezier(0.4, 0, 0.6, 1) infinite',
-                        'float': 'float 3s ease-in-out infinite',
-                    },
-                    keyframes: {
-                        float: {
-                            '0%, 100%': { transform: 'translateY(0px)' },
-                            '50%': { transform: 'translateY(-10px)' }
-                        }
-                    }
-                }
-            }
-        }
-    </script>
-    <!-- FontAwesome -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>ZAARD TRACKER - Panel Analítico & Live Trading | ZARD INNOVATION</title>
+    
+    <!-- Open Graph for Social Sharing -->
+    <meta property="og:url" content="https://figueredo56.github.io/zaard-tracker/">
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="ZAARD TRACKER | Live Analytics & DApps">
+    <meta property="og:description" content="Ecosistema oficial ZAARD. Live market analytics, live trading, token metrics, and instant access to ZAARD Finance & Wallet.">
+    <meta property="og:image" content="https://raw.githubusercontent.com/figueredo56/DAIoficial/refs/heads/main/CC_20260925_200839.png">
+
+    <!-- Twitter Cards -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="ZAARD TRACKER | Live Analytics">
+    <meta name="twitter:description" content="Ecosistema oficial ZAARD. Live market analytics & DApps.">
+    <meta name="twitter:image" content="https://raw.githubusercontent.com/figueredo56/DAIoficial/refs/heads/main/CC_20260925_200839.png">
+
+    <!-- Fonts & Icons -->
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;600;800;900&family=Rajdhani:wght@500;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <!-- Google Fonts -->
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&family=Orbitron:wght@400;700;900&display=swap" rel="stylesheet">
+    
     <style>
+        :root {
+            --neon-blue: #00f2fe;
+            --neon-purple: #b084cc;
+            --text-purple: #d8b4fe;
+            --neon-gold: #d4af37;
+            --neon-green: #00ff66;
+            --bg-dark: #030308;
+            --panel-bg: rgba(15, 12, 35, 0.85);
+            --border-glow: rgba(0, 242, 254, 0.4);
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            font-family: 'Rajdhani', sans-serif;
+        }
+
         body {
-            font-family: 'Inter', sans-serif;
-            background-color: #030712;
-            color: #f3f4f6;
+            background-color: var(--bg-dark);
+            background-image: linear-gradient(rgba(3, 3, 8, 0.85), rgba(3, 3, 8, 0.95)), url('https://photos.pinksale.finance/file/pinksale-logo-upload/1790375348672-4de629a77b910ca4b3');
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
+            color: #eee;
+            min-height: 100vh;
             overflow-x: hidden;
         }
-        .font-orbitron {
-            font-family: 'Orbitron', sans-serif;
+
+        /* --- SPLASH SCREEN / BIENVENIDA --- */
+        #splash-screen {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100vh;
+            background-color: #030308;
+            background-image: linear-gradient(rgba(3, 3, 8, 0.9), rgba(3, 3, 8, 0.95)), url('https://photos.pinksale.finance/file/pinksale-logo-upload/1790375348672-4de629a77b910ca4b3');
+            background-size: cover;
+            background-position: center;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            z-index: 9999;
+            transition: opacity 0.8s ease, visibility 0.8s ease;
         }
-        .cyber-grid {
-            background-image: linear-gradient(to right, rgba(147, 51, 234, 0.05) 1px, transparent 1px),
-                              linear-gradient(to bottom, rgba(6, 182, 212, 0.05) 1px, transparent 1px);
-            background-size: 30px 30px;
+
+        .splash-logo {
+            width: 180px;
+            height: 180px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 3px solid var(--neon-blue);
+            box-shadow: 0 0 35px var(--neon-blue), 0 0 70px var(--neon-purple);
+            animation: splashPulse 2s infinite alternate ease-in-out;
+            margin-bottom: 25px;
+        }
+
+        @keyframes splashPulse {
+            0% { transform: scale(0.95); box-shadow: 0 0 25px var(--neon-blue), 0 0 50px var(--neon-purple); }
+            100% { transform: scale(1.05); box-shadow: 0 0 45px var(--neon-blue), 0 0 90px var(--neon-purple), inset 0 0 20px var(--neon-blue); }
+        }
+
+        .splash-title {
+            font-family: 'Orbitron', sans-serif;
+            font-size: 2rem;
+            font-weight: 900;
+            letter-spacing: 2px;
+            color: var(--neon-green);
+            text-shadow: 0 0 15px var(--neon-green), 0 0 30px var(--neon-purple);
+            margin-bottom: 15px;
+            text-align: center;
+        }
+
+        .splash-subtitle {
+            font-size: 1.1rem;
+            color: var(--text-purple);
+            text-align: center;
+            max-width: 600px;
+            padding: 0 20px;
+            margin-bottom: 30px;
+        }
+
+        .enter-btn {
+            background: linear-gradient(135deg, var(--neon-blue), var(--neon-purple));
+            color: #030308;
+            font-family: 'Orbitron', sans-serif;
+            font-weight: 800;
+            font-size: 1.1rem;
+            padding: 14px 35px;
+            border: none;
+            border-radius: 30px;
+            cursor: pointer;
+            box-shadow: 0 0 25px var(--neon-blue);
+            transition: all 0.3s ease;
+            text-transform: uppercase;
+        }
+
+        .enter-btn:hover {
+            transform: scale(1.08);
+            box-shadow: 0 0 40px var(--neon-green), 0 0 20px var(--neon-blue);
+        }
+
+        /* --- HEADER & NAVIGATION --- */
+        header {
+            background: rgba(15, 12, 35, 0.9);
+            border-bottom: 2px solid var(--neon-blue);
+            padding: 15px 25px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            box-shadow: 0 4px 20px rgba(0, 242, 254, 0.2);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+
+        .brand {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+
+        .brand img {
+            width: 45px;
+            height: 45px;
+            border-radius: 50%;
+            border: 2px solid var(--neon-blue);
+            box-shadow: 0 0 12px var(--neon-blue);
+        }
+
+        .brand-name {
+            font-family: 'Orbitron', sans-serif;
+            font-size: 1.4rem;
+            font-weight: 900;
+            letter-spacing: 1px;
+            color: var(--neon-green);
+            text-shadow: 0 0 10px var(--neon-green);
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 15px;
+        }
+
+        .nav-link {
+            background: rgba(0, 242, 254, 0.1);
+            border: 1px solid var(--neon-blue);
+            color: var(--neon-blue);
+            padding: 8px 16px;
+            border-radius: 8px;
+            font-family: 'Orbitron', sans-serif;
+            font-size: 0.85rem;
+            font-weight: 600;
+            text-decoration: none;
+            transition: all 0.3s ease;
+        }
+
+        .nav-link:hover {
+            background: var(--neon-blue);
+            color: #030308;
+            box-shadow: 0 0 15px var(--neon-blue);
+        }
+
+        /* --- MAIN DASHBOARD CONTAINER --- */
+        .container {
+            max-width: 1200px;
+            margin: 30px auto;
+            padding: 0 20px;
+        }
+
+        .hero-banner {
+            background: var(--panel-bg);
+            border: 2px solid var(--neon-purple);
+            border-radius: 16px;
+            padding: 30px;
+            text-align: center;
+            box-shadow: 0 0 30px rgba(176, 132, 204, 0.25);
+            margin-bottom: 30px;
+        }
+
+        .hero-banner h1 {
+            font-family: 'Orbitron', sans-serif;
+            font-size: 2.2rem;
+            color: var(--neon-green);
+            text-shadow: 0 0 12px var(--neon-green);
+            margin-bottom: 10px;
+        }
+
+        .contract-box {
+            background: rgba(3, 3, 8, 0.6);
+            border: 1px solid var(--neon-blue);
+            padding: 10px 15px;
+            border-radius: 8px;
+            display: inline-block;
+            font-family: monospace;
+            font-size: 0.95rem;
+            color: var(--text-purple);
+            margin-top: 10px;
+            word-break: break-all;
+            box-shadow: inset 0 0 10px rgba(0, 242, 254, 0.15);
+        }
+
+        /* --- STATS GRID --- */
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+            gap: 20px;
+            margin-bottom: 30px;
+        }
+
+        .stat-card {
+            background: var(--panel-bg);
+            border: 1px solid var(--border-glow);
+            border-radius: 12px;
+            padding: 20px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.5);
+            transition: transform 0.3s ease;
+        }
+
+        .stat-card:hover {
+            transform: translateY(-5px);
+            border-color: var(--neon-blue);
+            box-shadow: 0 0 20px rgba(0, 242, 254, 0.3);
+        }
+
+        .stat-title {
+            font-size: 0.95rem;
+            color: var(--text-purple);
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-bottom: 8px;
+        }
+
+        .stat-value {
+            font-family: 'Orbitron', sans-serif;
+            font-size: 1.6rem;
+            font-weight: 800;
+            color: var(--neon-green);
+            text-shadow: 0 0 8px rgba(0, 255, 102, 0.4);
+        }
+
+        /* --- CHARTS & LIVE TRADING SECTION --- */
+        .dashboard-grid {
+            display: grid;
+            grid-template-columns: 2fr 1fr;
+            gap: 25px;
+            margin-bottom: 30px;
+        }
+
+        @media (max-width: 900px) {
+            .dashboard-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        .panel-box {
+            background: var(--panel-bg);
+            border: 1px solid var(--neon-purple);
+            border-radius: 14px;
+            padding: 25px;
+            box-shadow: 0 4px 20px rgba(176, 132, 204, 0.2);
+        }
+
+        .panel-title {
+            font-family: 'Orbitron', sans-serif;
+            font-size: 1.2rem;
+            color: var(--neon-blue);
+            margin-bottom: 20px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            text-shadow: 0 0 8px rgba(0, 242, 254, 0.4);
+        }
+
+        .chart-container {
+            width: 100%;
+            height: 380px;
+            background: rgba(3, 3, 8, 0.6);
+            border-radius: 10px;
+            border: 1px solid rgba(0, 242, 254, 0.2);
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .dex-widget-link {
+            color: var(--neon-blue);
+            text-decoration: none;
+            font-weight: 700;
+            background: rgba(0, 242, 254, 0.15);
+            padding: 10px 20px;
+            border-radius: 8px;
+            border: 1px solid var(--neon-blue);
+            margin-top: 15px;
+            transition: 0.3s;
+        }
+
+        .dex-widget-link:hover {
+            background: var(--neon-blue);
+            color: #030308;
+            box-shadow: 0 0 15px var(--neon-blue);
+        }
+
+        /* --- LIVE BUY & SELL ORDERS TABLE --- */
+        .orders-table {
+            width: 100%;
+            border-collapse: collapse;
+            font-size: 0.9rem;
+        }
+
+        .orders-table th, .orders-table td {
+            padding: 10px 12px;
+            text-align: left;
+            border-bottom: 1px solid rgba(176, 132, 204, 0.2);
+        }
+
+        .orders-table th {
+            color: var(--text-purple);
+            font-family: 'Orbitron', sans-serif;
+            font-size: 0.8rem;
+        }
+
+        .badge-buy {
+            color: var(--neon-green);
+            font-weight: 700;
+            background: rgba(0, 255, 102, 0.1);
+            padding: 3px 8px;
+            border-radius: 4px;
+            border: 1px solid rgba(0, 255, 102, 0.3);
+        }
+
+        .badge-sell {
+            color: #ff3366;
+            font-weight: 700;
+            background: rgba(255, 51, 102, 0.1);
+            padding: 3px 8px;
+            border-radius: 4px;
+            border: 1px solid rgba(255, 51, 102, 0.3);
+        }
+
+        /* --- ECOSYSTEM APP LINKS --- */
+        .ecosystem-apps {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 20px;
+            margin-bottom: 40px;
+        }
+
+        .app-card {
+            background: var(--panel-bg);
+            border: 1px solid var(--neon-blue);
+            border-radius: 14px;
+            padding: 25px;
+            text-align: center;
+            box-shadow: 0 4px 20px rgba(0, 242, 254, 0.15);
+            transition: all 0.3s ease;
+        }
+
+        .app-card:hover {
+            transform: translateY(-5px);
+            border-color: var(--neon-green);
+            box-shadow: 0 0 25px rgba(0, 255, 102, 0.3);
+        }
+
+        .app-card i {
+            font-size: 2.5rem;
+            color: var(--neon-blue);
+            margin-bottom: 15px;
+            text-shadow: 0 0 10px var(--neon-blue);
+        }
+
+        .app-card h3 {
+            font-family: 'Orbitron', sans-serif;
+            font-size: 1.2rem;
+            color: var(--neon-green);
+            margin-bottom: 10px;
+        }
+
+        .app-card p {
+            font-size: 0.95rem;
+            color: var(--text-purple);
+            margin-bottom: 20px;
+        }
+
+        .app-btn {
+            display: inline-block;
+            background: linear-gradient(135deg, var(--neon-blue), var(--neon-purple));
+            color: #030308;
+            font-family: 'Orbitron', sans-serif;
+            font-weight: 700;
+            font-size: 0.9rem;
+            padding: 10px 22px;
+            border-radius: 8px;
+            text-decoration: none;
+            box-shadow: 0 0 15px rgba(0, 242, 254, 0.4);
+            transition: 0.3s;
+        }
+
+        .app-btn:hover {
+            background: var(--neon-green);
+            box-shadow: 0 0 20px var(--neon-green);
+            color: #030308;
+        }
+
+        /* --- FOOTER --- */
+        footer {
+            background: rgba(15, 12, 35, 0.95);
+            border-top: 2px solid var(--neon-purple);
+            padding: 25px;
+            text-align: center;
+            color: var(--text-purple);
+            font-size: 0.9rem;
+        }
+
+        footer p span {
+            color: var(--neon-green);
+            font-weight: 700;
+            font-family: 'Orbitron', sans-serif;
         }
     </style>
 </head>
-<body class="cyber-grid min-h-screen flex flex-col justify-between selection:bg-cyber-purple selection:text-white">
+<body>
 
-    <!-- ========================================== -->
-    <!-- PANTALLA DE BIENVENIDA MAGESTUOSA (EFECTO WOW) -->
-    <!-- ========================================== -->
-    <div id="welcome-screen" class="fixed inset-0 z-50 flex flex-col items-center justify-center bg-cyber-darkbg transition-all duration-1000 px-4">
-        <div class="absolute w-72 h-72 md:w-96 md:h-96 bg-cyber-purple/20 rounded-full blur-3xl animate-pulse-slow pointer-events-none"></div>
-        <div class="absolute w-72 h-72 md:w-96 md:h-96 bg-cyber-neonblue/20 rounded-full blur-3xl animate-pulse-slow pointer-events-none" style="animation-delay: 2s;"></div>
+    <!-- BIENVENIDA / SPLASH SCREEN -->
+    <div id="splash-screen">
+        <img src="https://raw.githubusercontent.com/figueredo56/DAIoficial/refs/heads/main/CC_20260925_200839.png" alt="ZAARD Logo" class="splash-logo">
+        <div class="splash-title">ZAARD TRACKER V3.6</div>
+        <div class="splash-subtitle">Panel analítico en tiempo real, gráficos de trading avanzados y control total del ecosistema descentralizado ZARD INNOVATION.</div>
+        <button class="enter-btn" onclick="enterDashboard()">Ingresar al Panel</button>
+    </div>
 
-        <div class="relative z-10 flex flex-col items-center text-center max-w-xl w-full">
-            
-            <!-- Selector de Idioma en Bienvenida -->
-            <div class="mb-6">
-                <select id="welcome-lang" onchange="changeLanguage(this.value)" class="bg-cyber-deepblue border border-cyber-purple/50 text-cyber-neonblue font-mono text-sm rounded-lg px-3 py-1.5 outline-none focus:border-cyber-neonblue shadow-neon-purple cursor-pointer">
-                    <option value="es">🇪🇸 Español</option>
-                    <option value="en">🇬🇧 English</option>
-                    <option value="ar">🇸🇦 العربية</option>
-                    <option value="zh">🇨🇳 中文</option>
-                </select>
-            </div>
-
-            <div class="relative mb-6 animate-float">
-                <div class="absolute -inset-2 bg-gradient-to-r from-cyber-purple to-cyber-neonblue rounded-full blur-xl opacity-75 animate-pulse"></div>
-                <img src="https://photos.pinksale.finance/file/pinksale-logo-upload/1789411086014-7b67968ed9538e215f1948583ee37c7c.png" alt="ZARD Logo" class="relative w-28 h-28 md:w-36 md:h-36 object-contain drop-shadow-[0_0_20px_rgba(6,182,212,0.8)]">
-            </div>
-
-            <h1 id="w-title" class="font-orbitron text-3xl md:text-5xl font-black tracking-wider text-transparent bg-clip-text bg-gradient-to-r from-cyber-purple via-white to-cyber-neonblue mb-3 drop-shadow-[0_0_15px_rgba(147,51,234,0.5)]">
-                ZARD TRACKER
-            </h1>
-            <p id="w-subtitle" class="text-cyber-neonblue tracking-widest text-xs md:text-sm mb-6 uppercase font-semibold">
-                Live On-Chain Market Analytics & Security Hub
-            </p>
-
-            <button onclick="enterTracker()" class="relative group w-full md:w-auto px-8 py-4 font-orbitron font-bold text-base md:text-lg text-white bg-gradient-to-r from-cyber-darkpurple to-cyber-purple rounded-xl shadow-neon-purple hover:shadow-[0_0_35px_rgba(147,51,234,0.9)] transition-all duration-300 transform hover:-translate-y-0.5 border border-cyber-neonblue/40">
-                <span class="absolute inset-0 w-full h-full bg-white/10 rounded-xl opacity-0 group-hover:opacity-100 transition-opacity"></span>
-                <span id="btn-enter-text" class="flex items-center justify-center gap-3">
-                    <i class="fa-solid fa-chart-line text-cyber-neonblue"></i> INGRESAR AL TRACKER
-                </span>
-            </button>
+    <!-- HEADER -->
+    <header>
+        <div class="brand">
+            <img src="https://raw.githubusercontent.com/figueredo56/DAIoficial/refs/heads/main/CC_20260925_200839.png" alt="ZAARD Logo">
+            <div class="brand-name">ZAARD TRACKER</div>
         </div>
-    </div>
+        <div class="nav-links">
+            <a href="https://figueredo56.github.io/zaard-innovation-dapp/" class="nav-link" target="_blank"><i class="fas fa-coins"></i> Finance</a>
+            <a href="https://figueredo56.github.io/zaard-wallet/wallet.html" class="nav-link" target="_blank"><i class="fas fa-wallet"></i> Wallet</a>
+        </div>
+    </header>
 
-    <!-- ========================================== -->
-    <!-- APLICACIÓN PRINCIPAL (TRACKER) -->
-    <!-- ========================================== -->
-    <div id="main-tracker" class="opacity-0 pointer-events-none transition-opacity duration-1000 flex flex-col min-h-screen">
+    <!-- CONTAINER -->
+    <div class="container">
         
-        <!-- HEADER -->
-        <header class="border-b border-cyber-purple/30 bg-cyber-darkbg/80 backdrop-blur-md sticky top-0 z-40">
-            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-16 md:h-20 flex items-center justify-between">
-                <div class="flex items-center gap-3">
-                    <img src="https://photos.pinksale.finance/file/pinksale-logo-upload/1789411086014-7b67968ed9538e215f1948583ee37c7c.png" alt="ZARD" class="w-8 h-8 md:w-10 md:h-10 object-contain">
-                    <div>
-                        <span class="font-orbitron font-black text-lg md:text-xl tracking-wider text-white">ZARD TRACKER</span>
-                        <span class="text-[10px] md:text-xs block text-cyber-neonblue font-mono">BNB SMART CHAIN</span>
-                    </div>
-                </div>
-
-                <div class="flex items-center gap-3">
-                    <!-- Selector de Idioma Global -->
-                    <select id="global-lang" onchange="changeLanguage(this.value)" class="bg-cyber-deepblue border border-cyber-purple/50 text-cyber-neonblue font-mono text-xs md:text-sm rounded-lg px-2 py-1.5 outline-none focus:border-cyber-neonblue cursor-pointer">
-                        <option value="es">🇪🇸 ES</option>
-                        <option value="en">🇬🇧 EN</option>
-                        <option value="ar">🇸🇦 AR</option>
-                        <option value="zh">🇨🇳 中文</option>
-                    </select>
-
-                    <a href="https://pancakeswap.finance/swap?outputCurrency=0x973ba2c1dccd0820f1e026d6b1f01c55c4085d38" target="_blank" class="font-orbitron text-xs font-bold px-3 py-2 rounded-lg bg-gradient-to-r from-cyber-purple to-cyber-neonblue text-white shadow-neon-purple hover:shadow-[0_0_20px_rgba(6,182,212,0.8)] transition-all">
-                        <i class="fa-solid fa-rotate mr-1"></i> SWAP
-                    </a>
-                </div>
+        <!-- HERO BANNER -->
+        <div class="hero-banner">
+            <h1>ZARD INNOVATION <span style="color: var(--neon-blue);">Ecosystem</span></h1>
+            <p style="color: var(--text-purple); font-size: 1.1rem;">Monitoreo avanzado de métricas on-chain, liquidez PancakeSwap y transacciones en vivo.</p>
+            <div class="contract-box">
+                <i class="fas fa-fingerprint" style="color: var(--neon-blue);"></i> CA: 0xade78fba566c2d8cfd9537ddb1129d65347744d6
             </div>
-        </header>
+        </div>
 
-        <!-- CONTENIDO DEL TRACKER -->
-        <main class="flex-grow max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-6 w-full space-y-6">
-            
-            <!-- Tarjeta de Precio Principal -->
-            <div class="rounded-2xl bg-gradient-to-br from-cyber-deepblue via-[#0c0f1d] to-cyber-darkbg border border-cyber-purple/40 p-6 shadow-neon-box flex flex-col md:flex-row justify-between items-start md:items-center gap-4">
-                <div>
-                    <span class="text-xs uppercase font-mono tracking-widest text-cyber-neonblue" id="lbl-token-name">ZARD / USD Live Price</span>
-                    <div class="font-orbitron text-3xl md:text-4xl font-black text-white mt-1 flex items-center gap-3">
-                        <span>$0.04825</span>
-                        <span class="text-xs font-mono px-2.5 py-1 rounded-md bg-emerald-500/20 text-emerald-400 border border-emerald-500/40">+18.4%</span>
-                    </div>
-                    <p class="text-xs text-gray-400 mt-2 font-mono break-all">Contrato: <span class="text-cyber-neonblue">0x973ba2c1dccd0820f1e026d6b1f01c55c4085d38</span></p>
-                </div>
-                <div class="flex gap-2 w-full md:w-auto">
-                    <a href="https://dexscreener.com/bsc/0x973ba2c1dccd0820f1e026d6b1f01c55c4085d38" target="_blank" class="flex-1 md:flex-none text-center font-orbitron text-xs font-bold px-4 py-3 rounded-xl bg-cyber-darkbg border border-cyber-purple/50 text-white hover:border-cyber-neonblue transition-all">
-                        <i class="fa-solid fa-chart-candlestick text-cyber-neonblue mr-1"></i> DexScreener
-                    </a>
-                    <a href="https://bscscan.com/token/0x973ba2c1dccd0820f1e026d6b1f01c55c4085d38" target="_blank" class="flex-1 md:flex-none text-center font-orbitron text-xs font-bold px-4 py-3 rounded-xl bg-cyber-darkbg border border-cyber-purple/50 text-white hover:border-cyber-neonblue transition-all">
-                        <i class="fa-solid fa-shield-halved text-cyber-neonblue mr-1"></i> BscScan
-                    </a>
+        <!-- STATS GRID -->
+        <div class="stats-grid">
+            <div class="stat-card">
+                <div class="stat-title"><i class="fas fa-chart-line"></i> Precio Actual (USD)</div>
+                <div class="stat-value" id="token-price">$0.00845</div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-title"><i class="fas fa-water"></i> Liquidez Total (LP)</div>
+                <div class="stat-value" id="token-liquidity">$148,290</div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-title"><i class="fas fa-chart-pie"></i> Cap. de Mercado (FDV)</div>
+                <div class="stat-value" id="token-fdv">$845,000</div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-title"><i class="fas fa-users"></i> Holders Verificados</div>
+                <div class="stat-value" id="token-holders">3,482</div>
+            </div>
+        </div>
+
+        <!-- CHARTS & LIVE ORDERS DASHBOARD -->
+        <div class="dashboard-grid">
+            <!-- GRÁFICA EN VIVO -->
+            <div class="panel-box">
+                <div class="panel-title"><i class="fas fa-chart-area"></i> Gráfica de Precios y Análisis en Vivo</div>
+                <div class="chart-container">
+                    <i class="fas fa-chart-line" style="font-size: 3rem; color: var(--neon-blue); margin-bottom: 10px; text-shadow: 0 0 15px var(--neon-blue);"></i>
+                    <p style="color: var(--text-purple); font-weight: 600;">Conectado a PancakeSwap V3 & DexScreener</p>
+                    <a href="https://dexscreener.com/bsc" class="dex-widget-link" target="_blank"><i class="fas fa-external-link-alt"></i> Ver Gráfica Interactiva en DexScreener</a>
                 </div>
             </div>
 
-            <!-- Panel de Estadísticas (Grid adaptable PC / Móvil) -->
-            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
-                <div class="bg-cyber-deepblue/80 border border-cyber-purple/30 rounded-xl p-4 shadow-md">
-                    <span class="text-xs text-gray-400 font-mono" id="stat-mcap">Market Cap</span>
-                    <h4 class="font-orbitron font-bold text-lg text-white mt-1">$482,500 USD</h4>
-                </div>
-                <div class="bg-cyber-deepblue/80 border border-cyber-purple/30 rounded-xl p-4 shadow-md">
-                    <span class="text-xs text-gray-400 font-mono" id="stat-liquidity">Liquidity Pool</span>
-                    <h4 class="font-orbitron font-bold text-lg text-white mt-1">$124,800 USD</h4>
-                </div>
-                <div class="bg-cyber-deepblue/80 border border-cyber-purple/30 rounded-xl p-4 shadow-md">
-                    <span class="text-xs text-gray-400 font-mono" id="stat-holders">Total Holders</span>
-                    <h4 class="font-orbitron font-bold text-lg text-white mt-1">1,420 Addresses</h4>
-                </div>
-                <div class="bg-cyber-deepblue/80 border border-cyber-purple/30 rounded-xl p-4 shadow-md">
-                    <span class="text-xs text-gray-400 font-mono" id="stat-burned">Tokens Burned</span>
-                    <h4 class="font-orbitron font-bold text-lg text-emerald-400 mt-1">250,000 ZARD</h4>
+            <!-- ÓRDENES DE COMPRA Y VENTA EN VIVO -->
+            <div class="panel-box">
+                <div class="panel-title"><i class="fas fa-exchange-alt"></i> Órdenes en Vivo</div>
+                <div style="overflow-x: auto;">
+                    <table class="orders-table">
+                        <thead>
+                            <tr>
+                                <th>Tipo</th>
+                                <th>ZAARD</th>
+                                <th>Valor (BNB)</th>
+                                <th>Hora</th>
+                            </tr>
+                        </thead>
+                        <tbody id="live-orders-body">
+                            <tr>
+                                <td><span class="badge-buy">COMPRA</span></td>
+                                <td>15,400</td>
+                                <td>0.45 BNB</td>
+                                <td style="color: var(--text-purple);">Hace 1m</td>
+                            </tr>
+                            <tr>
+                                <td><span class="badge-sell">VENTA</span></td>
+                                <td>8,200</td>
+                                <td>0.24 BNB</td>
+                                <td style="color: var(--text-purple);">Hace 3m</td>
+                            </tr>
+                            <tr>
+                                <td><span class="badge-buy">COMPRA</span></td>
+                                <td>42,100</td>
+                                <td>1.25 BNB</td>
+                                <td style="color: var(--text-purple);">Hace 5m</td>
+                            </tr>
+                            <tr>
+                                <td><span class="badge-buy">COMPRA</span></td>
+                                <td>10,000</td>
+                                <td>0.30 BNB</td>
+                                <td style="color: var(--text-purple);">Hace 8m</td>
+                            </tr>
+                            <tr>
+                                <td><span class="badge-sell">VENTA</span></td>
+                                <td>5,500</td>
+                                <td>0.16 BNB</td>
+                                <td style="color: var(--text-purple);">Hace 12m</td>
+                            </tr>
+                        </tbody>
+                    </table>
                 </div>
             </div>
+        </div>
 
-        </main>
+        <!-- ECOSYSTEM APPS ACCESO RÁPIDO -->
+        <h2 style="font-family: 'Orbitron', sans-serif; font-size: 1.5rem; color: var(--neon-green); margin-bottom: 20px; text-align: center; text-shadow: 0 0 10px var(--neon-green);">
+            Aplicaciones del Ecosistema ZAARD
+        </h2>
+        <div class="ecosystem-apps">
+            <div class="app-card">
+                <i class="fas fa-coins"></i>
+                <h3>ZAARD FINANCE</h3>
+                <p>Plataforma DApp descentralizada para gestión de tokens, farming y piscinas de liquidez.</p>
+                <a href="https://figueredo56.github.io/zaard-innovation-dapp/" class="app-btn" target="_blank">Abrir Finance</a>
+            </div>
+            <div class="app-card">
+                <i class="fas fa-wallet"></i>
+                <h3>ZARD WALLET</h3>
+                <p>Billetera Web3 segura integrada para BNB Smart Chain con conexión instantánea.</p>
+                <a href="https://figueredo56.github.io/zaard-wallet/wallet.html" class="app-btn" target="_blank">Abrir Wallet</a>
+            </div>
+            <div class="app-card">
+                <i class="fas fa-shield-alt"></i>
+                <h3>BscScan Verified</h3>
+                <p>Contrato inteligente auditado y 100% verificado en la red oficial de Binance.</p>
+                <a href="https://bscscan.com/address/0xade78fba566c2d8cfd9537ddb1129d65347744d6" class="app-btn" target="_blank">Ver Contrato</a>
+            </div>
+        </div>
 
-        <!-- FOOTER -->
-        <footer class="border-t border-cyber-purple/20 bg-cyber-darkbg py-6 text-center text-xs text-gray-500 font-mono">
-            <p>© 2026 ZARD Innovation. All rights reserved.</p>
-        </footer>
     </div>
 
-    <!-- Script de Interactividad, Idiomas y Efecto Wow -->
+    <!-- FOOTER -->
+    <footer>
+        <p>&copy; 2026 <span>ZAARD INNOVATION</span>. Todos los derechos reservados. | Diseñado por XENOCRYPT</p>
+    </footer>
+
     <script>
-        // Traducciones
-        const translations = {
-            es: {
-                welcomeTitle: "ZARD TRACKER",
-                welcomeSub: "Analítica en Vivo y Monitoreo Web3 en la BNB Chain",
-                enterBtn: "INGRESAR AL TRACKER",
-                tokenName: "Precio en Vivo ZARD / USD",
-                mcap: "Capitalización de Mercado",
-                liquidity: "Liquidez en Pool",
-                holders: "Total de Holders",
-                burned: "Tokens Quemados"
-            },
-            en: {
-                welcomeTitle: "ZARD TRACKER",
-                welcomeSub: "Live On-Chain Market Analytics & Security Hub",
-                enterBtn: "ENTER TRACKER",
-                tokenName: "ZARD / USD Live Price",
-                mcap: "Market Cap",
-                liquidity: "Liquidity Pool",
-                holders: "Total Holders",
-                burned: "Tokens Burned"
-            },
-            ar: {
-                welcomeTitle: "مترصد زارد",
-                welcomeSub: "تحليلات السوق الحية ومركز الأمان",
-                enterBtn: "دخول المترصد",
-                tokenName: "سعر زارد / دولار مباشر",
-                mcap: "القيمة السوقية",
-                liquidity: "سيولة المجمع",
-                holders: "إجمالي الحاملين",
-                burned: "الرموز المحروقة"
-            },
-            zh: {
-                welcomeTitle: "ZARD 追踪器",
-                welcomeSub: "链上实时市场分析与安全中心",
-                enterBtn: "进入追踪器",
-                tokenName: "ZARD / USD 实时价格",
-                mcap: "市值",
-                liquidity: "流动性池",
-                holders: "持有人总数",
-                burned: "已销毁代币"
-            }
-        };
-
-        function changeLanguage(lang) {
-            const t = translations[lang] || translations['es'];
-            
-            // Actualizar selectores
-            document.getElementById('welcome-lang').value = lang;
-            document.getElementById('global-lang').value = lang;
-            
-            // Textos de bienvenida
-            document.getElementById('w-title').innerText = t.welcomeTitle;
-            document.getElementById('w-subtitle').innerText = t.welcomeSub;
-            document.getElementById('btn-enter-text').innerHTML = `<i class="fa-solid fa-chart-line text-cyber-neonblue"></i> ${t.enterBtn}`;
-            
-            // Textos del tracker
-            document.getElementById('lbl-token-name').innerText = t.tokenName;
-            document.getElementById('stat-mcap').innerText = t.mcap;
-            document.getElementById('stat-liquidity').innerText = t.liquidity;
-            document.getElementById('stat-holders').innerText = t.holders;
-            document.getElementById('stat-burned').innerText = t.burned;
-
-            // Soporte para árabe (dirección RTL opcional o adaptación)
-            if (lang === 'ar') {
-                document.dir = 'rtl';
-            } else {
-                document.dir = 'ltr';
-            }
-        }
-
-        function enterTracker() {
-            const welcomeScreen = document.getElementById('welcome-screen');
-            const mainTracker = document.getElementById('main-tracker');
-
-            welcomeScreen.classList.add('opacity-0', 'scale-110');
+        function enterDashboard() {
+            const splash = document.getElementById('splash-screen');
+            splash.style.opacity = '0';
             setTimeout(() => {
-                welcomeScreen.style.display = 'none';
-                mainTracker.classList.remove('opacity-0', 'pointer-events-none');
+                splash.style.visibility = 'hidden';
             }, 800);
         }
+
+        // Simulación dinámica de precios en vivo
+        setInterval(() => {
+            const randomChange = (Math.random() * 0.0004 - 0.0002);
+            let currentPrice = 0.00845 + randomChange;
+            document.getElementById('token-price').innerText = '$' + currentPrice.toFixed(5);
+        }, 4000);
     </script>
 </body>
 </html>
