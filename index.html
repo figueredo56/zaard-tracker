@@ -139,6 +139,8 @@
             position: sticky;
             top: 0;
             z-index: 100;
+            flex-wrap: wrap;
+            gap: 15px;
         }
 
         .brand {
@@ -164,9 +166,16 @@
             text-shadow: 0 0 10px var(--neon-green);
         }
 
+        .nav-right {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            flex-wrap: wrap;
+        }
+
         .nav-links {
             display: flex;
-            gap: 12px;
+            gap: 10px;
             flex-wrap: wrap;
         }
 
@@ -174,7 +183,7 @@
             background: rgba(0, 242, 254, 0.1);
             border: 1px solid var(--neon-blue);
             color: var(--neon-blue);
-            padding: 8px 14px;
+            padding: 8px 12px;
             border-radius: 8px;
             font-family: 'Orbitron', sans-serif;
             font-size: 0.8rem;
@@ -187,6 +196,32 @@
             background: var(--neon-blue);
             color: #030308;
             box-shadow: 0 0 15px var(--neon-blue);
+        }
+
+        /* --- LANGUAGE SELECTOR --- */
+        .lang-select {
+            background: rgba(176, 132, 204, 0.15);
+            border: 1px solid var(--neon-purple);
+            color: var(--text-purple);
+            padding: 7px 12px;
+            border-radius: 8px;
+            font-family: 'Orbitron', sans-serif;
+            font-size: 0.8rem;
+            font-weight: 600;
+            cursor: pointer;
+            outline: none;
+            transition: 0.3s;
+        }
+
+        .lang-select:hover, .lang-select:focus {
+            border-color: var(--neon-blue);
+            color: var(--neon-blue);
+            box-shadow: 0 0 10px rgba(0, 242, 254, 0.3);
+        }
+
+        .lang-select option {
+            background: #030308;
+            color: #fff;
         }
 
         /* --- MAIN DASHBOARD CONTAINER --- */
@@ -355,17 +390,23 @@
             border: 1px solid rgba(255, 51, 102, 0.3);
         }
 
-        /* --- ECOSYSTEM APP CARDS WITH CUSTOM BACKGROUNDS --- */
+        /* --- ECOSYSTEM APP CARDS (EXACTLY 4 ITEMS -> 2x2 GRID) --- */
         .ecosystem-apps {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+            grid-template-columns: repeat(2, 1fr);
             gap: 25px;
             margin-bottom: 40px;
         }
 
+        @media (max-width: 768px) {
+            .ecosystem-apps {
+                grid-template-columns: 1fr;
+            }
+        }
+
         .app-card {
             border-radius: 16px;
-            padding: 30px 20px;
+            padding: 35px 25px;
             text-align: center;
             position: relative;
             overflow: hidden;
@@ -404,14 +445,14 @@
 
         .app-card h3 {
             font-family: 'Orbitron', sans-serif;
-            font-size: 1.2rem;
+            font-size: 1.3rem;
             color: var(--neon-green);
             margin-bottom: 10px;
             text-shadow: 0 0 8px rgba(0, 255, 102, 0.4);
         }
 
         .app-card p {
-            font-size: 0.92rem;
+            font-size: 0.95rem;
             color: var(--text-purple);
             margin-bottom: 20px;
             line-height: 1.4;
@@ -423,8 +464,8 @@
             color: #030308;
             font-family: 'Orbitron', sans-serif;
             font-weight: 700;
-            font-size: 0.85rem;
-            padding: 10px 20px;
+            font-size: 0.9rem;
+            padding: 11px 22px;
             border-radius: 8px;
             text-decoration: none;
             box-shadow: 0 0 15px rgba(0, 242, 254, 0.4);
@@ -459,9 +500,9 @@
     <!-- BIENVENIDA / SPLASH SCREEN -->
     <div id="splash-screen">
         <img src="https://raw.githubusercontent.com/figueredo56/DAIoficial/refs/heads/main/CC_20260925_200839.png" alt="ZAARD Logo" class="splash-logo">
-        <div class="splash-title">ZAARD TRACKER V3.6</div>
-        <div class="splash-subtitle">Panel analítico en tiempo real, gráficos de trading avanzados y control total del ecosistema descentralizado ZARD INNOVATION.</div>
-        <button class="enter-btn" onclick="enterDashboard()">Ingresar al Panel</button>
+        <div class="splash-title" id="t-splash-title">ZAARD TRACKER V3.6</div>
+        <div class="splash-subtitle" id="t-splash-sub">Panel analítico en tiempo real, gráficos de trading avanzados y control total del ecosistema descentralizado ZARD INNOVATION.</div>
+        <button class="enter-btn" onclick="enterDashboard()" id="t-enter">Ingresar al Panel</button>
     </div>
 
     <!-- HEADER -->
@@ -470,10 +511,19 @@
             <img src="https://raw.githubusercontent.com/figueredo56/DAIoficial/refs/heads/main/CC_20260925_200839.png" alt="ZAARD Logo">
             <div class="brand-name">ZAARD TRACKER</div>
         </div>
-        <div class="nav-links">
-            <a href="https://figueredo56.github.io/zaard-innovation-dapp/" class="nav-link" target="_blank"><i class="fas fa-coins"></i> Finance</a>
-            <a href="https://figueredo56.github.io/zaard-wallet/wallet.html" class="nav-link" target="_blank"><i class="fas fa-wallet"></i> Wallet</a>
-            <a href="https://figueredo56.github.io/DAIoficial/" class="nav-link" target="_blank"><i class="fas fa-globe"></i> Web</a>
+        <div class="nav-right">
+            <div class="nav-links">
+                <a href="https://figueredo56.github.io/zaard-innovation-dapp/" class="nav-link" target="_blank"><i class="fas fa-coins"></i> Finance</a>
+                <a href="https://figueredo56.github.io/zaard-wallet/wallet.html" class="nav-link" target="_blank"><i class="fas fa-wallet"></i> Wallet</a>
+                <a href="https://figueredo56.github.io/DAIoficial/" class="nav-link" target="_blank"><i class="fas fa-globe"></i> <span id="t-web">Web</span></a>
+            </div>
+            <!-- IDIOMA SELECTOR -->
+            <select class="lang-select" id="langSelector" onchange="changeLanguage(this.value)">
+                <option value="es" selected>🇪🇸 Español</option>
+                <option value="en">🇬🇧 English</option>
+                <option value="ar">🇸🇦 العربية</option>
+                <option value="zh">🇨🇳 中文</option>
+            </select>
         </div>
     </header>
 
@@ -482,8 +532,8 @@
         
         <!-- HERO BANNER -->
         <div class="hero-banner">
-            <h1>ZARD INNOVATION <span style="color: var(--neon-blue);">Ecosystem</span></h1>
-            <p style="color: var(--text-purple); font-size: 1.1rem;">Monitoreo avanzado de métricas on-chain, liquidez PancakeSwap y transacciones en vivo.</p>
+            <h1 id="t-hero-title">ZARD INNOVATION <span style="color: var(--neon-blue);">Ecosystem</span></h1>
+            <p id="t-hero-desc" style="color: var(--text-purple); font-size: 1.1rem;">Monitoreo avanzado de métricas on-chain, liquidez PancakeSwap y transacciones en vivo.</p>
             <div class="contract-box">
                 <i class="fas fa-fingerprint" style="color: var(--neon-blue);"></i> CA: 0xade78fba566c2d8cfd9537ddb1129d65347744d6
             </div>
@@ -492,19 +542,19 @@
         <!-- STATS GRID -->
         <div class="stats-grid">
             <div class="stat-card">
-                <div class="stat-title"><i class="fas fa-chart-line"></i> Precio Actual (USD)</div>
+                <div class="stat-title" id="t-stat-price"><i class="fas fa-chart-line"></i> Precio Actual (USD)</div>
                 <div class="stat-value" id="token-price">$0.00843</div>
             </div>
             <div class="stat-card">
-                <div class="stat-title"><i class="fas fa-water"></i> Liquidez Total (LP)</div>
+                <div class="stat-title" id="t-stat-liq"><i class="fas fa-water"></i> Liquidez Total (LP)</div>
                 <div class="stat-value" id="token-liquidity">$148,290</div>
             </div>
             <div class="stat-card">
-                <div class="stat-title"><i class="fas fa-chart-pie"></i> Cap. de Mercado (FDV)</div>
+                <div class="stat-title" id="t-stat-fdv"><i class="fas fa-chart-pie"></i> Cap. de Mercado (FDV)</div>
                 <div class="stat-value" id="token-fdv">$845,000</div>
             </div>
             <div class="stat-card">
-                <div class="stat-title"><i class="fas fa-users"></i> Holders Verificados</div>
+                <div class="stat-title" id="t-stat-holders"><i class="fas fa-users"></i> Holders Verificados</div>
                 <div class="stat-value" id="token-holders">3,482</div>
             </div>
         </div>
@@ -513,7 +563,7 @@
         <div class="dashboard-grid">
             <!-- GRÁFICA EN VIVO EMBEBIDA -->
             <div class="panel-box">
-                <div class="panel-title"><i class="fas fa-chart-area"></i> Gráfica de Precios en Vivo (DexScreener)</div>
+                <div class="panel-title" id="t-chart-title"><i class="fas fa-chart-area"></i> Gráfica de Precios en Vivo (DexScreener)</div>
                 <div class="chart-container">
                     <iframe src="https://dexscreener.com/bsc/0xade78fba566c2d8cfd9537ddb1129d65347744d6?embed=1&theme=dark&trades=0&info=0" title="ZAARD Live Chart"></iframe>
                 </div>
@@ -521,47 +571,47 @@
 
             <!-- ÓRDENES DE COMPRA Y VENTA EN VIVO -->
             <div class="panel-box">
-                <div class="panel-title"><i class="fas fa-exchange-alt"></i> Órdenes en Vivo</div>
+                <div class="panel-title" id="t-orders-title"><i class="fas fa-exchange-alt"></i> Órdenes en Vivo</div>
                 <div style="overflow-x: auto;">
                     <table class="orders-table">
                         <thead>
                             <tr>
-                                <th>Tipo</th>
-                                <th>ZAARD</th>
-                                <th>Valor (BNB)</th>
-                                <th>Hora</th>
+                                <th id="t-th-type">Tipo</th>
+                                <th id="t-th-token">ZAARD</th>
+                                <th id="t-th-val">Valor (BNB)</th>
+                                <th id="t-th-time">Hora</th>
                             </tr>
                         </thead>
                         <tbody id="live-orders-body">
                             <tr>
-                                <td><span class="badge-buy">COMPRA</span></td>
+                                <td><span class="badge-buy" id="t-buy-1">COMPRA</span></td>
                                 <td>15,400</td>
                                 <td>0.45 BNB</td>
-                                <td style="color: var(--text-purple);">Hace 1m</td>
+                                <td style="color: var(--text-purple);" id="t-time-1">Hace 1m</td>
                             </tr>
                             <tr>
-                                <td><span class="badge-sell">VENTA</span></td>
+                                <td><span class="badge-sell" id="t-sell-1">VENTA</span></td>
                                 <td>8,200</td>
                                 <td>0.24 BNB</td>
-                                <td style="color: var(--text-purple);">Hace 3m</td>
+                                <td style="color: var(--text-purple);" id="t-time-2">Hace 3m</td>
                             </tr>
                             <tr>
-                                <td><span class="badge-buy">COMPRA</span></td>
+                                <td><span class="badge-buy" id="t-buy-2">COMPRA</span></td>
                                 <td>42,100</td>
                                 <td>1.25 BNB</td>
-                                <td style="color: var(--text-purple);">Hace 5m</td>
+                                <td style="color: var(--text-purple);" id="t-time-3">Hace 5m</td>
                             </tr>
                             <tr>
-                                <td><span class="badge-buy">COMPRA</span></td>
+                                <td><span class="badge-buy" id="t-buy-3">COMPRA</span></td>
                                 <td>10,000</td>
                                 <td>0.30 BNB</td>
-                                <td style="color: var(--text-purple);">Hace 8m</td>
+                                <td style="color: var(--text-purple);" id="t-time-4">Hace 8m</td>
                             </tr>
                             <tr>
-                                <td><span class="badge-sell">VENTA</span></td>
+                                <td><span class="badge-sell" id="t-sell-2">VENTA</span></td>
                                 <td>5,500</td>
                                 <td>0.16 BNB</td>
-                                <td style="color: var(--text-purple);">Hace 12m</td>
+                                <td style="color: var(--text-purple);" id="t-time-5">Hace 12m</td>
                             </tr>
                         </tbody>
                     </table>
@@ -569,8 +619,8 @@
             </div>
         </div>
 
-        <!-- ECOSYSTEM APPS ACCESO RÁPIDO CON FONDOS PERSONALIZADOS -->
-        <h2 style="font-family: 'Orbitron', sans-serif; font-size: 1.5rem; color: var(--neon-green); margin-bottom: 20px; text-align: center; text-shadow: 0 0 10px var(--neon-green);">
+        <!-- ECOSYSTEM APPS ACCESO RÁPIDO (2x2 PERFECT GRID) -->
+        <h2 id="t-eco-heading" style="font-family: 'Orbitron', sans-serif; font-size: 1.5rem; color: var(--neon-green); margin-bottom: 20px; text-align: center; text-shadow: 0 0 10px var(--neon-green);">
             Aplicaciones del Ecosistema ZAARD
         </h2>
         <div class="ecosystem-apps">
@@ -578,32 +628,32 @@
             <div class="app-card" style="background-image: url('https://photos.pinksale.finance/file/pinksale-logo-upload/1790285851823-4955b8f5511ea8235af22dfb82371c91.png');">
                 <i class="fas fa-coins"></i>
                 <h3>ZAARD FINANCE</h3>
-                <p>Plataforma DApp descentralizada para gestión de tokens, farming y piscinas de liquidez.</p>
-                <a href="https://figueredo56.github.io/zaard-innovation-dapp/" class="app-btn" target="_blank">Abrir Finance</a>
+                <p id="t-card-finance">Plataforma DApp descentralizada para gestión de tokens, farming y piscinas de liquidez.</p>
+                <a href="https://figueredo56.github.io/zaard-innovation-dapp/" class="app-btn" target="_blank" id="t-btn-finance">Abrir Finance</a>
             </div>
 
             <!-- ZARD WALLET CARD -->
             <div class="app-card" style="background-image: url('https://photos.pinksale.finance/file/pinksale-logo-upload/1790290143709-10b712b064b3dca0c1a6417000db08e3.png');">
                 <i class="fas fa-wallet"></i>
                 <h3>ZARD WALLET</h3>
-                <p>Billetera Web3 segura integrada para BNB Smart Chain con conexión instantánea.</p>
-                <a href="https://figueredo56.github.io/zaard-wallet/wallet.html" class="app-btn" target="_blank">Abrir Wallet</a>
+                <p id="t-card-wallet">Billetera Web3 segura integrada para BNB Smart Chain con conexión instantánea.</p>
+                <a href="https://figueredo56.github.io/zaard-wallet/wallet.html" class="app-btn" target="_blank" id="t-btn-wallet">Abrir Wallet</a>
             </div>
 
             <!-- WEB OFICIAL CARD -->
             <div class="app-card" style="background-image: url('https://photos.pinksale.finance/file/pinksale-logo-upload/1790286389131-9ffaade2f1b5bc4c51858adc8fdf4bd4.png');">
                 <i class="fas fa-globe"></i>
-                <h3>WEB OFICIAL</h3>
-                <p>Portal principal del ecosistema ZAARD con la documentación y accesos directos.</p>
-                <a href="https://figueredo56.github.io/DAIoficial/" class="app-btn" target="_blank">Abrir Web</a>
+                <h3 id="t-card-web-title">WEB OFICIAL</h3>
+                <p id="t-card-web-desc">Portal principal del ecosistema ZAARD con la documentación y accesos directos.</p>
+                <a href="https://figueredo56.github.io/DAIoficial/" class="app-btn" target="_blank" id="t-btn-web">Abrir Web</a>
             </div>
 
             <!-- BSCSCAN VERIFIED CARD -->
             <div class="app-card" style="background-image: url('https://photos.pinksale.finance/file/pinksale-logo-upload/1790290122445-0077664fb41e21b3aec6f1685fd6ec56.png');">
                 <i class="fas fa-shield-alt"></i>
                 <h3>BSCSCAN VERIFIED</h3>
-                <p>Contrato inteligente auditado y 100% verificado en la red oficial de Binance.</p>
-                <a href="https://bscscan.com/address/0xade78fba566c2d8cfd9537ddb1129d65347744d6" class="app-btn" target="_blank">Ver Contrato</a>
+                <p id="t-card-bsc">Contrato inteligente auditado y 100% verificado en la red oficial de Binance.</p>
+                <a href="https://bscscan.com/address/0xade78fba566c2d8cfd9537ddb1129d65347744d6" class="app-btn" target="_blank" id="t-btn-bsc">Ver Contrato</a>
             </div>
         </div>
 
@@ -611,7 +661,7 @@
 
     <!-- FOOTER -->
     <footer>
-        <p>&copy; 2026 <span>ZAARD INNOVATION</span>. Todos los derechos reservados. | Diseñado por XENOCRYPT</p>
+        <p id="t-footer">&copy; 2026 <span>ZAARD INNOVATION</span>. Todos los derechos reservados. | Diseñado por XENOCRYPT</p>
     </footer>
 
     <script>
@@ -629,6 +679,179 @@
             let currentPrice = 0.00843 + randomChange;
             document.getElementById('token-price').innerText = '$' + currentPrice.toFixed(5);
         }, 4000);
+
+        // Diccionario de Traducciones (Español, Inglés, Árabe, Chino)
+        const translations = {
+            es: {
+                splashTitle: "ZAARD TRACKER V3.6",
+                splashSub: "Panel analítico en tiempo real, gráficos de trading avanzados y control total del ecosistema descentralizado ZARD INNOVATION.",
+                enter: "Ingresar al Panel",
+                web: "Web",
+                heroTitle: 'ZARD INNOVATION <span style="color: var(--neon-blue);">Ecosystem</span>',
+                heroDesc: "Monitoreo avanzado de métricas on-chain, liquidez PancakeSwap y transacciones en vivo.",
+                statPrice: '<i class="fas fa-chart-line"></i> Precio Actual (USD)',
+                statLiq: '<i class="fas fa-water"></i> Liquidez Total (LP)',
+                statFdv: '<i class="fas fa-chart-pie"></i> Cap. de Mercado (FDV)',
+                statHolders: '<i class="fas fa-users"></i> Holders Verificados',
+                chartTitle: '<i class="fas fa-chart-area"></i> Gráfica de Precios en Vivo (DexScreener)',
+                ordersTitle: '<i class="fas fa-exchange-alt"></i> Órdenes en Vivo',
+                thType: "Tipo", thToken: "ZAARD", thVal: "Valor (BNB)", thTime: "Hora",
+                buy: "COMPRA", sell: "VENTA",
+                time1: "Hace 1m", time2: "Hace 3m", time3: "Hace 5m", time4: "Hace 8m", time5: "Hace 12m",
+                ecoHeading: "Aplicaciones del Ecosistema ZAARD",
+                cardFinance: "Plataforma DApp descentralizada para gestión de tokens, farming y piscinas de liquidez.",
+                btnFinance: "Abrir Finance",
+                cardWallet: "Billetera Web3 segura integrada para BNB Smart Chain con conexión instantánea.",
+                btnWallet: "Abrir Wallet",
+                cardWebTitle: "WEB OFICIAL",
+                cardWebDesc: "Portal principal del ecosistema ZAARD con la documentación y accesos directos.",
+                btnWeb: "Abrir Web",
+                cardBsc: "Contrato inteligente auditado y 100% verificado en la red oficial de Binance.",
+                btnBsc: "Ver Contrato",
+                footer: '&copy; 2026 <span>ZAARD INNOVATION</span>. Todos los derechos reservados. | Diseñado por XENOCRYPT'
+            },
+            en: {
+                splashTitle: "ZAARD TRACKER V3.6",
+                splashSub: "Real-time analytics dashboard, advanced trading charts, and total control of the ZARD INNOVATION decentralized ecosystem.",
+                enter: "Enter Dashboard",
+                web: "Web",
+                heroTitle: 'ZARD INNOVATION <span style="color: var(--neon-blue);">Ecosystem</span>',
+                heroDesc: "Advanced on-chain metrics monitoring, PancakeSwap liquidity, and live transactions.",
+                statPrice: '<i class="fas fa-chart-line"></i> Current Price (USD)',
+                statLiq: '<i class="fas fa-water"></i> Total Liquidity (LP)',
+                statFdv: '<i class="fas fa-chart-pie"></i> Market Cap (FDV)',
+                statHolders: '<i class="fas fa-users"></i> Verified Holders',
+                chartTitle: '<i class="fas fa-chart-area"></i> Live Price Chart (DexScreener)',
+                ordersTitle: '<i class="fas fa-exchange-alt"></i> Live Orders',
+                thType: "Type", thToken: "ZAARD", thVal: "Value (BNB)", thTime: "Time",
+                buy: "BUY", sell: "SELL",
+                time1: "1m ago", time2: "3m ago", time3: "5m ago", time4: "8m ago", time5: "12m ago",
+                ecoHeading: "ZAARD Ecosystem Applications",
+                cardFinance: "Decentralized DApp platform for token management, farming, and liquidity pools.",
+                btnFinance: "Open Finance",
+                cardWallet: "Secure integrated Web3 wallet for BNB Smart Chain with instant connection.",
+                btnWallet: "Open Wallet",
+                cardWebTitle: "OFFICIAL WEB",
+                cardWebDesc: "Main portal of the ZAARD ecosystem featuring documentation and quick links.",
+                btnWeb: "Open Web",
+                cardBsc: "Audited smart contract 100% verified on the official Binance network.",
+                btnBsc: "View Contract",
+                footer: '&copy; 2026 <span>ZAARD INNOVATION</span>. All rights reserved. | Designed by XENOCRYPT'
+            },
+            ar: {
+                splashTitle: "ZAARD TRACKER V3.6",
+                splashSub: "لوحة تحليلات في الوقت الفعلي، رسوم بيانية متقدمة للتداول، والتحكم الكامل في نظام ZARD INNOVATION البيئي اللامركزي.",
+                enter: "الدخول إلى لوحة التحكم",
+                web: "الرئيسية",
+                heroTitle: 'نظام ZARD INNOVATION <span style="color: var(--neon-blue);">البيئي</span>',
+                heroDesc: "مراقبة متقدمة لمقاييس السلسلة، سيولة PancakeSwap والمعاملات الحية.",
+                statPrice: '<i class="fas fa-chart-line"></i> السعر الحالي (USD)',
+                statLiq: '<i class="fas fa-water"></i> إجمالي السيولة (LP)',
+                statFdv: '<i class="fas fa-chart-pie"></i> القيمة السوقية (FDV)',
+                statHolders: '<i class="fas fa-users"></i> الحاملون المتحقق منهم',
+                chartTitle: '<i class="fas fa-chart-area"></i> مخطط السعر الحي (DexScreener)',
+                ordersTitle: '<i class="fas fa-exchange-alt"></i> الطلبات الحية',
+                thType: "النوع", thToken: "ZAARD", thVal: "القيمة (BNB)", thTime: "الوقت",
+                buy: "شراء", sell: "بيع",
+                time1: "منذ دقيقة", time2: "منذ 3 دقائق", time3: "منذ 5 دقائق", time4: "منذ 8 دقائق", time5: "منذ 12 دقيقة",
+                ecoHeading: "تطبيقات نظام ZAARD البيئي",
+                cardFinance: "منصة DApps لامركزية لإدارة الرموز والزراعة ومجمعات السيولة.",
+                btnFinance: "فتح Finance",
+                cardWallet: "محفظة Web3 آمنة ومدمجة لشبكة BNB الذكية مع اتصال فوري.",
+                btnWallet: "فتح Wallet",
+                cardWebTitle: "الموقع الرسمي",
+                cardWebDesc: "البوابة الرئيسية لنظام ZAARD البيئي مع الوثائق والروابط السريعة.",
+                btnWeb: "فتح الموقع",
+                cardBsc: "عقد ذكي مدقق ومتحقق منه بنسبة 100% على شبكة Binance الرسمية.",
+                btnBsc: "عرض العقد",
+                footer: '&copy; 2026 <span>ZAARD INNOVATION</span>. جميع الحقوق محفوظة. | تصميم XENOCRYPT'
+            },
+            zh: {
+                splashTitle: "ZAARD TRACKER V3.6",
+                splashSub: "实时分析仪表板、高级交易图表，完全掌控 ZARD INNOVATION 去中心化生态系统。",
+                enter: "进入面板",
+                web: "官网",
+                heroTitle: 'ZARD INNOVATION <span style="color: var(--neon-blue);">生态系统</span>',
+                heroDesc: "高级链上指标监控、PancakeSwap 流动性与实时交易。",
+                statPrice: '<i class="fas fa-chart-line"></i> 当前价格 (USD)',
+                statLiq: '<i class="fas fa-water"></i> 总流动性 (LP)',
+                statFdv: '<i class="fas fa-chart-pie"></i> 市值 (FDV)',
+                statHolders: '<i class="fas fa-users"></i> 认证持有人',
+                chartTitle: '<i class="fas fa-chart-area"></i> 实时价格图表 (DexScreener)',
+                ordersTitle: '<i class="fas fa-exchange-alt"></i> 实时订单',
+                thType: "类型", thToken: "ZAARD", thVal: "价值 (BNB)", thTime: "时间",
+                buy: "买入", sell: "卖出",
+                time1: "1分钟前", time2: "3分钟前", time3: "5分钟前", time4: "8分钟前", time5: "12分钟前",
+                ecoHeading: "ZAARD 生态系统应用",
+                cardFinance: "用于代币管理、挖矿和流动性池的去中心化 DApp 平台。",
+                btnFinance: "打开 Finance",
+                cardWallet: "专为 BNB 智能链集成的高安全 Web3 钱包，即时连接。",
+                btnWallet: "打开 Wallet",
+                cardWebTitle: "官方网站",
+                cardWebDesc: "ZAARD 生态系统主门户，提供文档与快捷链接。",
+                btnWeb: "打开网页",
+                cardBsc: "经币安官方网络 100% 审计与验证的智能合约。",
+                btnBsc: "查看合约",
+                footer: '&copy; 2026 <span>ZAARD INNOVATION</span>. 保留所有权利。 | 设计者 XENOCRYPT'
+            }
+        };
+
+        function changeLanguage(lang) {
+            const t = translations[lang];
+            if (!t) return;
+
+            document.getElementById('t-splash-title').innerText = t.splashTitle;
+            document.getElementById('t-splash-sub').innerText = t.splashSub;
+            document.getElementById('t-enter').innerText = t.enter;
+            document.getElementById('t-web').innerText = t.web;
+            document.getElementById('t-hero-title').innerHTML = t.heroTitle;
+            document.getElementById('t-hero-desc').innerText = t.heroDesc;
+            
+            document.getElementById('t-stat-price').innerHTML = t.statPrice;
+            document.getElementById('t-stat-liq').innerHTML = t.statLiq;
+            document.getElementById('t-stat-fdv').innerHTML = t.statFdv;
+            document.getElementById('t-stat-holders').innerHTML = t.statHolders;
+
+            document.getElementById('t-chart-title').innerHTML = t.chartTitle;
+            document.getElementById('t-orders-title').innerHTML = t.ordersTitle;
+
+            document.getElementById('t-th-type').innerText = t.thType;
+            document.getElementById('t-th-token').innerText = t.thToken;
+            document.getElementById('t-th-val').innerText = t.thVal;
+            document.getElementById('t-th-time').innerText = t.thTime;
+
+            document.getElementById('t-buy-1').innerText = t.buy;
+            document.getElementById('t-sell-1').innerText = t.sell;
+            document.getElementById('t-buy-2').innerText = t.buy;
+            document.getElementById('t-buy-3').innerText = t.buy;
+            document.getElementById('t-sell-2').innerText = t.sell;
+
+            document.getElementById('t-time-1').innerText = t.time1;
+            document.getElementById('t-time-2').innerText = t.time2;
+            document.getElementById('t-time-3').innerText = t.time3;
+            document.getElementById('t-time-4').innerText = t.time4;
+            document.getElementById('t-time-5').innerText = t.time5;
+
+            document.getElementById('t-eco-heading').innerText = t.ecoHeading;
+            document.getElementById('t-card-finance').innerText = t.cardFinance;
+            document.getElementById('t-btn-finance').innerText = t.btnFinance;
+            document.getElementById('t-card-wallet').innerText = t.cardWallet;
+            document.getElementById('t-btn-wallet').innerText = t.btnWallet;
+            document.getElementById('t-card-web-title').innerText = t.cardWebTitle;
+            document.getElementById('t-card-web-desc').innerText = t.cardWebDesc;
+            document.getElementById('t-btn-web').innerText = t.btnWeb;
+            document.getElementById('t-card-bsc').innerText = t.cardBsc;
+            document.getElementById('t-btn-bsc').innerText = t.btnBsc;
+
+            document.getElementById('t-footer').innerHTML = t.footer;
+
+            // Ajuste de dirección de texto para Árabe
+            if (lang === 'ar') {
+                document.body.dir = 'rtl';
+            } else {
+                document.body.dir = 'ltr';
+            }
+        }
     </script>
 </body>
 </html>
