@@ -1,8 +1,7 @@
 ![logo ZARED](https://raw.githubusercontent.com/figueredo56/ZARD.token/refs/heads/main/170%20sin%20t%C3%ADtulo_20260707213436.png)
 # 🚀 ZAARD TRACKER - ZARD INNOVATION
 ![logo ZARED](https://raw.githubusercontent.com/figueredo56/ZARD.token/refs/heads/main/170%20sin%20t%C3%ADtulo_20260707213436.png)
-# 🚀 ZAARD TRACKER - ZARD INNOVATION![logo ZARED](https://raw.githubusercontent.com/figueredo56/ZARD.token/refs/heads/main/170%20sin%20t%C3%ADtulo_20260707213436.png)
-# 🚀 ZAARD TRACKER - ZARD INNOVATION
+
 
 <div align="center">
 
