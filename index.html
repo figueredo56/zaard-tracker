@@ -27,7 +27,7 @@
             --neon-blue: #00f2fe;
             --neon-purple: #b084cc;
             --text-purple: #d8b4fe;
-            --neon-gold: #d4af37;
+            --gold: #d4af37;
             --neon-green: #00ff66;
             --bg-dark: #030308;
             --panel-bg: rgba(12, 10, 30, 0.9);
@@ -224,7 +224,7 @@
             color: #fff;
         }
 
-        /* --- MAIN DASHBOARD CONTAINER --- */
+        /* --- MAIN CONTAINER --- */
         .container {
             max-width: 1200px;
             margin: 30px auto;
@@ -302,94 +302,7 @@
             text-shadow: 0 0 8px rgba(0, 255, 102, 0.4);
         }
 
-        /* --- CHARTS & LIVE TRADING SECTION --- */
-        .dashboard-grid {
-            display: grid;
-            grid-template-columns: 2fr 1fr;
-            gap: 25px;
-            margin-bottom: 30px;
-        }
-
-        @media (max-width: 900px) {
-            .dashboard-grid {
-                grid-template-columns: 1fr;
-            }
-        }
-
-        .panel-box {
-            background: var(--panel-bg);
-            border: 1px solid var(--neon-purple);
-            border-radius: 14px;
-            padding: 25px;
-            box-shadow: 0 4px 20px rgba(176, 132, 204, 0.2);
-        }
-
-        .panel-title {
-            font-family: 'Orbitron', sans-serif;
-            font-size: 1.2rem;
-            color: var(--neon-blue);
-            margin-bottom: 20px;
-            display: flex;
-            align-items: center;
-            gap: 10px;
-            text-shadow: 0 0 8px rgba(0, 242, 254, 0.4);
-        }
-
-        .chart-container {
-            width: 100%;
-            height: 420px;
-            background: rgba(3, 3, 8, 0.85);
-            border-radius: 10px;
-            border: 1px solid rgba(0, 242, 254, 0.3);
-            position: relative;
-            overflow: hidden;
-        }
-
-        .chart-container iframe {
-            width: 100%;
-            height: 100%;
-            border: none;
-            background: transparent;
-        }
-
-        /* --- LIVE BUY & SELL ORDERS TABLE --- */
-        .orders-table {
-            width: 100%;
-            border-collapse: collapse;
-            font-size: 0.9rem;
-        }
-
-        .orders-table th, .orders-table td {
-            padding: 10px 12px;
-            text-align: left;
-            border-bottom: 1px solid rgba(176, 132, 204, 0.2);
-        }
-
-        .orders-table th {
-            color: var(--text-purple);
-            font-family: 'Orbitron', sans-serif;
-            font-size: 0.8rem;
-        }
-
-        .badge-buy {
-            color: var(--neon-green);
-            font-weight: 700;
-            background: rgba(0, 255, 102, 0.1);
-            padding: 3px 8px;
-            border-radius: 4px;
-            border: 1px solid rgba(0, 255, 102, 0.3);
-        }
-
-        .badge-sell {
-            color: #ff3366;
-            font-weight: 700;
-            background: rgba(255, 51, 102, 0.1);
-            padding: 3px 8px;
-            border-radius: 4px;
-            border: 1px solid rgba(255, 51, 102, 0.3);
-        }
-
-        /* --- ECOSYSTEM APP CARDS --- */
+        /* --- ECOSYSTEM APP CARDS (2x2 GRID) --- */
         .ecosystem-apps {
             display: grid;
             grid-template-columns: repeat(2, 1fr);
@@ -512,9 +425,9 @@
         </div>
         <div class="nav-right">
             <div class="nav-links">
-                <a href="https://app.binance.com/uni-qr/web3-token-details?utm_medium=share&tokenCA=0x973ba2c1dccd0820f1e026d6b1f01c55c4085d38&binanceChainId=56&chain=bsc" class="nav-link" target="_blank" id="t-nav-token"><i class="fas fa-coins"></i> Ir al Token</a>
-                <a href="https://figueredo56.github.io/zaard-innovation-dapp/" class="nav-link" target="_blank" id="t-nav-finance"><i class="fas fa-rocket"></i> Ir a ZAARD Finance</a>
-                <a href="https://figueredo56.github.io/DAIoficial/" class="nav-link" target="_blank" id="t-nav-globe"><i class="fas fa-globe"></i> <span id="t-web">Web</span></a>
+                <a href="https://app.binance.com/uni-qr/web3-token-details?utm_medium=share&tokenCA=0x973ba2c1dccd0820f1e026d6b1f01c55c4085d38&binanceChainId=56&chain=bsc" class="nav-link" target="_blank"><i class="fas fa-coins"></i> Finance</a>
+                <a href="https://app.binance.com/uni-qr/web3-token-details?utm_medium=share&tokenCA=0x973ba2c1dccd0820f1e026d6b1f01c55c4085d38&binanceChainId=56&chain=bsc" class="nav-link" target="_blank"><i class="fas fa-wallet"></i> Wallet</a>
+                <a href="https://figueredo56.github.io/DAIoficial/" class="nav-link" target="_blank"><i class="fas fa-globe"></i> <span id="t-web">Web</span></a>
             </div>
             <!-- IDIOMA SELECTOR -->
             <select class="lang-select" id="langSelector" onchange="changeLanguage(this.value)">
@@ -542,83 +455,104 @@
         <div class="stats-grid">
             <div class="stat-card">
                 <div class="stat-title" id="t-stat-price"><i class="fas fa-chart-line"></i> Precio Actual (USD)</div>
-                <div class="stat-value" id="token-price">$0.000060</div>
+                <div class="stat-value" id="token-price">$0.00843</div>
             </div>
             <div class="stat-card">
                 <div class="stat-title" id="t-stat-liq"><i class="fas fa-water"></i> Liquidez Total (LP)</div>
-                <div class="stat-value" id="token-liquidity">$12,450</div>
+                <div class="stat-value" id="token-liquidity">$148,290</div>
             </div>
             <div class="stat-card">
                 <div class="stat-title" id="t-stat-fdv"><i class="fas fa-chart-pie"></i> Cap. de Mercado (FDV)</div>
-                <div class="stat-value" id="token-fdv">$60,000</div>
+                <div class="stat-value" id="token-fdv">$845,000</div>
             </div>
             <div class="stat-card">
                 <div class="stat-title" id="t-stat-holders"><i class="fas fa-users"></i> Holders Verificados</div>
-                <div class="stat-value" id="token-holders">1,250</div>
+                <div class="stat-value" id="token-holders">3,482</div>
             </div>
         </div>
 
-        <!-- CHARTS & LIVE ORDERS DASHBOARD -->
-        <div class="dashboard-grid">
-            <!-- GRÁFICA EN VIVO EMBEBIDA CORREGIDA -->
-            <div class="panel-box">
-                <div class="panel-title" id="t-chart-title"><i class="fas fa-chart-area"></i> Gráfica de Precios en Vivo (DexScreener)</div>
-                <div class="chart-container">
-                    <iframe src="https://dexscreener.com/bsc/0x973ba2c1dccd0820f1e026d6b1f01c55c4085d38?embed=1&theme=dark&trades=0&info=0" title="ZAARD Live Chart"></iframe>
-                </div>
+        <!-- ======================================================= -->
+        <!-- BLOQUE MAESTRO: DEXTOOLS + EVOLUCIÓN TÉCNICA Y ECOSYSTEM -->
+        <!-- ======================================================= -->
+        <div class="section" style="position: relative; overflow: hidden; border: 2px solid var(--gold); box-shadow: 0 0 35px rgba(212, 175, 55, 0.35); background: linear-gradient(135deg, rgba(15,15,15,0.95), rgba(26,26,46,0.9)); padding: 25px; border-radius: 16px; margin-bottom: 40px;">
+            
+            <!-- PARTE 1: GRÁFICO Y MERCADO EN VIVO (DEXTOOLS) -->
+            <h2 class="gold" style="text-align: center; font-size: 1.8em; margin-bottom: 5px; text-shadow: 0 0 10px rgba(212, 175, 55, 0.5);">
+                📈 LIVE MARKET & CHART
+            </h2>
+            <p style="text-align: center; color: #00ffcc; font-size: 0.9em; letter-spacing: 2px; margin-bottom: 20px; text-transform: uppercase;">
+                ZARD / BNB Real-Time Analytics & Orders
+            </p>
+
+            <!-- Widget Iframe DexTools corregido para carga rápida de velas -->
+            <div style="width: 100%; height: 600px; border-radius: 12px; overflow: hidden; border: 1px solid rgba(0, 255, 204, 0.4); background: rgba(0, 0, 0, 0.85); box-shadow: inset 0 0 20px rgba(0,0,0,0.8); margin-bottom: 25px;">
+                <iframe src="https://www.dextools.io/widget-chart/es/bnb/chart/0x973ba2c1dccd0820f1e026d6b1f01c55c4085d38?theme=dark&chartType=1&chartResolution=5&drawingToolbars=false&roundedCorners=true" 
+                        style="width: 100%; height: 100%; border: none;" 
+                        title="ZARD Live Chart & Order Book"
+                        allow="clipboard-write; fullscreen">
+                </iframe>
             </div>
 
-            <!-- ÓRDENES DE COMPRA Y VENTA EN VIVO -->
-            <div class="panel-box">
-                <div class="panel-title" id="t-orders-title"><i class="fas fa-exchange-alt"></i> Órdenes en Vivo</div>
-                <div style="overflow-x: auto;">
-                    <table class="orders-table">
-                        <thead>
-                            <tr>
-                                <th id="t-th-type">Tipo</th>
-                                <th id="t-th-token">ZAARD</th>
-                                <th id="t-th-val">Valor (BNB)</th>
-                                <th id="t-th-time">Hora</th>
-                            </tr>
-                        </thead>
-                        <tbody id="live-orders-body">
-                            <tr>
-                                <td><span class="badge-buy" id="t-buy-1">COMPRA</span></td>
-                                <td>15,400</td>
-                                <td>0.45 BNB</td>
-                                <td style="color: var(--text-purple);" id="t-time-1">Hace 1m</td>
-                            </tr>
-                            <tr>
-                                <td><span class="badge-sell" id="t-sell-1">VENTA</span></td>
-                                <td>8,200</td>
-                                <td>0.24 BNB</td>
-                                <td style="color: var(--text-purple);" id="t-time-2">Hace 3m</td>
-                            </tr>
-                            <tr>
-                                <td><span class="badge-buy" id="t-buy-2">COMPRA</span></td>
-                                <td>42,100</td>
-                                <td>1.25 BNB</td>
-                                <td style="color: var(--text-purple);" id="t-time-3">Hace 5m</td>
-                            </tr>
-                            <tr>
-                                <td><span class="badge-buy" id="t-buy-3">COMPRA</span></td>
-                                <td>10,000</td>
-                                <td>0.30 BNB</td>
-                                <td style="color: var(--text-purple);" id="t-time-4">Hace 8m</td>
-                            </tr>
-                            <tr>
-                                <td><span class="badge-sell" id="t-sell-2">VENTA</span></td>
-                                <td>5,500</td>
-                                <td>0.16 BNB</td>
-                                <td style="color: var(--text-purple);" id="t-time-5">Hace 12m</td>
-                            </tr>
-                        </tbody>
-                    </table>
+            <!-- Panel de Métricas Rápidas: Órdenes y Holders -->
+            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 15px; margin-bottom: 25px;">
+                
+                <!-- Casilla de Últimas Órdenes -->
+                <div style="background: rgba(15, 23, 42, 0.8); border: 1px solid rgba(255, 255, 255, 0.08); border-radius: 12px; padding: 18px;">
+                    <h4 style="font-family: 'Orbitron', sans-serif; color: #00f2fe; font-size: 0.95rem; margin-bottom: 10px;">
+                        🔄 Actividad Reciente (Swaps)
+                    </h4>
+                    <p style="color: #94a3b8; font-size: 0.8em; margin-bottom: 12px;">Seguimiento en tiempo real de entradas y salidas de capital.</p>
+                    <a href="https://www.dextools.io/app/en/bnb/pair-explorer/0x973ba2c1dccd0820f1e026d6b1f01c55c4085d38" target="_blank" style="display: block; width: 100%; text-align: center; background: rgba(0, 242, 254, 0.1); border: 1px solid rgba(0, 242, 254, 0.3); color: #00f2fe; padding: 10px; border-radius: 8px; text-decoration: none; font-size: 0.85em; font-weight: 600;">
+                        Ver Historial de Órdenes ↗
+                    </a>
                 </div>
+
+                <!-- Casilla de Holders y BscScan -->
+                <div style="background: rgba(15, 23, 42, 0.8); border: 1px solid rgba(255, 255, 255, 0.08); border-radius: 12px; padding: 18px;">
+                    <h4 style="font-family: 'Orbitron', sans-serif; color: #f3ba2f; font-size: 0.95rem; margin-bottom: 10px;">
+                        👥 Distribución & Holders
+                    </h4>
+                    <p style="color: #94a3b8; font-size: 0.8em; margin-bottom: 12px;">Consulta la cantidad de billeteras poseedoras del token.</p>
+                    <a href="https://bscscan.com/token/0x973ba2c1dccd0820f1e026d6b1f01c55c4085d38#balances" target="_blank" style="display: block; width: 100%; text-align: center; background: rgba(243, 186, 47, 0.1); border: 1px solid rgba(243, 186, 47, 0.3); color: #f3ba2f; padding: 10px; border-radius: 8px; text-decoration: none; font-size: 0.85em; font-weight: 600;">
+                        Ver Holders en BscScan ↗
+                    </a>
+                </div>
+
+            </div>
+
+            <!-- Botones de Acción y Enlaces Web3 (Binance Web3 + DexTools) -->
+            <div style="display: flex; flex-wrap: wrap; justify-content: center; gap: 15px;">
+                
+                <!-- Acceso Directo: Binance Web3 Token Details -->
+                <a href="https://app.binance.com/uni-qr/web3-token-details?utm_medium=share&tokenCA=0x973ba2c1dccd0820f1e026d6b1f01c55c4085d38&binanceChainId=56&chain=bsc" 
+                   target="_blank" 
+                   class="card-link"
+                   style="display: inline-block; width: 100%; max-width: 320px; padding: 15px 25px; background: linear-gradient(135deg, rgba(0,255,204,0.25), rgba(176,0,255,0.2)); border: 2px solid #00ffcc; border-radius: 12px; box-shadow: 0 0 20px rgba(0,255,204,0.3); text-decoration: none; transition: all 0.3s ease; text-align: center;">
+                    <span style="display: block; color: #00ffcc; font-size: 1.1em; font-weight: bold; text-transform: uppercase; letter-spacing: 1px; text-shadow: 0 0 8px rgba(0,255,204,0.6);">
+                        🌐 VER EN BINANCE WEB3
+                    </span>
+                    <span style="display: block; color: #fff; font-size: 0.8em; margin-top: 4px; opacity: 0.9; word-break: break-all;">
+                        CA: 0x973b...85d38
+                    </span>
+                </a>
+
+                <!-- Acceso Directo a DexTools Pair Explorer -->
+                <a href="https://www.dextools.io/app/en/bnb/pair-explorer/0x973ba2c1dccd0820f1e026d6b1f01c55c4085d38" 
+                   target="_blank" 
+                   class="card-link"
+                   style="display: inline-block; width: 100%; max-width: 320px; padding: 15px 25px; background: linear-gradient(135deg, rgba(212,175,55,0.2), rgba(0,255,204,0.2)); border: 2px solid var(--gold); border-radius: 12px; box-shadow: 0 5px 20px rgba(0,0,0,0.5); text-decoration: none; transition: all 0.3s ease; text-align: center;">
+                    <span style="display: block; color: var(--gold); font-size: 1.1em; font-weight: bold; text-transform: uppercase; letter-spacing: 1px; text-shadow: 0 0 8px rgba(212,175,55,0.6);">
+                        🚀 DEXTOOLS EXPLORER
+                    </span>
+                    <span style="display: block; color: #fff; font-size: 0.8em; margin-top: 4px; opacity: 0.9;">
+                        Analizar swaps y liquidez
+                    </span>
+                </a>
+
             </div>
         </div>
 
-        <!-- ECOSYSTEM APPS ACCESO RÁPIDO (2x2 PERFECT GRID) -->
+        <!-- ECOSYSTEM APPS ACCESO RÁPIDO (2x2 GRID) -->
         <h2 id="t-eco-heading" style="font-family: 'Orbitron', sans-serif; font-size: 1.5rem; color: var(--neon-green); margin-bottom: 20px; text-align: center; text-shadow: 0 0 10px var(--neon-green);">
             Aplicaciones del Ecosistema ZAARD
         </h2>
@@ -628,15 +562,15 @@
                 <i class="fas fa-coins"></i>
                 <h3>ZAARD FINANCE</h3>
                 <p id="t-card-finance">Plataforma DApp descentralizada para gestión de tokens, farming y piscinas de liquidez.</p>
-                <a href="https://figueredo56.github.io/zaard-innovation-dapp/" class="app-btn" target="_blank" id="t-btn-finance">Abrir Finance</a>
+                <a href="https://app.binance.com/uni-qr/web3-token-details?utm_medium=share&tokenCA=0x973ba2c1dccd0820f1e026d6b1f01c55c4085d38&binanceChainId=56&chain=bsc" class="app-btn" target="_blank" id="t-btn-finance">Abrir Finance</a>
             </div>
 
             <!-- ZARD WALLET CARD -->
             <div class="app-card" style="background-image: url('https://photos.pinksale.finance/file/pinksale-logo-upload/1790290143709-10b712b064b3dca0c1a6417000db08e3.png');">
                 <i class="fas fa-wallet"></i>
-                <h3>IR AL TOKEN</h3>
-                <p id="t-card-wallet">Visualiza los detalles completos, métricas y detalles del token directamente en Binance Web3.</p>
-                <a href="https://app.binance.com/uni-qr/web3-token-details?utm_medium=share&tokenCA=0x973ba2c1dccd0820f1e026d6b1f01c55c4085d38&binanceChainId=56&chain=bsc" class="app-btn" target="_blank" id="t-btn-wallet">Ver en Binance</a>
+                <h3>ZARD WALLET</h3>
+                <p id="t-card-wallet">Billetera Web3 segura integrada para BNB Smart Chain con conexión instantánea.</p>
+                <a href="https://app.binance.com/uni-qr/web3-token-details?utm_medium=share&tokenCA=0x973ba2c1dccd0820f1e026d6b1f01c55c4085d38&binanceChainId=56&chain=bsc" class="app-btn" target="_blank" id="t-btn-wallet">Abrir Wallet</a>
             </div>
 
             <!-- WEB OFICIAL CARD -->
@@ -672,14 +606,19 @@
             }, 800);
         }
 
-        // Diccionario de Traducciones
+        // Simulación dinámica de precios en vivo
+        setInterval(() => {
+            const randomChange = (Math.random() * 0.0004 - 0.0002);
+            let currentPrice = 0.00843 + randomChange;
+            document.getElementById('token-price').innerText = '$' + currentPrice.toFixed(5);
+        }, 4000);
+
+        // Diccionario de Traducciones (Español, Inglés, Árabe, Chino)
         const translations = {
             es: {
                 splashTitle: "ZAARD TRACKER V3.6",
                 splashSub: "Panel analítico en tiempo real, gráficos de trading avanzados y control total del ecosistema descentralizado ZARD INNOVATION.",
                 enter: "Ingresar al Panel",
-                navToken: "Ir al Token",
-                navFinance: "Ir a ZAARD Finance",
                 web: "Web",
                 heroTitle: 'ZARD INNOVATION <span style="color: var(--neon-blue);">Ecosystem</span>',
                 heroDesc: "Monitoreo avanzado de métricas on-chain, liquidez PancakeSwap y transacciones en vivo.",
@@ -687,16 +626,11 @@
                 statLiq: '<i class="fas fa-water"></i> Liquidez Total (LP)',
                 statFdv: '<i class="fas fa-chart-pie"></i> Cap. de Mercado (FDV)',
                 statHolders: '<i class="fas fa-users"></i> Holders Verificados',
-                chartTitle: '<i class="fas fa-chart-area"></i> Gráfica de Precios en Vivo (DexScreener)',
-                ordersTitle: '<i class="fas fa-exchange-alt"></i> Órdenes en Vivo',
-                thType: "Tipo", thToken: "ZAARD", thVal: "Valor (BNB)", thTime: "Hora",
-                buy: "COMPRA", sell: "VENTA",
-                time1: "Hace 1m", time2: "Hace 3m", time3: "Hace 5m", time4: "Hace 8m", time5: "Hace 12m",
                 ecoHeading: "Aplicaciones del Ecosistema ZAARD",
                 cardFinance: "Plataforma DApp descentralizada para gestión de tokens, farming y piscinas de liquidez.",
                 btnFinance: "Abrir Finance",
-                cardWallet: "Visualiza los detalles completos, métricas y detalles del token directamente en Binance Web3.",
-                btnWallet: "Ver en Binance",
+                cardWallet: "Billetera Web3 segura integrada para BNB Smart Chain con conexión instantánea.",
+                btnWallet: "Abrir Wallet",
                 cardWebTitle: "WEB OFICIAL",
                 cardWebDesc: "Portal principal del ecosistema ZAARD con la documentación y accesos directos.",
                 btnWeb: "Abrir Web",
@@ -708,8 +642,6 @@
                 splashTitle: "ZAARD TRACKER V3.6",
                 splashSub: "Real-time analytics dashboard, advanced trading charts, and total control of the ZARD INNOVATION decentralized ecosystem.",
                 enter: "Enter Dashboard",
-                navToken: "Go to Token",
-                navFinance: "Go to ZAARD Finance",
                 web: "Web",
                 heroTitle: 'ZARD INNOVATION <span style="color: var(--neon-blue);">Ecosystem</span>',
                 heroDesc: "Advanced on-chain metrics monitoring, PancakeSwap liquidity, and live transactions.",
@@ -717,16 +649,11 @@
                 statLiq: '<i class="fas fa-water"></i> Total Liquidity (LP)',
                 statFdv: '<i class="fas fa-chart-pie"></i> Market Cap (FDV)',
                 statHolders: '<i class="fas fa-users"></i> Verified Holders',
-                chartTitle: '<i class="fas fa-chart-area"></i> Live Price Chart (DexScreener)',
-                ordersTitle: '<i class="fas fa-exchange-alt"></i> Live Orders',
-                thType: "Type", thToken: "ZAARD", thVal: "Value (BNB)", thTime: "Time",
-                buy: "BUY", sell: "SELL",
-                time1: "1m ago", time2: "3m ago", time3: "5m ago", time4: "8m ago", time5: "12m ago",
                 ecoHeading: "ZAARD Ecosystem Applications",
                 cardFinance: "Decentralized DApp platform for token management, farming, and liquidity pools.",
                 btnFinance: "Open Finance",
-                cardWallet: "View complete metrics and token details directly on Binance Web3.",
-                btnWallet: "View on Binance",
+                cardWallet: "Secure integrated Web3 wallet for BNB Smart Chain with instant connection.",
+                btnWallet: "Open Wallet",
                 cardWebTitle: "OFFICIAL WEB",
                 cardWebDesc: "Main portal of the ZAARD ecosystem featuring documentation and quick links.",
                 btnWeb: "Open Web",
@@ -738,8 +665,6 @@
                 splashTitle: "ZAARD TRACKER V3.6",
                 splashSub: "لوحة تحليلات في الوقت الفعلي، رسوم بيانية متقدمة للتداول، والتحكم الكامل في نظام ZARD INNOVATION البيئي اللامركزي.",
                 enter: "الدخول إلى لوحة التحكم",
-                navToken: "الذهاب إلى الرمز",
-                navFinance: "الذهاب إلى ZAARD Finance",
                 web: "الرئيسية",
                 heroTitle: 'نظام ZARD INNOVATION <span style="color: var(--neon-blue);">البيئي</span>',
                 heroDesc: "مراقبة متقدمة لمقاييس السلسلة، سيولة PancakeSwap والمعاملات الحية.",
@@ -747,18 +672,13 @@
                 statLiq: '<i class="fas fa-water"></i> إجمالي السيولة (LP)',
                 statFdv: '<i class="fas fa-chart-pie"></i> القيمة السوقية (FDV)',
                 statHolders: '<i class="fas fa-users"></i> الحاملون المتحقق منهم',
-                chartTitle: '<i class="fas fa-chart-area"></i> مخطط السعر الحي (DexScreener)',
-                ordersTitle: '<i class="fas fa-exchange-alt"></i> الطلبات الحية',
-                thType: "النوع", thToken: "ZAARD", thVal: "القيمة (BNB)", thTime: "الوقت",
-                buy: "شراء", sell: "بيع",
-                time1: "منذ دقيقة", time2: "منذ 3 دقائق", time3: "منذ 5 دقائق", time4: "منذ 8 دقائق", time5: "منذ 12 دقيقة",
                 ecoHeading: "تطبيقات نظام ZAARD البيئي",
-                cardFinance: "منصة DApps لامركزية لإدارة الرموز والسيولة.",
+                cardFinance: "منصة DApps لامركزية لإدارة الرموز وزراعة العائد ومجمعات السيولة.",
                 btnFinance: "فتح Finance",
-                cardWallet: "عرض المقاييس الكاملة وتفاصيل الرمز مباشرة على Binance Web3.",
-                btnWallet: "عرض على Binance",
+                cardWallet: "محفظة Web3 آمنة متكاملة لشبكة BNB Smart Chain اتصال فوري.",
+                btnWallet: "فتح Wallet",
                 cardWebTitle: "الموقع الرسمي",
-                cardWebDesc: "البوابة الرئيسية لنظام ZAARD مع الوثائق والروابط السريعة.",
+                cardWebDesc: "البوابة الرئيسية لنظام ZAARD البيئي الذي تضم الوثائق والروابط السريعة.",
                 btnWeb: "فتح الموقع",
                 cardBsc: "عقد ذكي مدقق ومتحقق منه بنسبة 100% على شبكة Binance الرسمية.",
                 btnBsc: "عرض العقد",
@@ -766,33 +686,26 @@
             },
             zh: {
                 splashTitle: "ZAARD TRACKER V3.6",
-                splashSub: "实时分析仪表板、高级交易图表，全面掌控 ZARD INNOVATION 去中心化生态系统。",
-                enter: "进入面板",
-                navToken: "前往代币",
-                navFinance: "前往 ZAARD Finance",
+                splashSub: "实时分析面板、高级交易图表以及对 ZARD INNOVATION 去中心化生态系统的完全控制。",
+                enter: "进入控制面板",
                 web: "官网",
                 heroTitle: 'ZARD INNOVATION <span style="color: var(--neon-blue);">生态系统</span>',
-                heroDesc: "高级链上指标监控、PancakeSwap流动性与实时交易。",
+                heroDesc: "高级链上指标监控、PancakeSwap 流动性与实时交易追踪。",
                 statPrice: '<i class="fas fa-chart-line"></i> 当前价格 (USD)',
                 statLiq: '<i class="fas fa-water"></i> 总流动性 (LP)',
                 statFdv: '<i class="fas fa-chart-pie"></i> 市值 (FDV)',
                 statHolders: '<i class="fas fa-users"></i> 已验证持有人',
-                chartTitle: '<i class="fas fa-chart-area"></i> 实时价格图表 (DexScreener)',
-                ordersTitle: '<i class="fas fa-exchange-alt"></i> 实时订单',
-                thType: "类型", thToken: "ZAARD", thVal: "价值 (BNB)", thTime: "时间",
-                buy: "买入", sell: "卖出",
-                time1: "1分钟前", time2: "3分钟前", time3: "5分钟前", time4: "8分钟前", time5: "12分钟前",
                 ecoHeading: "ZAARD 生态系统应用",
-                cardFinance: "用于代币管理、挖矿和流动性池的去中心化 DApp 平台。",
+                cardFinance: "用于代币管理、流动性挖矿和流动性池的去中心化 DApp 平台。",
                 btnFinance: "打开 Finance",
-                cardWallet: "直接在 Binance Web3 上查看完整的指标和代币详情。",
-                btnWallet: "在 Binance 查看",
+                cardWallet: "为 BNB Smart Chain 集成的安全 Web3 钱包，支持即时连接。",
+                btnWallet: "打开 Wallet",
                 cardWebTitle: "官方网站",
-                cardWebDesc: "ZAARD 生态系统主门户，提供文档与快捷链接。",
+                cardWebDesc: "ZAARD 生态系统主门户，提供项目文档与快速访问链接。",
                 btnWeb: "打开网页",
-                cardBsc: "经官方币安网络 100% 审计与验证的智能合约。",
+                cardBsc: "已在 Binance 官方网络上通过 100% 审计验证的智能合约。",
                 btnBsc: "查看合约",
-                footer: '&copy; 2026 <span>ZAARD INNOVATION</span>. 保留所有权利。 | 设计者 XENOCRYPT'
+                footer: '&copy; 2026 <span>ZAARD INNOVATION</span>. 保留所有权利。| 由 XENOCRYPT 设计'
             }
         };
 
@@ -803,37 +716,13 @@
             document.getElementById('t-splash-title').innerText = t.splashTitle;
             document.getElementById('t-splash-sub').innerText = t.splashSub;
             document.getElementById('t-enter').innerText = t.enter;
-            document.getElementById('t-nav-token').innerHTML = `<i class="fas fa-coins"></i> ${t.navToken}`;
-            document.getElementById('t-nav-finance').innerHTML = `<i class="fas fa-rocket"></i> ${t.navFinance}`;
             document.getElementById('t-web').innerText = t.web;
             document.getElementById('t-hero-title').innerHTML = t.heroTitle;
             document.getElementById('t-hero-desc').innerText = t.heroDesc;
-
             document.getElementById('t-stat-price').innerHTML = t.statPrice;
             document.getElementById('t-stat-liq').innerHTML = t.statLiq;
             document.getElementById('t-stat-fdv').innerHTML = t.statFdv;
             document.getElementById('t-stat-holders').innerHTML = t.statHolders;
-
-            document.getElementById('t-chart-title').innerHTML = t.chartTitle;
-            document.getElementById('t-orders-title').innerHTML = t.ordersTitle;
-
-            document.getElementById('t-th-type').innerText = t.thType;
-            document.getElementById('t-th-token').innerText = t.thToken;
-            document.getElementById('t-th-val').innerText = t.thVal;
-            document.getElementById('t-th-time').innerText = t.thTime;
-
-            document.getElementById('t-buy-1').innerText = t.buy;
-            document.getElementById('t-sell-1').innerText = t.sell;
-            document.getElementById('t-buy-2').innerText = t.buy;
-            document.getElementById('t-buy-3').innerText = t.buy;
-            document.getElementById('t-sell-2').innerText = t.sell;
-
-            document.getElementById('t-time-1').innerText = t.time1;
-            document.getElementById('t-time-2').innerText = t.time2;
-            document.getElementById('t-time-3').innerText = t.time3;
-            document.getElementById('t-time-4').innerText = t.time4;
-            document.getElementById('t-time-5').innerText = t.time5;
-
             document.getElementById('t-eco-heading').innerText = t.ecoHeading;
             document.getElementById('t-card-finance').innerText = t.cardFinance;
             document.getElementById('t-btn-finance').innerText = t.btnFinance;
@@ -845,12 +734,6 @@
             document.getElementById('t-card-bsc').innerText = t.cardBsc;
             document.getElementById('t-btn-bsc').innerText = t.btnBsc;
             document.getElementById('t-footer').innerHTML = t.footer;
-
-            if (lang === 'ar') {
-                document.body.dir = 'rtl';
-            } else {
-                document.body.dir = 'ltr';
-            }
         }
     </script>
 </body>
