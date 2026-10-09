@@ -542,15 +542,15 @@
         <div class="stats-grid">
             <div class="stat-card">
                 <div class="stat-title" id="t-stat-price"><i class="fas fa-chart-line"></i> Precio Actual (USD)</div>
-                <div class="stat-value" id="token-price">$0.00843</div>
+                <div class="stat-value" id="token-price">Cargando...</div>
             </div>
             <div class="stat-card">
                 <div class="stat-title" id="t-stat-liq"><i class="fas fa-water"></i> Liquidez Total (LP)</div>
-                <div class="stat-value" id="token-liquidity">$148,290</div>
+                <div class="stat-value" id="token-liquidity">Cargando...</div>
             </div>
             <div class="stat-card">
                 <div class="stat-title" id="t-stat-fdv"><i class="fas fa-chart-pie"></i> Cap. de Mercado (FDV)</div>
-                <div class="stat-value" id="token-fdv">$845,000</div>
+                <div class="stat-value" id="token-fdv">Cargando...</div>
             </div>
             <div class="stat-card">
                 <div class="stat-title" id="t-stat-holders"><i class="fas fa-users"></i> Holders Verificados</div>
@@ -672,12 +672,38 @@
             }, 800);
         }
 
-        // Simulación dinámica de precios en vivo
-        setInterval(() => {
-            const randomChange = (Math.random() * 0.0004 - 0.0002);
-            let currentPrice = 0.00843 + randomChange;
-            document.getElementById('token-price').innerText = '$' + currentPrice.toFixed(5);
-        }, 4000);
+        // Función para consultar los datos reales de DexScreener en vivo
+        async function fetchTokenData() {
+            try {
+                const response = await fetch('https://api.dexscreener.com/latest/dex/tokens/0x973ba2c1dccd0820f1e026d6b1f01c55c4085d38');
+                const data = await response.json();
+                
+                if (data && data.pairs && data.pairs.length > 0) {
+                    // Tomamos el primer par de la red BSC
+                    const pair = data.pairs.find(p => p.chainId === 'bsc') || data.pairs[0];
+                    
+                    if (pair) {
+                        // Precio USD
+                        const priceUsd = parseFloat(pair.priceUsd || 0);
+                        document.getElementById('token-price').innerText = '$' + (priceUsd < 0.0001 ? priceUsd.toFixed(8) : priceUsd.toFixed(6));
+                        
+                        // Liquidez Total (LP) en USD
+                        const liquidityUsd = pair.liquidity && pair.liquidity.usd ? pair.liquidity.usd : 0;
+                        document.getElementById('token-liquidity').innerText = '$' + liquidityUsd.toLocaleString('en-US', { maximumFractionDigits: 0 });
+                        
+                        // Capitalización de Mercado (FDV)
+                        const fdv = pair.fdv || pair.marketCap || 0;
+                        document.getElementById('token-fdv').innerText = '$' + fdv.toLocaleString('en-US', { maximumFractionDigits: 0 });
+                    }
+                }
+            } catch (error) {
+                console.log("Error al obtener datos en vivo de DexScreener:", error);
+            }
+        }
+
+        // Cargar datos al iniciar y actualizar cada 10 segundos
+        fetchTokenData();
+        setInterval(fetchTokenData, 10000);
 
         // Diccionario de Traducciones (Español, Inglés, Árabe, Chino)
         const translations = {
