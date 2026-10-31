@@ -1,9 +1,9 @@
 <!DOCTYPE html>
-<html lang="es">
+<html lang="es" dir="ltr">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-    <title>ZAARD INNOVATION NEXUS | Ecosistema Multitoken, NFT & Live Trading</title>
+    <title id="page-title">ZAARD INNOVATION TRACKER OFFICIAL  | Ecosistema Multitoken, NFT & Live Trading</title>
     
     <!-- Open Graph for Social Sharing -->
     <meta property="og:url" content="https://figueredo56.github.io/zaard-tracker/">
@@ -277,9 +277,9 @@
     <!-- SPLASH SCREEN -->
     <div id="splash-screen">
         <img src="https://raw.githubusercontent.com/figueredo56/DAIoficial/refs/heads/main/CC_20260925_200839.png" alt="ZAARD Logo" class="splash-logo">
-        <div class="splash-title">ZAARD INNOVATION NEXUS</div>
-        <div class="splash-subtitle">Ecosistema descentralizado de alta gama en BNB Smart Chain (BSC). Colección exclusiva de NFTs, juegos de recompensas, bloqueo de seguridad, quema de tokens, liquidez ZARD & PANGA y analítica en vivo.</div>
-        <button class="enter-btn" onclick="enterDashboard()">Ingresar al Ecosistema</button>
+        <div class="splash-title" id="t-splash-title">ZAARD INNOVATION NEXUS</div>
+        <div class="splash-subtitle" id="t-splash-sub">Ecosistema descentralizado de alta gama en BNB Smart Chain (BSC). Colección exclusiva de NFTs, juegos de recompensas, bloqueo de seguridad, quema de tokens, liquidez ZARD & PANGA y analítica en vivo.</div>
+        <button class="enter-btn" onclick="enterDashboard()" id="t-enter-btn">Ingresar al Ecosistema</button>
     </div>
 
     <!-- HEADER & NAVEGACIÓN TIPO NEXUS -->
@@ -291,16 +291,16 @@
 
         <!-- Pestañas Superiores Tipo Nexus -->
         <div class="nexus-tabs">
-            <button class="tab-btn active" onclick="switchTab(event, 'tab-nexus')">
+            <button class="tab-btn active" onclick="switchTab(event, 'tab-nexus')" id="t-tab-nexus">
                 <i class="fas fa-network-wired" style="color:var(--neon-blue);"></i> Ecosistema
             </button>
-            <button class="tab-btn" onclick="switchTab(event, 'tab-zard')">
+            <button class="tab-btn" onclick="switchTab(event, 'tab-zard')" id="t-tab-zard">
                 <i class="fas fa-coins" style="color:var(--gold);"></i> ZARD Token
             </button>
-            <button class="tab-btn panga-tab" onclick="switchTab(event, 'tab-panga')">
+            <button class="tab-btn panga-tab" onclick="switchTab(event, 'tab-panga')" id="t-tab-panga">
                 <i class="fas fa-fire" style="color:var(--neon-green);"></i> PANGA Token
             </button>
-            <a href="https://figueredo56.github.io/ZAARD-Arcade/index-lucky.html" target="_blank" class="tab-btn arcade-tab">
+            <a href="https://figueredo56.github.io/ZAARD-Arcade/index-lucky.html" target="_blank" class="tab-btn arcade-tab" id="t-tab-arcade">
                 <i class="fas fa-dice"></i> Pon a prueba tus habilidades ↗
             </a>
         </div>
@@ -312,7 +312,7 @@
                 <option value="ar">🇸🇦 العربية</option>
                 <option value="zh">🇨🇳 中文</option>
             </select>
-            <button class="wallet-btn" onclick="alert('Conectando proveedor Web3 inyectado...')">
+            <button class="wallet-btn" onclick="alert('Conectando proveedor Web3 inyectado...')" id="t-wallet-btn">
                 <i class="fas fa-wallet"></i> Conectar
             </button>
         </div>
@@ -326,57 +326,58 @@
         <!-- ======================================================= -->
         <div id="tab-nexus" class="tab-content active">
             <div class="fin-card gold-glow" style="text-align: center; padding: 40px 30px;">
-                <img src="https://photos.pinksale.finance/file/pinksale-logo-upload/1790817037242-10b712b064b3dca0c1a6417000db08e3.png" alt="Banner Ecosistema" style="width: 100%; max-height: 300px; object-fit: cover; border-radius: 14px; border: 2px solid var(--gold); margin-bottom: 25px; box-shadow: 0 0 30px rgba(212,175,55,0.45);">
+                <!-- Nueva imagen rectangular ancha completa -->
+                <img src="https://photos.pinksale.finance/file/pinksale-logo-upload/1793403729787-08f2f9a1843dbe09507205aea1768c8a.png" alt="Banner Ancho Ecosistema" style="width: 100%; max-height: 380px; object-fit: contain; border-radius: 14px; border: 2px solid var(--gold); margin-bottom: 25px; box-shadow: 0 0 35px rgba(212,175,55,0.45); background: #000;">
                 
-                <h2 style="color: var(--neon-green); font-size: 2.3rem; margin-bottom: 15px; text-shadow: 0 0 12px rgba(0,255,102,0.6);">
+                <h2 id="t-eco-title" style="color: var(--neon-green); font-size: 2.3rem; margin-bottom: 15px; text-shadow: 0 0 12px rgba(0,255,102,0.6);">
                     ⚡ ARQUITECTURA DE VALOR & UTILIDAD INTEGRAL
                 </h2>
-                <p style="color: var(--text-purple); font-size: 1.2rem; max-width: 950px; margin: 0 auto 30px auto; line-height: 1.6;">
-                    <b>ZAARD INNOVATION</b> representa un ecosistema multifuncional diseñado para proteger y potenciar los activos de los inversores en la BNB Smart Chain[cite: 1, 2, 3, 4, 5, 6, 7]. Combinamos contratos inteligentes con auditorías verificadas, sistemas de bloques de seguridad (*liquidity lockers*), quemas permanentes de suministro y una experiencia interactiva única respaldada por tokens de doble propósito (<b>ZARD</b> y <b>PANGA</b>).
+                <p id="t-eco-desc" style="color: var(--text-purple); font-size: 1.2rem; max-width: 950px; margin: 0 auto 30px auto; line-height: 1.6;">
+                    <b>ZAARD INNOVATION</b> representa un ecosistema multifuncional diseñado para proteger y potenciar los activos de los inversores en la BNB Smart Chain. Combinamos contratos inteligentes con auditorías verificadas, sistemas de bloques de seguridad (*liquidity lockers*), quemas permanentes de suministro y una experiencia interactiva única respaldada por tokens de doble propósito (<b>ZARD</b> y <b>PANGA</b>).
                 </p>
 
                 <div class="features-grid">
                     <div class="feature-box">
                         <i class="fas fa-gem" style="color: var(--gold);"></i>
-                        <h4>Colección de NFTs</h4>
-                        <p>Activos digitales únicos con integración en el ecosistema, ofreciendo privilegios exclusivos y estatus dentro de las dApps.</p>
+                        <h4 id="t-feat1-title">Colección de NFTs</h4>
+                        <p id="t-feat1-desc">Activos digitales únicos con integración en el ecosistema, ofreciendo privilegios exclusivos y estatus dentro de las dApps.</p>
                     </div>
                     <div class="feature-box">
                         <i class="fas fa-gamepad" style="color: var(--neon-blue);"></i>
-                        <h4>Juegos & Recompensas</h4>
-                        <p>Plataforma interactiva de arcade Play-to-Earn conectada para recompensar la actividad y destreza de los usuarios.</p>
+                        <h4 id="t-feat2-title">Juegos & Recompensas</h4>
+                        <p id="t-feat2-desc">Plataforma interactiva de arcade Play-to-Earn conectada para recompensar la actividad y destreza de los usuarios.</p>
                     </div>
                     <div class="feature-box">
                         <i class="fas fa-lock" style="color: var(--neon-green);"></i>
-                        <h4>Bloqueo & Seguridad</h4>
-                        <p>Protección rigurosa de liquidez mediante PinkSale PinkLock y Mudra Manager, salvaguardando los fondos de los inversores.</p>
+                        <h4 id="t-feat3-title">Bloqueo & Seguridad</h4>
+                        <p id="t-feat3-desc">Protección rigurosa de liquidez mediante PinkSale PinkLock y Mudra Manager, salvaguardando los fondos de los inversores.</p>
                     </div>
                     <div class="feature-box">
                         <i class="fas fa-fire-alt" style="color: var(--neon-pink);"></i>
-                        <h4>Quema de Tokens (Burns)</h4>
-                        <p>Estrategia deflacionaria permanente con envíos a direcciones cero, reduciendo la oferta circulante de forma transparente.</p>
+                        <h4 id="t-feat4-title">Quema de Tokens (Burns)</h4>
+                        <p id="t-feat4-desc">Estrategia deflacionaria permanente con envíos a direcciones cero, reduciendo la oferta circulante de forma transparente.</p>
                     </div>
                     <div class="feature-box">
                         <i class="fas fa-code-branch" style="color: #38bdf8;"></i>
-                        <h4>Utilidad en dApps & Liquidez</h4>
-                        <p>Creación y emparejamiento de tokens utilizando como base los pools oficiales de <b>ZARD</b> y <b>PANGA</b> en PancakeSwap.</p>
+                        <h4 id="t-feat5-title">Utilidad en dApps & Liquidez</h4>
+                        <p id="t-feat5-desc">Creación y emparejamiento de tokens utilizando como base los pools oficiales de <b>ZARD</b> y <b>PANGA</b> en PancakeSwap.</p>
                     </div>
                     <div class="feature-box">
                         <i class="fas fa-shield-alt" style="color: #a855f7;"></i>
-                        <h4>Rastreo & Verificación</h4>
-                        <p>Auditorías on-chain verificadas en BscScan, rastreo de seguridad activo y herramientas analíticas en tiempo real.</p>
+                        <h4 id="t-feat6-title">Rastreo & Verificación</h4>
+                        <p id="t-feat6-desc">Auditorías on-chain verificadas en BscScan, rastreo de seguridad activo y herramientas analíticas en tiempo real.</p>
                     </div>
                 </div>
             </div>
 
             <div class="fin-card" style="text-align: center;">
-                <h3 style="color: var(--neon-blue); margin-bottom: 15px;">🌐 Acceso Directo al Ecosistema</h3>
+                <h3 id="t-access-title" style="color: var(--neon-blue); margin-bottom: 15px;">🌐 Acceso Directo al Ecosistema</h3>
                 <div style="display: flex; justify-content: center; gap: 15px; flex-wrap: wrap;">
-                    <a href="https://figueredo56.github.io/zaard-wallet/wallet.html" target="_blank" class="action-btn" style="background: linear-gradient(135deg, var(--neon-green), var(--neon-blue)); color:#030107;">
+                    <a href="https://figueredo56.github.io/zaard-wallet/wallet.html" target="_blank" class="action-btn" style="background: linear-gradient(135deg, var(--neon-green), var(--neon-blue)); color:#030107;" id="t-btn-nexus">
                         <i class="fas fa-arrow-left"></i> Volver al Nexus
                     </a>
-                    <a href="https://figueredo56.github.io/DAIoficial/" target="_blank" class="action-btn">Portal Web DAI</a>
-                    <a href="https://figueredo56.github.io/zaard-tracker/" target="_blank" class="action-btn" style="background: linear-gradient(135deg, var(--gold), var(--neon-purple)); color:#030107;">Zaard Tracker Pro</a>
+                    <a href="https://figueredo56.github.io/DAIoficial/" target="_blank" class="action-btn" id="t-btn-web">Portal Web DAI</a>
+                    <a href="https://figueredo56.github.io/zaard-tracker/" target="_blank" class="action-btn" style="background: linear-gradient(135deg, var(--gold), var(--neon-purple)); color:#030107;" id="t-btn-tracker">Zaard Tracker Pro</a>
                 </div>
             </div>
         </div>
@@ -388,7 +389,7 @@
             <div class="fin-card gold-glow">
                 <div style="display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 15px; margin-bottom: 20px;">
                     <div>
-                        <h2 style="color: var(--gold); font-size: 1.6rem;"><i class="fas fa-coins"></i> ZARD Token Analytics & Liquidity Core</h2>
+                        <h2><i class="fas fa-coins" style="color:var(--gold);"></i> ZARD Token Analytics & Liquidity Core</h2>
                         <div class="contract-pill">CA: 0x973ba2c1dccd0820f1e026d6b1f01c55c4085d38</div>
                     </div>
                     <div>
@@ -402,7 +403,7 @@
                             style="width: 100%; height: 100%; border: none;" title="ZARD Chart"></iframe>
                 </div>
 
-                <!-- Órdenes de Compra y Venta (Order Book / Swaps Recientes) -->
+                <!-- Órdenes de Compra y Venta -->
                 <div class="order-book-grid">
                     <div class="order-box">
                         <h4 style="color: var(--neon-green); font-family:'Orbitron'; margin-bottom:10px;"><i class="fas fa-arrow-trend-up"></i> Órdenes de Compra (BUY)</h4>
@@ -418,9 +419,9 @@
                     </div>
                 </div>
 
-                <!-- Comparador de Precios (vs BNB, BTC, USDT) -->
+                <!-- Comparador de Precios -->
                 <div style="margin-top: 25px;">
-                    <h4 style="color: var(--text-purple); font-family:'Orbitron'; font-size:0.95rem; margin-bottom: 10px;">📊 Comparación de Valor en Vivo</h4>
+                    <h4 style="color: var(--text-purple); font-family:'Orbitron'; font-size:0.95rem; margin-bottom: 10px;" id="t-comp-title">📊 Comparación de Valor en Vivo</h4>
                     <div class="price-compare-table">
                         <div class="price-comp-card">
                             <span style="font-size:0.8rem; color:#94a3b8; display:block;">vs BNB</span>
@@ -451,7 +452,7 @@
             <div class="fin-card green-glow">
                 <div style="display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 15px; margin-bottom: 20px;">
                     <div>
-                        <h2 style="color: var(--neon-green); font-size: 1.6rem;"><i class="fas fa-fire"></i> PANGA Token & GameFi Analytics</h2>
+                        <h2><i class="fas fa-fire" style="color:var(--neon-green);"></i> PANGA Token & GameFi Analytics</h2>
                         <div class="contract-pill" style="border-color: var(--neon-green);">CA: 0x4a6c3ea9e7132ad217c31f8252119f08c801366e</div>
                     </div>
                     <div>
@@ -465,7 +466,7 @@
                             style="width: 100%; height: 100%; border: none;" title="PANGA Chart"></iframe>
                 </div>
 
-                <!-- Órdenes de Compra y Venta (Order Book / Swaps Recientes) -->
+                <!-- Órdenes de Compra y Venta -->
                 <div class="order-book-grid">
                     <div class="order-box">
                         <h4 style="color: var(--neon-green); font-family:'Orbitron'; margin-bottom:10px;"><i class="fas fa-arrow-trend-up"></i> Órdenes de Compra (BUY)</h4>
@@ -481,9 +482,9 @@
                     </div>
                 </div>
 
-                <!-- Comparador de Precios (vs BNB, BTC, USDT) -->
+                <!-- Comparador de Precios -->
                 <div style="margin-top: 25px;">
-                    <h4 style="color: var(--text-purple); font-family:'Orbitron'; font-size:0.95rem; margin-bottom: 10px;">📊 Comparación de Valor en Vivo</h4>
+                    <h4 style="color: var(--text-purple); font-family:'Orbitron'; font-size:0.95rem; margin-bottom: 10px;" id="t-comp-title-2">📊 Comparación de Valor en Vivo</h4>
                     <div class="price-compare-table">
                         <div class="price-comp-card">
                             <span style="font-size:0.8rem; color:#94a3b8; display:block;">vs BNB</span>
@@ -511,10 +512,10 @@
 
     <!-- FOOTER -->
     <footer>
-        <p>&copy; 2026 <span>ZAARD INNOVATION</span>. Todos los derechos reservados. | Ecosistema Multitoken desarrollado por Panga (XENOCRYPT)</p>
+        <p id="t-footer">&copy; 2026 <span>ZAARD INNOVATION</span>. Todos los derechos reservados. | Ecosistema Multitoken desarrollado por Panga (XENOCRYPT)</p>
     </footer>
 
-    <!-- SCRIPTS DE CONTROL -->
+    <!-- SCRIPTS DE CONTROL & TRADUCCIONES -->
     <script>
         function enterDashboard() {
             const splash = document.getElementById('splash-screen');
@@ -529,8 +530,173 @@
             evt.currentTarget.classList.add('active');
         }
 
+        const translations = {
+            es: {
+                pageTitle: "ZAARD INNOVATION NEXUS | Ecosistema Multitoken, NFT & Live Trading",
+                splashTitle: "ZAARD INNOVATION NEXUS",
+                splashSub: "Ecosistema descentralizado de alta gama en BNB Smart Chain (BSC). Colección exclusiva de NFTs, juegos de recompensas, bloqueo de seguridad, quema de tokens, liquidez ZARD & PANGA y analítica en vivo.",
+                enterBtn: "Ingresar al Ecosistema",
+                tabNexus: '<i class="fas fa-network-wired" style="color:var(--neon-blue);"></i> Ecosistema',
+                tabZard: '<i class="fas fa-coins" style="color:var(--gold);"></i> ZARD Token',
+                tabPanga: '<i class="fas fa-fire" style="color:var(--neon-green);"></i> PANGA Token',
+                tabArcade: '<i class="fas fa-dice"></i> Pon a prueba tus habilidades ↗',
+                walletBtn: '<i class="fas fa-wallet"></i> Conectar',
+                ecoTitle: "⚡ ARQUITECTURA DE VALOR & UTILIDAD INTEGRAL",
+                ecoDesc: "ZAARD INNOVATION representa un ecosistema multifuncional diseñado para proteger y potenciar los activos de los inversores en la BNB Smart Chain. Combinamos contratos inteligentes con auditorías verificadas, sistemas de bloques de seguridad (*liquidity lockers*), quemas permanentes de suministro y una experiencia interactiva única respaldada por tokens de doble propósito (ZARD y PANGA).",
+                feat1Title: "Colección de NFTs",
+                feat1Desc: "Activos digitales únicos con integración en el ecosistema, ofreciendo privilegios exclusivos y estatus dentro de las dApps.",
+                feat2Title: "Juegos & Recompensas",
+                feat2Desc: "Plataforma interactiva de arcade Play-to-Earn conectada para recompensar la actividad y destreza de los usuarios.",
+                feat3Title: "Bloqueo & Seguridad",
+                feat3Desc: "Protección rigurosa de liquidez mediante PinkSale PinkLock y Mudra Manager, salvaguardando los fondos de los inversores.",
+                feat4Title: "Quema de Tokens (Burns)",
+                feat4Desc: "Estrategia deflacionaria permanente con envíos a direcciones cero, reduciendo la oferta circulante de forma transparente.",
+                feat5Title: "Utilidad en dApps & Liquidez",
+                feat5Desc: "Creación y emparejamiento de tokens utilizando como base los pools oficiales de ZARD y PANGA en PancakeSwap.",
+                feat6Title: "Rastreo & Verificación",
+                feat6Desc: "Auditorías on-chain verificadas en BscScan, rastreo de seguridad activo y herramientas analíticas en tiempo real.",
+                accessTitle: "🌐 Acceso Directo al Ecosistema",
+                btnNexus: '<i class="fas fa-arrow-left"></i> Volver al Nexus',
+                btnWeb: "Portal Web DAI",
+                btnTracker: "Zaard Tracker Pro",
+                compTitle: "📊 Comparación de Valor en Vivo",
+                footer: '&copy; 2026 <span>ZAARD INNOVATION</span>. Todos los derechos reservados. | Ecosistema Multitoken desarrollado por Panga (XENOCRYPT)'
+            },
+            en: {
+                pageTitle: "ZAARD INNOVATION NEXUS | Multitoken Ecosystem, NFT & Live Trading",
+                splashTitle: "ZAARD INNOVATION NEXUS",
+                splashSub: "High-end decentralized ecosystem on BNB Smart Chain (BSC). Exclusive NFT collection, reward games, security locking, token burning, ZARD & PANGA liquidity, and live analytics.",
+                enterBtn: "Enter Ecosystem",
+                tabNexus: '<i class="fas fa-network-wired" style="color:var(--neon-blue);"></i> Ecosystem',
+                tabZard: '<i class="fas fa-coins" style="color:var(--gold);"></i> ZARD Token',
+                tabPanga: '<i class="fas fa-fire" style="color:var(--neon-green);"></i> PANGA Token',
+                tabArcade: '<i class="fas fa-dice"></i> Test Your Skills ↗',
+                walletBtn: '<i class="fas fa-wallet"></i> Connect',
+                ecoTitle: "⚡ VALUE ARCHITECTURE & COMPREHENSIVE UTILITY",
+                ecoDesc: "ZAARD INNOVATION represents a multi-functional ecosystem designed to protect and empower investors' assets on the BNB Smart Chain. We combine smart contracts with verified audits, liquidity locking systems, permanent supply burns, and a unique interactive experience backed by dual-purpose tokens (ZARD and PANGA).",
+                feat1Title: "NFT Collection",
+                feat1Desc: "Unique digital assets integrated into the ecosystem, offering exclusive privileges and status within dApps.",
+                feat2Title: "Games & Rewards",
+                feat2Desc: "Interactive Play-to-Earn arcade platform connected to reward user activity and skills.",
+                feat3Title: "Locking & Security",
+                feat3Desc: "Rigorous liquidity protection via PinkSale PinkLock and Mudra Manager, safeguarding investor funds.",
+                feat4Title: "Token Burns",
+                feat4Desc: "Permanent deflationary strategy sending tokens to zero addresses, transparently reducing circulating supply.",
+                feat5Title: "dApp Utility & Liquidity",
+                feat5Desc: "Token creation and pairing using official ZARD and PANGA liquidity pools on PancakeSwap.",
+                feat6Title: "Tracking & Verification",
+                feat6Desc: "On-chain audits verified on BscScan, active security tracking, and real-time analytical tools.",
+                accessTitle: "🌐 Direct Access to Ecosystem",
+                btnNexus: '<i class="fas fa-arrow-left"></i> Return to Nexus',
+                btnWeb: "DAI Web Portal",
+                btnTracker: "Zaard Tracker Pro",
+                compTitle: "📊 Live Value Comparison",
+                footer: '&copy; 2026 <span>ZAARD INNOVATION</span>. All rights reserved. | Multitoken Ecosystem developed by Panga (XENOCRYPT)'
+            },
+            ar: {
+                pageTitle: "ZAARD INNOVATION NEXUS | نظام متعدد الرموز، NFTs والتداول المباشر",
+                splashTitle: "ZAARD INNOVATION NEXUS",
+                splashSub: "نظام لامركزي متطور على شبكة BNB Smart Chain. مجموعة NFTs حصرية، ألعاب مكافآت، قفل الأمان، حرق الرموز، سيولة ZARD و PANGA وتحليلات حية.",
+                enterBtn: "دخول النظام البيئي",
+                tabNexus: '<i class="fas fa-network-wired" style="color:var(--neon-blue);"></i> النظام البيئي',
+                tabZard: '<i class="fas fa-coins" style="color:var(--gold);"></i> رمزي ZARD',
+                tabPanga: '<i class="fas fa-fire" style="color:var(--neon-green);"></i> رمزي PANGA',
+                tabArcade: '<i class="fas fa-dice"></i> اختبار مهاراتك ↗',
+                walletBtn: '<i class="fas fa-wallet"></i> اتصال',
+                ecoTitle: "⚡ هندسة القيمة والفائدة الشاملة",
+                ecoDesc: "يمثل ZAARD INNOVATION نظامًا بيئيًا متعدد الوظائف مصممًا لحماية وتمكين أصول المستثمرين على شبكة BNB Smart Chain. نجمع بين العقود الذكية وعمليات التدقيق المتحقق منها، وأنظمة قفل السيولة، وحرق الإمدادات الدائم.",
+                feat1Title: "مجموعة NFTs",
+                feat1Desc: "أصول رقمية فريدة مدمجة في النظام البيئي، توفر امتيازات حصرية ومكانة داخل التطبيقات اللامركزية.",
+                feat2Title: "الألعاب والمكافآت",
+                feat2Desc: "منصة ألعاب تفاعلية للربح من اللعب لمكافأة نشاط المستخدمين ومهاراتهم.",
+                feat3Title: "القفل والأمان",
+                feat3Desc: "حماية صارمة للسيولة من خلال PinkSale PinkLock و Mudra Manager لحماية أموال المستثمرين.",
+                feat4Title: "حرق الرموز",
+                feat4Desc: "استراتيجية انكماشية دائمة ترسل الرموز إلى عناوين صفري، مما يقلل المعروض المتداول بشكل شفاف.",
+                feat5Title: "فائدة التطبيقات والسيولة",
+                feat5Desc: "إنشاء وإقران الرموز باستخدام مجمعات السيولة الرسمية لـ ZARD و PANGA على PancakeSwap.",
+                feat6Title: "التتبع والتحقق",
+                feat6Desc: "عمليات تدقيق على السلسلة يتم التحقق منها على BscScan، وتتبع نشط للأمان وأدوات تحليلية في الوقت الفعلي.",
+                accessTitle: "🌐 الوصول المباشر إلى النظام البيئي",
+                btnNexus: '<i class="fas fa-arrow-left"></i> العودة إلى Nexus',
+                btnWeb: "بوابة DAI الإلكترونية",
+                btnTracker: "Zaard Tracker Pro",
+                compTitle: "📊 مقارنة القيمة المباشرة",
+                footer: '&copy; 2026 <span>ZAARD INNOVATION</span>. جميع الحقوق محفوظة. | تطوير Panga (XENOCRYPT)'
+            },
+            zh: {
+                pageTitle: "ZAARD INNOVATION NEXUS | 多代币生态系统、NFT 与实时交易",
+                splashTitle: "ZAARD INNOVATION NEXUS",
+                splashSub: "BNB Smart Chain (BSC) 上的高端去中心化生态系统。独家 NFT 系列、奖励游戏、安全锁仓、代币销毁、ZARD & PANGA 流动性与实时分析。",
+                enterBtn: "进入生态系统",
+                tabNexus: '<i class="fas fa-network-wired" style="color:var(--neon-blue);"></i> 生态系统',
+                tabZard: '<i class="fas fa-coins" style="color:var(--gold);"></i> ZARD 代币',
+                tabPanga: '<i class="fas fa-fire" style="color:var(--neon-green);"></i> PANGA 代币',
+                tabArcade: '<i class="fas fa-dice"></i> 考验你的技能 ↗',
+                walletBtn: '<i class="fas fa-wallet"></i> 连接钱包',
+                ecoTitle: "⚡ 价值架构与综合效用",
+                ecoDesc: "ZAARD INNOVATION 是一个多功能生态系统，旨在保护并赋能 BNB Smart Chain 上的投资者资产。我们将智能合约与已验证的审计、流动性锁仓系统、永久代币销毁以及由双用途代币（ZARD 和 PANGA）支持的独特互动体验相结合。",
+                feat1Title: "NFT 系列",
+                feat1Desc: "集成到生态系统中的独特数字资产，在 dApp 中享有专属特权和地位。",
+                feat2Title: "游戏与奖励",
+                feat2Desc: "互动式边玩边赚 (Play-to-Earn) 街机平台，奖励用户的活跃度与技巧。",
+                feat3Title: "锁仓与安全",
+                feat3Desc: "通过 PinkSale PinkLock 和 Mudra Manager 提供严格的流动性保护，保障投资者资金安全。",
+                feat4Title: "代币销毁 (Burns)",
+                feat4Desc: "永久通缩策略，将代币发送至零地址，透明地减少流通供应量。",
+                feat5Title: "dApp 效用与流动性",
+                feat5Desc: "在 PancakeSwap 上利用 ZARD 和 PANGA 官方流动性池进行代币创建与配对。",
+                feat6Title: "追踪与验证",
+                feat6Desc: "在 BscScan 上验证的链上审计、主动安全追踪以及实时分析工具。",
+                accessTitle: "🌐 直接访问生态系统",
+                btnNexus: '<i class="fas fa-arrow-left"></i> 返回 Nexus',
+                btnWeb: "DAI 网页门户",
+                btnTracker: "Zaard Tracker Pro",
+                compTitle: "📊 实时价值对比",
+                footer: '&copy; 2026 <span>ZAARD INNOVATION</span>. 保留所有权利。| 多代币生态系统由 Panga (XENOCRYPT) 开发'
+            }
+        };
+
         function changeLanguage(lang) {
-            console.log("Idioma seleccionado:", lang);
+            const t = translations[lang];
+            if (!t) return;
+
+            document.documentElement.lang = lang;
+            document.documentElement.dir = (lang === 'ar') ? 'rtl' : 'ltr';
+
+            document.getElementById('page-title').innerText = t.pageTitle;
+            document.getElementById('t-splash-title').innerText = t.splashTitle;
+            document.getElementById('t-splash-sub').innerText = t.splashSub;
+            document.getElementById('t-enter-btn').innerText = t.enterBtn;
+            document.getElementById('t-tab-nexus').innerHTML = t.tabNexus;
+            document.getElementById('t-tab-zard').innerHTML = t.tabZard;
+            document.getElementById('t-tab-panga').innerHTML = t.tabPanga;
+            document.getElementById('t-tab-arcade').innerHTML = t.tabArcade;
+            document.getElementById('t-wallet-btn').innerHTML = t.walletBtn;
+
+            document.getElementById('t-eco-title').innerText = t.ecoTitle;
+            document.getElementById('t-eco-desc').innerHTML = t.ecoDesc;
+
+            document.getElementById('t-feat1-title').innerText = t.feat1Title;
+            document.getElementById('t-feat1-desc').innerText = t.feat1Desc;
+            document.getElementById('t-feat2-title').innerText = t.feat2Title;
+            document.getElementById('t-feat2-desc').innerText = t.feat2Desc;
+            document.getElementById('t-feat3-title').innerText = t.feat3Title;
+            document.getElementById('t-feat3-desc').innerText = t.feat3Desc;
+            document.getElementById('t-feat4-title').innerText = t.feat4Title;
+            document.getElementById('t-feat4-desc').innerText = t.feat4Desc;
+            document.getElementById('t-feat5-title').innerText = t.feat5Title;
+            document.getElementById('t-feat5-desc').innerHTML = t.feat5Desc;
+            document.getElementById('t-feat6-title').innerText = t.feat6Title;
+            document.getElementById('t-feat6-desc').innerText = t.feat6Desc;
+
+            document.getElementById('t-access-title').innerText = t.accessTitle;
+            document.getElementById('t-btn-nexus').innerHTML = t.btnNexus;
+            document.getElementById('t-btn-web').innerText = t.btnWeb;
+            document.getElementById('t-btn-tracker').innerText = t.btnTracker;
+            document.getElementById('t-comp-title').innerText = t.compTitle;
+            document.getElementById('t-comp-title-2').innerText = t.compTitle;
+            document.getElementById('t-footer').innerHTML = t.footer;
         }
     </script>
 </body>
