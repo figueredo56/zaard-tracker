@@ -3,14 +3,14 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-    <title id="page-title">ZAARD INNOVATION TRACKER OFFICIAL | Ecosistema Multitoken, NFT & Live Trading</title>
+    <title id="page-title">ZAARD INNOVATION TRACKER OFFICIAL | Ecosistema Multitoken, NFT & Live Tracking</title>
     
     <!-- Open Graph for Social Sharing -->
     <meta property="og:url" content="https://figueredo56.github.io/zaard-tracker/">
     <meta property="og:type" content="website">
     <meta property="og:title" content="ZAARD INNOVATION NEXUS & TRACKER">
     <meta property="og:description" content="Ecosistema oficial ZAARD. Rastreo en vivo de ZARD, PANGA, ZARED y ZYM en BNB Smart Chain.">
-    <meta property="og:image" content="https://photos.pinksale.finance/file/pinksale-logo-upload/1790375348672-4de629a77b910ca4b3f245dda1b233f0.png">
+    <meta property="og:image" content="https://photos.pinksale.finance/file/pinksale-logo-upload/1790285851823-4955b8f5511ea8235af22dfb82371c91.png">
 
     <!-- Fonts & Icons -->
     <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;600;800;900&family=Rajdhani:wght@500;700&display=swap" rel="stylesheet">
@@ -38,7 +38,7 @@
 
         body {
             background-color: var(--bg-dark);
-            background-image: linear-gradient(rgba(3, 3, 8, 0.82), rgba(3, 3, 8, 0.96)), url('https://photos.pinksale.finance/file/pinksale-logo-upload/1790375348672-4de629a77b910ca4b3f245dda1b233f0.png');
+            background-image: linear-gradient(rgba(3, 3, 8, 0.82), rgba(3, 3, 8, 0.96)), url('https://photos.pinksale.finance/file/pinksale-logo-upload/1794687559048-16ebac67278e144f98b264e40bf5690d.png');
             background-size: cover;
             background-position: center;
             background-attachment: fixed;
@@ -52,7 +52,7 @@
             position: fixed;
             top: 0; left: 0; width: 100%; height: 100vh;
             background-color: #030308;
-            background-image: linear-gradient(rgba(3, 3, 8, 0.88), rgba(3, 3, 8, 0.98)), url('https://photos.pinksale.finance/file/pinksale-logo-upload/1790375348672-4de629a77b910ca4b3f245dda1b233f0.png');
+            background-image: linear-gradient(rgba(3, 3, 8, 0.88), rgba(3, 3, 8, 0.98)), url('https://photos.pinksale.finance/file/pinksale-logo-upload/1794687559048-16ebac67278e144f98b264e40bf5690d.png');
             background-size: cover; background-position: center;
             display: flex; flex-direction: column; align-items: center; justify-content: center;
             z-index: 9999;
@@ -218,17 +218,25 @@
             background: rgba(3, 3, 12, 0.8); border: 1px solid var(--border-glow); padding: 15px; border-radius: 10px;
         }
 
+        /* Grid cuadrado perfecto de 2x2 para los 4 tokens */
         .features-grid {
-            display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 20px; margin-top: 25px;
+            display: grid; 
+            grid-template-columns: repeat(2, 1fr); 
+            gap: 20px; 
+            margin-top: 25px;
+        }
+
+        @media (max-width: 768px) {
+            .features-grid { grid-template-columns: 1fr; }
         }
 
         .feature-box {
-            background: rgba(3, 3, 12, 0.8); border: 1px solid rgba(0, 242, 254, 0.3); border-radius: 14px; padding: 22px; text-align: left; transition: 0.3s;
+            background: rgba(3, 3, 12, 0.8); border: 1px solid rgba(0, 242, 254, 0.3); border-radius: 14px; padding: 24px; text-align: left; transition: 0.3s;
         }
         .feature-box:hover { border-color: var(--neon-blue); box-shadow: 0 0 20px rgba(0,242,254,0.3); transform: translateY(-4px); }
         .feature-box i { font-size: 2rem; color: var(--neon-blue); margin-bottom: 12px; }
-        .feature-box h4 { font-family: 'Orbitron', sans-serif; color: #fff; font-size: 1.05rem; margin-bottom: 8px; }
-        .feature-box p { color: #94a3b8; font-size: 0.9rem; line-height: 1.4; }
+        .feature-box h4 { font-family: 'Orbitron', sans-serif; color: #fff; font-size: 1.1rem; margin-bottom: 8px; }
+        .feature-box p { color: #cbd5e1; font-size: 0.92rem; line-height: 1.5; }
 
         footer {
             background: rgba(15, 12, 35, 0.96); border-top: 2px solid var(--neon-purple);
@@ -241,16 +249,16 @@
 
     <!-- SPLASH SCREEN -->
     <div id="splash-screen">
-        <img src="https://photos.pinksale.finance/file/pinksale-logo-upload/1790375348672-4de629a77b910ca4b3f245dda1b233f0.png" alt="ZAARD Logo" class="splash-logo">
-        <div class="splash-title">ZAARD INNOVATION TRACKER</div>
-        <div class="splash-subtitle">Ecosistema descentralizado de alta gama en BNB Smart Chain (BSC). Analítica y rastreo en vivo de ZARD, PANGA, ZARED y ZYM.</div>
+        <img src="https://photos.pinksale.finance/file/pinksale-logo-upload/1790285851823-4955b8f5511ea8235af22dfb82371c91.png" alt="ZAARD Logo" class="splash-logo">
+        <div class="splash-title">ZAARD TRACKER OFFICIAL</div>
+        <div class="splash-subtitle">Ecosistema descentralizado de alta gama en BNB Smart Chain (BSC). Rastreo inteligente en tiempo real de ZARD, PANGA, ZARED y ZYM.</div>
         <button class="enter-btn" onclick="enterDashboard()">Ingresar al Tracker</button>
     </div>
 
     <!-- HEADER & NAVEGACIÓN -->
     <header>
         <div class="brand">
-            <img src="https://photos.pinksale.finance/file/pinksale-logo-upload/1790375348672-4de629a77b910ca4b3f245dda1b233f0.png" alt="ZAARD Logo">
+            <img src="https://photos.pinksale.finance/file/pinksale-logo-upload/1791940828941-906fd2a3d85625f79d066e5b033f6011.png" alt="ZAARD Logo">
             <div class="brand-name">ZAARD TRACKER</div>
         </div>
 
@@ -291,36 +299,37 @@
         <!-- ======================================================= -->
         <div id="tab-nexus" class="tab-content active">
             <div class="fin-card gold-glow" style="text-align: center; padding: 40px 30px;">
-                <!-- Imagen de portada actualizada -->
-                <img src="https://photos.pinksale.finance/file/pinksale-logo-upload/1790375348672-4de629a77b910ca4b3f245dda1b233f0.png" alt="Banner Ancho Ecosistema" style="width: 100%; max-height: 380px; object-fit: contain; border-radius: 14px; border: 2px solid var(--gold); margin-bottom: 25px; box-shadow: 0 0 35px rgba(212,175,55,0.45); background: #000;">
+                <!-- Imagen de portada ancha principal -->
+                <img src="https://photos.pinksale.finance/file/pinksale-logo-upload/1794687559048-16ebac67278e144f98b264e40bf5690d.png" alt="Banner Ancho Ecosistema" style="width: 100%; max-height: 380px; object-fit: cover; border-radius: 14px; border: 2px solid var(--gold); margin-bottom: 25px; box-shadow: 0 0 35px rgba(212,175,55,0.45); background: #000;">
                 
                 <h2 style="color: var(--neon-green); font-size: 2.3rem; margin-bottom: 15px; text-shadow: 0 0 12px rgba(0,255,102,0.6);">
                     📊 ZAARD TRACKER · RASTREO ACTIVO & SEGURIDAD WEB3
                 </h2>
-                <p style="color: var(--text-purple); font-size: 1.2rem; max-width: 950px; margin: 0 auto 30px auto; line-height: 1.6;">
-                    El rastro directo y activo es la base fiel de la seguridad en el ecosistema. En <b>ZAARD INNOVATION</b> nos preocupamos por que cada contrato, aplicación y token operen blindados y bajo un monitoreo impecable. Control total de nuestros 4 pilares: <b>ZARD</b>, <b>PANGA</b>, <b>ZARED</b> y <b>ZYM</b>[cite: 1, 2, 3, 4].
+                <p style="color: var(--text-purple); font-size: 1.15rem; max-width: 950px; margin: 0 auto 30px auto; line-height: 1.6;">
+                    El rastro directo y activo es la base fiel de la seguridad en el ecosistema. En <b>ZAARD INNOVATION</b> nos preocupamos por que cada contrato, aplicación y token operen blindados y bajo un monitoreo impecable en tiempo real. Analítica avanzada de alta gama para nuestros 4 pilares fundamentales[cite: 1, 2, 3, 4].
                 </p>
 
+                <!-- Grid de 2x2 Cuadrado Perfecto para los 4 Tokens -->
                 <div class="features-grid">
                     <div class="feature-box">
                         <i class="fas fa-coins" style="color: var(--gold);"></i>
                         <h4>ZARD Token Core</h4>
-                        <p>Monitoreo de liquidez en tiempo real, órdenes de compra/venta y comparativas de valor.</p>
+                        <p>El motor, la fuerza y la columna vertebral que da el poder absoluto al ecosistema. Monitoreo integral de liquidez, órdenes de compra/venta y paridades en PancakeSwap con un blindaje inquebrantable.</p>
                     </div>
                     <div class="feature-box">
                         <i class="fas fa-fire" style="color: var(--neon-green);"></i>
                         <h4>PANGA GameFi Engine</h4>
-                        <p>Seguimiento analítico del token de recompensas y su paridad directa con PancakeSwap.</p>
+                        <p>El poder místico y estratégico del tradeo descentralizado. Seguimiento analítico del token de recompensas conectado al ecosistema Play-to-Earn con total transparencia operativa.</p>
                     </div>
                     <div class="feature-box">
                         <i class="fas fa-shield-alt" style="color: #f72585;"></i>
                         <h4>ZARED Security Unit</h4>
-                        <p>Rastreo y verificación on-chain del contrato 0xfc2a...690e blindado en la red BSC.</p>
+                        <p>La infraestructura, el universo y el respaldo normativo. Rastreo y verificación on-chain del contrato 0xfc2a...690e optimizado para garantizar estabilidad y confianza absoluta.</p>
                     </div>
                     <div class="feature-box">
                         <i class="fas fa-bolt" style="color: #06d6a0;"></i>
                         <h4>ZYM Protocol Core</h4>
-                        <p>Analítica de alto rendimiento del contrato 0x5a1d...c53d para expansión del ecosistema.</p>
+                        <p>La fuerza viva y la cohesión inagotable de la comunidad. Analítica de alto rendimiento del contrato 0x5a1d...c53d para la expansión técnica de la red.</p>
                     </div>
                 </div>
             </div>
@@ -439,7 +448,6 @@
                     </div>
                 </div>
 
-                <!-- Botón de Swap corregido directo a PancakeSwap entre PANGA y ZARD -->
                 <div style="display: flex; justify-content: center; gap: 15px; flex-wrap: wrap; margin-top: 25px;">
                     <a href="https://pancakeswap.finance/swap?inputCurrency=0x4a6c3ea9e7132ad217c31f8252119f08c801366e&outputCurrency=0x973ba2c1dccd0820f1e026d6b1f01c55c4085d38" target="_blank" class="action-btn" style="background: linear-gradient(135deg, #a855f7, #ec4899); color:#fff;">Swap PANGA ⇄ ZARD (PancakeSwap)</a>
                     <a href="https://bscscan.com/token/0x4a6c3ea9e7132ad217c31f8252119f08c801366e" target="_blank" class="action-btn" style="background: rgba(0,255,102,0.15); border: 1px solid var(--neon-green); color:var(--neon-green);">Ver BscScan PANGA</a>
@@ -448,7 +456,7 @@
         </div>
 
         <!-- ======================================================= -->
-        <!-- PESTAÑA 4: ZARED TOKEN (NUEVO)                          -->
+        <!-- PESTAÑA 4: ZARED TOKEN                                  -->
         <!-- ======================================================= -->
         <div id="tab-zared" class="tab-content">
             <div class="fin-card pink-glow">
@@ -462,7 +470,6 @@
                     </div>
                 </div>
 
-                <!-- Gráfico DexTools ZARED -->
                 <div style="width: 100%; height: 500px; border-radius: 12px; overflow: hidden; border: 1px solid #f72585; background: #000; margin-bottom: 25px;">
                     <iframe src="https://www.dextools.io/widget-chart/es/bnb/chart/0xfc2aca08fc64e51793c32e9088fc43a57d39690e?theme=dark&chartType=1&chartResolution=5&drawingToolbars=false&roundedCorners=true" style="width: 100%; height: 100%; border: none;" title="ZARED Chart"></iframe>
                 </div>
@@ -504,7 +511,7 @@
         </div>
 
         <!-- ======================================================= -->
-        <!-- PESTAÑA 5: ZYM TOKEN (NUEVO)                            -->
+        <!-- PESTAÑA 5: ZYM TOKEN                                    -->
         <!-- ======================================================= -->
         <div id="tab-zym" class="tab-content">
             <div class="fin-card cyan-glow">
@@ -518,7 +525,6 @@
                     </div>
                 </div>
 
-                <!-- Gráfico DexTools ZYM -->
                 <div style="width: 100%; height: 500px; border-radius: 12px; overflow: hidden; border: 1px solid #06d6a0; background: #000; margin-bottom: 25px;">
                     <iframe src="https://www.dextools.io/widget-chart/es/bnb/chart/0x5a1de9974c1279fbe989ce32899a1f4ece3fc53d?theme=dark&chartType=1&chartResolution=5&drawingToolbars=false&roundedCorners=true" style="width: 100%; height: 100%; border: none;" title="ZYM Chart"></iframe>
                 </div>
