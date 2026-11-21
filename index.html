@@ -352,12 +352,12 @@
         }
 
         /* ========================================================= */
-        /* BLOQUE DE VERIFICACIÓN ZYM - HIGH VOLTAGE EDITION         */
+        /* BLOQUE SHOWCASE ELÉCTRICO POR TOKEN (DEBAJO DE GRÁFICA)   */
         /* ========================================================= */
-        .zym-hv-section {
+        .token-volt-showcase {
             max-width: 100%;
             margin: 35px auto 10px auto;
-            padding: 44px 26px;
+            padding: 42px 26px;
             background:
                 radial-gradient(circle at 50% 0%, rgba(0, 240, 255, 0.22) 0%, transparent 55%),
                 radial-gradient(circle at 15% 85%, rgba(168, 85, 247, 0.25) 0%, transparent 50%),
@@ -372,12 +372,12 @@
             animation: electricCardPulse 2.4s infinite alternate ease-in-out;
         }
 
-        .zym-hv-content {
+        .token-volt-content {
             position: relative;
             z-index: 2;
         }
 
-        .zym-hv-badge {
+        .token-volt-badge {
             display: inline-block;
             padding: 7px 20px;
             margin-bottom: 16px;
@@ -391,17 +391,17 @@
             background-size: 200% auto;
             border-radius: 50px;
             box-shadow: 0 0 20px rgba(0, 240, 255, 0.8);
-            animation: hvBadgePulse 3s linear infinite;
+            animation: voltBadgeFlow 3s linear infinite;
         }
 
-        @keyframes hvBadgePulse {
+        @keyframes voltBadgeFlow {
             0% { background-position: 0% center; }
             100% { background-position: 200% center; }
         }
 
-        .zym-hv-title {
+        .token-volt-title {
             font-family: 'Orbitron', sans-serif;
-            font-size: 2rem;
+            font-size: 1.9rem;
             font-weight: 900;
             margin: 0 0 14px 0;
             background: linear-gradient(90deg, #ffffff, #00f0ff, #00ff88, #c084fc);
@@ -412,11 +412,11 @@
             filter: drop-shadow(0 0 12px rgba(0, 240, 255, 0.45));
         }
 
-        .zym-hv-img-wrapper {
+        .token-volt-img-wrapper {
             position: relative;
-            width: 290px;
-            height: 290px;
-            margin: 22px auto 26px auto;
+            width: 280px;
+            height: 280px;
+            margin: 20px auto 26px auto;
             border-radius: 22px;
             padding: 4px;
             display: flex;
@@ -427,11 +427,11 @@
             transition: transform 0.35s ease;
         }
 
-        .zym-hv-img-wrapper:hover {
+        .token-volt-img-wrapper:hover {
             transform: scale(1.04);
         }
 
-        .zym-hv-img-wrapper::before {
+        .token-volt-img-wrapper::before {
             content: "";
             position: absolute;
             width: 160%;
@@ -445,15 +445,15 @@
                 #00f0ff 300deg,
                 #00ff88 360deg
             );
-            animation: hvSpinArc 3.5s linear infinite;
+            animation: voltSpinArc 3.5s linear infinite;
             z-index: 0;
         }
 
-        @keyframes hvSpinArc {
+        @keyframes voltSpinArc {
             100% { transform: rotate(360deg); }
         }
 
-        .zym-hv-img-wrapper img {
+        .token-volt-img-wrapper img {
             position: relative;
             z-index: 1;
             width: 100%;
@@ -464,83 +464,45 @@
             background-color: #020810;
         }
 
-        .zym-hv-desc {
-            max-width: 680px;
+        .token-volt-desc {
+            max-width: 720px;
             margin: 0 auto 28px auto;
-            font-size: 1.12rem;
+            font-size: 1.18rem;
             line-height: 1.65;
             color: #d4f1fc;
-            text-shadow: 0 1px 8px rgba(0, 0, 0, 0.8);
+            text-shadow: 0 1px 8px rgba(0, 0, 0, 0.85);
         }
 
-        .zym-hv-desc strong {
+        .token-volt-desc strong {
             color: #00ff88;
-            text-shadow: 0 0 10px rgba(0, 255, 136, 0.5);
+            text-shadow: 0 0 10px rgba(0, 255, 136, 0.55);
         }
 
-        .zym-hv-desc span {
+        .token-volt-desc span {
             color: #c084fc;
             font-weight: 700;
-            text-shadow: 0 0 10px rgba(192, 132, 252, 0.5);
+            text-shadow: 0 0 10px rgba(192, 132, 252, 0.55);
         }
 
-        .zym-hv-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(270px, 1fr));
-            gap: 18px;
-            margin-top: 10px;
-        }
-
-        .zym-hv-card {
-            position: relative;
-            display: flex;
-            flex-direction: column;
-            justify-content: space-between;
-            padding: 20px 22px;
-            border-radius: 16px;
-            text-decoration: none;
-            background: linear-gradient(160deg, rgba(4, 22, 34, 0.88) 0%, rgba(10, 14, 30, 0.92) 100%);
-            border: 1.5px solid rgba(0, 240, 255, 0.6);
-            backdrop-filter: blur(6px);
-            transition: all 0.3s ease;
-            box-shadow: 0 0 18px rgba(0, 240, 255, 0.2);
-        }
-
-        .zym-hv-card:hover {
-            transform: translateY(-5px);
-            border-color: #00ff88;
-            background: linear-gradient(160deg, rgba(0, 255, 136, 0.16) 0%, rgba(0, 240, 255, 0.2) 100%);
-            box-shadow: 0 0 28px rgba(0, 255, 136, 0.7), 0 0 45px rgba(0, 240, 255, 0.45);
-        }
-
-        .zym-hv-card-title {
-            font-family: 'Orbitron', sans-serif;
-            font-size: 1.05rem;
-            font-weight: 900;
-            color: #ffffff;
-            margin-bottom: 8px;
-            text-shadow: 0 0 10px rgba(0, 240, 255, 0.6);
-        }
-
-        .zym-hv-card-sub {
-            font-size: 0.94rem;
-            color: #b4e2f5;
-            margin-bottom: 16px;
-            line-height: 1.45;
-        }
-
-        .zym-hv-btn {
+        .token-volt-cta {
             display: inline-block;
-            padding: 11px 16px;
-            border-radius: 9px;
+            padding: 14px 28px;
+            border-radius: 12px;
+            text-decoration: none;
             font-family: 'Orbitron', sans-serif;
-            font-size: 0.8rem;
-            font-weight: 800;
-            letter-spacing: 1.1px;
+            font-size: 0.88rem;
+            font-weight: 900;
+            letter-spacing: 1.2px;
             color: #01080c;
             background: linear-gradient(90deg, #00ff88, #00f0ff);
-            box-shadow: 0 0 16px rgba(0, 255, 136, 0.55);
+            box-shadow: 0 0 22px rgba(0, 255, 136, 0.6), 0 0 36px rgba(0, 240, 255, 0.4);
             text-transform: uppercase;
+            transition: all 0.3s ease;
+        }
+
+        .token-volt-cta:hover {
+            transform: translateY(-3px) scale(1.03);
+            box-shadow: 0 0 35px #00ff88, 0 0 55px #00f0ff;
         }
 
         footer {
@@ -718,6 +680,29 @@
                         <a href="https://app.binance.com/uni-qr/web3-token-details?utm_medium=share&tokenCA=0xe2879d1172215e728472d7827586bd2796afa3fb&binanceChainId=56&chain=bsc" target="_blank" rel="noopener noreferrer" class="action-btn" style="background: rgba(0,255,204,0.15); border: 1px solid #00ffcc; color:#00ffcc;">Ver en Binance Web3</a>
                         <a href="https://bscscan.com/token/0xE2879d1172215E728472D7827586bd2796aFA3fB" target="_blank" rel="noopener noreferrer" class="action-btn" style="background: rgba(243,186,47,0.15); border: 1px solid #f3ba2f; color:#f3ba2f;">Auditoría BscScan</a>
                     </div>
+
+                    <!-- BLOQUE ELÉCTRICO ZARD -->
+                    <div class="token-volt-showcase">
+                        <div class="electric-grid-overlay"></div>
+                        <canvas class="electric-spark-canvas"></canvas>
+
+                        <div class="token-volt-content">
+                            <div class="token-volt-badge">⚡ NÚCLEO DE POTENCIA · ZAARD INNOVATION ⚡</div>
+                            <h3 class="token-volt-title">ZARD ($ZARD)</h3>
+
+                            <div class="token-volt-img-wrapper">
+                                <img src="https://photos.pinksale.finance/file/pinksale-logo-upload/1791940828941-906fd2a3d85625f79d066e5b033f6011.png" alt="ZARD Token - ZAARD INNOVATION">
+                            </div>
+
+                            <p class="token-volt-desc">
+                                La fuerza, el motor, el poder más allá de lo convencional dentro de <strong>ZAARD INNOVATION</strong> y bajo el respaldo técnico de <span>ZAARD XENOCRYPT</span>.
+                            </p>
+
+                            <a href="https://app.binance.com/uni-qr/web3-token-details?utm_medium=share&tokenCA=0xe2879d1172215e728472d7827586bd2796afa3fb&binanceChainId=56&chain=bsc" target="_blank" rel="noopener noreferrer" class="token-volt-cta">
+                                Explorar ZARD en Binance Web3 ↗
+                            </a>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
@@ -778,6 +763,29 @@
                         <a href="https://pancakeswap.finance/swap?inputCurrency=0x4a6c3ea9e7132ad217c31f8252119f08c801366e&outputCurrency=0xE2879d1172215E728472D7827586bd2796aFA3fB" target="_blank" rel="noopener noreferrer" class="action-btn" style="background: linear-gradient(135deg, #a855f7, #ec4899); color:#fff;">Swap PANGA ⇄ ZARD</a>
                         <a href="https://dexscreener.com/bsc/0x4a6c3ea9e7132ad217c31f8252119f08c801366e" target="_blank" rel="noopener noreferrer" class="action-btn" style="background: rgba(0,255,102,0.2); border: 1px solid var(--neon-green); color:var(--neon-green);">📈 Ver en DexScreener Full ↗</a>
                     </div>
+
+                    <!-- BLOQUE ELÉCTRICO PANGA -->
+                    <div class="token-volt-showcase">
+                        <div class="electric-grid-overlay"></div>
+                        <canvas class="electric-spark-canvas"></canvas>
+
+                        <div class="token-volt-content">
+                            <div class="token-volt-badge">⚡ FUERZA MÍSTICA & ESTRATEGIA · ZAARD INNOVATION ⚡</div>
+                            <h3 class="token-volt-title">PANGA ($PANGA)</h3>
+
+                            <div class="token-volt-img-wrapper">
+                                <img src="https://photos.pinksale.finance/file/pinksale-logo-upload/1790484633328-559fdd3c13098c92f8a665ac39a838c2.png" alt="PANGA Token - ZAARD INNOVATION">
+                            </div>
+
+                            <p class="token-volt-desc">
+                                La fuerza mística, el razonamiento y la majestad del trade dentro de <strong>ZAARD INNOVATION</strong> y bajo el sello de <span>ZAARD XENOCRYPT</span>.
+                            </p>
+
+                            <a href="https://app.binance.com/uni-qr/web3-token-details?utm_medium=share&tokenCA=0x4a6c3ea9e7132ad217c31f8252119f08c801366e&binanceChainId=56&chain=bsc" target="_blank" rel="noopener noreferrer" class="token-volt-cta">
+                                Explorar PANGA en Binance Web3 ↗
+                            </a>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
@@ -837,6 +845,29 @@
                     <div style="display: flex; justify-content: center; gap: 15px; flex-wrap: wrap; margin-top: 25px;">
                         <a href="https://pancakeswap.finance/swap?inputCurrency=0xfc2aca08fc64e51793c32e9088fc43a57d39690e&outputCurrency=0xE2879d1172215E728472D7827586bd2796aFA3fB" target="_blank" rel="noopener noreferrer" class="action-btn" style="background: linear-gradient(135deg, #f72585, #4cc9f0); color:#fff;">Swap ZARED ⇄ ZARD</a>
                         <a href="https://dexscreener.com/bsc/0xfc2aca08fc64e51793c32e9088fc43a57d39690e" target="_blank" rel="noopener noreferrer" class="action-btn" style="background: rgba(247,37,133,0.2); border: 1px solid #f72585; color:#f72585;">📈 Ver en DexScreener Full ↗</a>
+                    </div>
+
+                    <!-- BLOQUE ELÉCTRICO ZARED -->
+                    <div class="token-volt-showcase" id="zared-volt-block">
+                        <div class="electric-grid-overlay"></div>
+                        <canvas class="electric-spark-canvas"></canvas>
+
+                        <div class="token-volt-content">
+                            <div class="token-volt-badge">⚡ EXTENSIÓN & EMPODERAMIENTO · ZAARD INNOVATION ⚡</div>
+                            <h3 class="token-volt-title">ZARED ($ZARED)</h3>
+
+                            <div class="token-volt-img-wrapper">
+                                <img src="https://photos.pinksale.finance/file/pinksale-logo-upload/1794605349763-3b36fe22e2048e05bbf50f8bdf231392.png" alt="ZARED Token - ZAARD INNOVATION">
+                            </div>
+
+                            <p class="token-volt-desc">
+                                El universo, el poder fuera de lo normal y la extensión misma del ecosistema <strong>ZAARD</strong>: calma, empoderamiento y la fuerza <strong>PANGA</strong> en su absoluta capacidad bajo la firma de <span>ZAARD XENOCRYPT</span>.
+                            </p>
+
+                            <a href="https://app.binance.com/uni-qr/web3-token-details?utm_medium=share&tokenCA=0xfc2aca08fc64e51793c32e9088fc43a57d39690e&binanceChainId=56&chain=bsc" target="_blank" rel="noopener noreferrer" class="token-volt-cta">
+                                Explorar ZARED en Binance Web3 ↗
+                            </a>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -899,43 +930,28 @@
                         <a href="https://dexscreener.com/bsc/0x3984bd80e73777f2e790892435338d032b987bc7" target="_blank" rel="noopener noreferrer" class="action-btn" style="background: rgba(6,214,160,0.2); border: 1px solid #06d6a0; color:#06d6a0;">📈 Ver en DexScreener Full ↗</a>
                     </div>
 
-                    <!-- BLOQUE WEB DE VERIFICACIÓN ZYM - HIGH VOLTAGE EDITION -->
-                    <div class="zym-hv-section">
+                    <!-- BLOQUE ELÉCTRICO ZYM -->
+                    <div class="token-volt-showcase" id="zym-volt-block">
                         <div class="electric-grid-overlay"></div>
                         <canvas class="electric-spark-canvas"></canvas>
 
-                        <div class="zym-hv-content">
-                            <div class="zym-hv-badge">⚡ INFRAESTRUCTURA DE ALTA FIDELIDAD ⚡</div>
-                            <h2 class="zym-hv-title">Protocolo ZYM ($ZYM)</h2>
+                        <div class="token-volt-content">
+                            <div class="token-volt-badge">⚡ FUERZA ENMUTADA · ZAARD, YEKA & MAR ⚡</div>
+                            <h3 class="token-volt-title">ZYM ($ZYM)</h3>
 
-                            <div class="zym-hv-img-wrapper">
-                                <img src="https://photos.pinksale.finance/file/pinksale-logo-upload/1795287783052-f8c0c8e84423be80e218f488d441440d.png" alt="ZYM Protocol - ZAARD INNOVATION">
+                            <div class="token-volt-img-wrapper">
+                                <img src="https://photos.pinksale.finance/file/pinksale-logo-upload/1793917735714-d84b28c0d04f3063f454cbc1d8a062fb.png" alt="ZYM Token - ZAARD INNOVATION">
                             </div>
 
-                            <p class="zym-hv-desc">
-                                Arquitectura criptográfica avanzada orientada a la estabilidad de suministro y valor a largo plazo dentro de <strong>ZAARD INNOVATION</strong>. Operado bajo la fuerza directriz de <strong>PANGA</strong> y bajo la custodia inmutable de <span>ZAARD XENOCRYPT</span>.
+                            <p class="token-volt-desc">
+                                La fuerza enmutada, el poder de una comunidad que cree y da el máximo para que cada cosa funcione dentro de <strong>ZAARD INNOVATION</strong> — impulsada por <strong>ZAARD, YEKA &amp; MAR</strong> bajo la custodia de <span>ZAARD XENOCRYPT</span>.
                             </p>
 
-                            <div class="zym-hv-grid">
-                                <a href="https://bscscan.com/verifySig/342478" target="_blank" rel="noopener noreferrer" class="zym-hv-card">
-                                    <div>
-                                        <div class="zym-hv-card-title">✍️ Firma Verificada #342478</div>
-                                        <p class="zym-hv-card-sub">Validación criptográfica oficial de autoría y autenticidad on-chain en BscScan Verified Signatures.</p>
-                                    </div>
-                                    <span class="zym-hv-btn">Verificar Firma #342478 ↗</span>
-                                </a>
-
-                                <a href="https://bscscan.com/tx/0xeff2effa9eabce258978153c3ec64cee420c0d0f71496b6ca6679754804fef57" target="_blank" rel="noopener noreferrer" class="zym-hv-card">
-                                    <div>
-                                        <div class="zym-hv-card-title">🔒 Renuncia de Contrato</div>
-                                        <p class="zym-hv-card-sub">Transacción inmutable de transferencia de propiedad a dirección cero (0x000...000) en BNB Smart Chain.</p>
-                                    </div>
-                                    <span class="zym-hv-btn">Ver Hash Renounce ↗</span>
-                                </a>
-                            </div>
+                            <a href="https://app.binance.com/uni-qr/web3-token-details?utm_medium=share&tokenCA=0x3984bd80e73777f2e790892435338d032b987bc7&binanceChainId=56&chain=bsc" target="_blank" rel="noopener noreferrer" class="token-volt-cta">
+                                Explorar ZYM en Binance Web3 ↗
+                            </a>
                         </div>
                     </div>
-                    <!-- FIN BLOQUE ZYM -->
                 </div>
             </div>
         </div>
